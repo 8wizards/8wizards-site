@@ -23,7 +23,7 @@ raven==5.7.2
 PyJWT==1.1.0
 APScheduler==3.0.5
 jsonfield==1.0.3
-argparse
+argparse==1.4.0
 sqlalchemy==1.0.1
 billiard==3.3.0.22
 beautifulsoup4==4.4.0
