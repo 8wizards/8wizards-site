@@ -67,5 +67,6 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "provision.yml"
+    ansible.verbose = "vvvv"
   end
 end

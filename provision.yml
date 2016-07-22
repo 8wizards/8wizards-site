@@ -5,6 +5,8 @@
   vars:
     - mysql_pass: 123asd3d
     - mysql_database: eightwizards
+    - vagrant_project_folder: /vagrant/eightwizards
+    - django_settings: eightwizards.settings.local
   handlers:
     - name: Restart MySQL
       service: name=mysql state=restarted
@@ -61,3 +63,9 @@
 
     - name: Install Python packages
       pip: requirements=~/requirements.txt executable=pip3
+
+    - name: Django Migrate DB
+      command : 'python3 {{ vagrant_project_folder }}/manage.py migrate --settings={{ django_settings }}'
+
+    - name: Start Django Test Server
+      command: 'python3 {{ vagrant_project_folder }}/manage.py runserver 0.0.0.0:9999 --settings={{ django_settings }}'
