@@ -20,8 +20,6 @@
            - mysql-server
            - mysql-client
            - python-mysqldb
-    - name: Copy the root credentials as .my.cnf file
-      template: src=mysql.cnf.j2 dest=~/.my.cnf mode=0600
 
     - name: Update MySQL root password for all wizard accounts
       mysql_user: name=root host={{ item }} password={{ mysql_pass }} state=present
@@ -29,6 +27,10 @@
         - 127.0.0.1
         - ::1
         - localhost
+
+    - name: Copy the root credentials as .my.cnf file
+      template: src=mysql.cnf.j2 dest=~/.my.cnf mode=0600
+
 
     - name: Ensure Anonymous user(s) are not in the database
       mysql_user: name='' host={{ item }} state=absent
@@ -49,6 +51,24 @@
         - redis-server
       notify:
         - Restart Redis
+
+    - name: Install frontend stack stuff
+      apt: name={{ item }} state=installed update_cache=yes
+      with_items:
+        - nodejs
+        - npm
+        - ruby
+
+    - name: Copy package.json to vagrant's fs
+      copy: src="package.json" dest=~/.
+
+    - name: Install npm packages
+      npm: path=~/
+
+    - name: Install SASS
+      gem:
+        name: sass
+        user_install: no
 
     - name: Instal python related/driver packages
       apt: name={{ item }} state=installed update_cache=yes
