@@ -56,6 +56,7 @@
       apt: name={{ item }} state=installed update_cache=yes
       with_items:
         - nodejs
+        - nodejs-legacy
         - npm
         - ruby
 
@@ -69,6 +70,15 @@
       gem:
         name: sass
         user_install: no
+
+    - name: Install Bower dependecies
+      bower: name={{ item }} path={{ vagrant_project_folder }}/static relative_execpath=~/node_modules/.bin
+      with_items:
+        - foundation-sites
+        - jquery
+
+    # - name: Run Gulp
+    #  command: gulp
 
     - name: Instal python related/driver packages
       apt: name={{ item }} state=installed update_cache=yes
