@@ -5,6 +5,7 @@
   vars:
     - mysql_pass: 123asd3d
     - mysql_database: eightwizards
+    - vagrant_folder: /vagrant
     - vagrant_project_folder: /vagrant/eightwizards
     - django_settings: eightwizards.settings.local
   handlers:
@@ -20,6 +21,7 @@
            - mysql-server
            - mysql-client
            - python-mysqldb
+
     - name: Copy the root credentials as .my.cnf file
       template: src=mysql.cnf.j2 dest=~/.my.cnf mode=0600
 
@@ -50,19 +52,16 @@
       notify:
         - Restart Redis
 
-    - name: Instal python related/driver packages
+    - name: Install python related/driver packages
       apt: name={{ item }} state=installed update_cache=yes
       with_items:
         - python3-dev
         - python3-pip
         - libmysqlclient-dev
         - libjpeg8-dev
-        
-    - name: Copy requirements.txt to vagrant's fs
-      copy: src="requirements.txt" dest=~/.
 
     - name: Install Python packages
-      pip: requirements=~/requirements.txt executable=pip3
+      pip: requirements={{ vagrant_folder }}/requirements.txt executable=pip3
 
     - name: Django Migrate DB
       command : 'python3 {{ vagrant_project_folder }}/manage.py migrate --settings={{ django_settings }}'
