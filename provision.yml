@@ -22,15 +22,16 @@
            - mysql-client
            - python-mysqldb
 
-    - name: Copy the root credentials as .my.cnf file
-      template: src=mysql.cnf.j2 dest=~/.my.cnf mode=0600
-
     - name: Update MySQL root password for all wizard accounts
       mysql_user: name=root host={{ item }} password={{ mysql_pass }} state=present
       with_items:
         - 127.0.0.1
         - ::1
         - localhost
+
+    - name: Copy the root credentials as .my.cnf file
+      template: src=mysql.cnf.j2 dest=~/.my.cnf mode=0600
+
 
     - name: Ensure Anonymous user(s) are not in the database
       mysql_user: name='' host={{ item }} state=absent
@@ -52,7 +53,35 @@
       notify:
         - Restart Redis
 
-    - name: Install python related/driver packages
+    - name: Install frontend stack stuff
+      apt: name={{ item }} state=installed update_cache=yes
+      with_items:
+        - nodejs
+        - nodejs-legacy
+        - npm
+        - ruby
+
+    - name: Copy package.json to vagrant's fs
+      copy: src="package.json" dest={{ vagrant_folder }}
+
+    - name: Install npm packages
+      npm: path={{ vagrant_folder }}
+
+    - name: Install SASS
+      gem:
+        name: sass
+        user_install: no
+
+    - name: Install Bower dependecies
+      bower: name={{ item }} path={{ vagrant_project_folder }}/static relative_execpath=~/node_modules/.bin
+      with_items:
+        - foundation-sites
+        - jquery
+
+    # - name: Run Gulp
+    #  command: gulp
+
+    - name: Instal python related/driver packages
       apt: name={{ item }} state=installed update_cache=yes
       with_items:
         - python3-dev

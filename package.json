@@ -1,0 +1,21 @@
+{
+  "name": "8wizards",
+  "version": "0.0.1",
+  "description": "Frontend Stuff",
+  "author": "erlrange",
+  "license": "BSD",
+  "files": [],
+  "dependencies": {
+    "bower": "*"
+  , "browser-sync": "*"
+  , "gulp": "*"
+  , "gulp-changed": "*"
+  , "gulp-file-include": "*"
+  , "gulp-htmlmin": "*"
+  , "gulp-imagemin": "*"
+  , "gulp-plumber": "*"
+  , "gulp-postcss": "*"
+  , "gulp-sass": "*"
+  , "gulp-sourcemaps": "*"
+  }
+}
