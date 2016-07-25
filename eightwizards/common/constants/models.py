@@ -1,0 +1,26 @@
+ACTIVE = True
+INACTIVE = False
+
+ACTIVE_INACTIVE_CHOICES = (
+    (ACTIVE, 'Active'),
+    (INACTIVE, 'Inactive')
+)
+
+ACTIVE_INACTIVE_CHOICES_MAP = dict(ACTIVE_INACTIVE_CHOICES)
+
+YES = 'Y'
+NO = 'N'
+
+YES_NO_CHOICES = (
+    (YES, 'Yes'),
+    (NO, 'No'),
+)
+
+YES_NO_CHOICES_MAP = dict(YES_NO_CHOICES)
+
+YES_NO_BOOLEAN_CHOICES = (
+    (True, 'Yes'),
+    (False, 'No'),
+)
+
+YES_NO_BOOLEAN_CHOICES_MAP = dict(YES_NO_BOOLEAN_CHOICES)
