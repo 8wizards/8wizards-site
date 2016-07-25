@@ -60,6 +60,7 @@
         - nodejs-legacy
         - npm
         - ruby
+        - git
 
     - name: Copy package.json to vagrant's fs
       copy: src="package.json" dest={{ vagrant_folder }}
@@ -73,10 +74,11 @@
         user_install: no
 
     - name: Install Bower dependecies
-      bower: name={{ item }} path={{ vagrant_project_folder }}/static relative_execpath=~/node_modules/.bin
+      bower: name={{ item }} path={{ vagrant_project_folder }}/static/vendor relative_execpath={{ vagrant_folder }}/node_modules/.bin
       with_items:
         - foundation-sites
         - jquery
+        - angular
 
     # - name: Run Gulp
     #  command: gulp
