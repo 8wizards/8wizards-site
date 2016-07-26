@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Certification',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('name', models.CharField(max_length=255)),
                 ('description', models.TextField()),
                 ('image', models.ImageField(upload_to='')),
@@ -23,10 +23,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Member',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('first_name', models.CharField(max_length=50)),
                 ('last_name', models.CharField(max_length=50)),
-                ('nick_name', models.CharField(max_length=127, blank=True)),
+                ('nick_name', models.CharField(blank=True, max_length=127)),
                 ('overview', models.TextField()),
                 ('is_available', models.BooleanField(default=True)),
                 ('birthday', models.DateField()),
@@ -35,9 +35,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Role',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('name', models.CharField(max_length=127)),
-                ('description', models.CharField(max_length=255, blank=True)),
+                ('description', models.CharField(blank=True, max_length=255)),
             ],
         ),
         migrations.AddField(

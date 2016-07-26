@@ -14,27 +14,27 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('name', models.CharField(max_length=127)),
-                ('slug', models.SlugField(unique=True, blank=True, default='', null=None)),
+                ('slug', models.SlugField(null=None, unique=True, blank=True, default='')),
                 ('description', models.CharField(max_length=512)),
             ],
         ),
         migrations.CreateModel(
             name='MediaResource',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
-                ('name', models.CharField(null=None, max_length=127, blank=None, db_index=True)),
-                ('image', models.ImageField(upload_to='gallery', blank=True)),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
+                ('name', models.CharField(db_index=True, null=None, max_length=127, blank=None)),
+                ('image', models.ImageField(blank=True, upload_to='gallery')),
             ],
         ),
         migrations.CreateModel(
             name='Project',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
-                ('name', models.CharField(null=None, max_length=127, blank=None, db_index=True)),
-                ('slug', models.SlugField(unique=True, blank=True, default='', null=None)),
-                ('short_description', models.TextField(null=None, blank=None)),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
+                ('name', models.CharField(db_index=True, null=None, max_length=127, blank=None)),
+                ('slug', models.SlugField(null=None, unique=True, blank=True, default='')),
+                ('short_description', models.TextField(blank=None, null=None)),
                 ('large_description', models.TextField()),
                 ('status', models.BooleanField(choices=[(True, 'Active'), (False, 'Inactive')], default=True)),
                 ('keywords', models.TextField(help_text='SEO')),
@@ -50,7 +50,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Skill',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('name', models.CharField(max_length=127)),
                 ('description', models.CharField(max_length=512)),
             ],
@@ -63,6 +63,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='mediaresource',
             name='project',
-            field=models.ForeignKey(to='projects.Project', default=None),
+            field=models.ForeignKey(default=None, to='projects.Project'),
         ),
     ]
