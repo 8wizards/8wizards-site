@@ -19,6 +19,11 @@ module OS
         OS.unix? and not OS.mac?
     end
 end
+Vagrant.configure(2) do |config|
+  config.vm.provider :virtualbox do |vm|
+    vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
+  end
+end
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
