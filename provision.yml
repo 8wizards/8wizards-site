@@ -1,6 +1,6 @@
 - name: Provision Vagrant
   hosts: all
-  become: yes
+  become: true
   user: vagrant
   vars:
     - mysql_pass: 123asd3d
@@ -63,22 +63,24 @@
         - git
 
     - name: Copy package.json to vagrant's fs
-      copy: src="package.json" dest={{ vagrant_folder }}
+      copy: src="package.json" dest=~/
 
     - name: Install npm packages
-      npm: path={{ vagrant_folder }}
+      npm: path=~/
 
     - name: Install SASS
       gem:
         name: sass
         user_install: no
 
+    - name: Copy bowerrc to vagrant's fs
+      copy: src=".bowerrc" dest=~/
+
     - name: Install Bower dependecies
-      bower: name={{ item }} path={{ vagrant_project_folder }}/static/vendor relative_execpath={{ vagrant_folder }}/node_modules/.bin
-      with_items:
-        - foundation-sites
-        - jquery
-        - angular
+      become: false
+      become_user: vagrant
+      # command: ~/node_modules/.bin/bower install {{ item }}
+      bower: path={{ vagrant_folder }} relative_execpath=~/node_modules/.bin
 
     # - name: Run Gulp
     #  command: gulp

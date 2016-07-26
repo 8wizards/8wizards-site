@@ -1,3 +1,4 @@
 {
-  "directory": "eightwizards/static/vendor"
+  "directory": "/vagrant/eightwizards/static/vendor",
+  "allow_root": true
 }

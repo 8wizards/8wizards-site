@@ -1,0 +1,10 @@
+{
+  "name": "8wizards",
+  "version": "0.0.1",
+  "dependencies": {
+    "foundation-sites": "6.2.3",
+    "angular": "~1.5",
+    "modernizr": "~2.6.2",
+    "jquery": "~2.2.4"
+  }
+}
