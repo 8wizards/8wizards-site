@@ -1,0 +1,33 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=10,user-scalable=no,initial-scale=1.0">
+        <meta name="application-name" content="{{ SITE_INFO.site_name }}">
+        <meta name="msapplication-tooltip" content="{{ SITE_INFO.site_description }}">
+        <meta name="apple-mobile-web-app-title" content="{{ SITE_INFO.site_name }}">
+        <meta name="description" content="{% block page-description %}{{ SITE_INFO.site_descriptopn }}{% endblock %}">
+        <meta name="keywords" content="{% block page-keywords %}{{ SITE_INFO.site_keywords }}{% endblock %}">
+
+        <!-- icons -->
+        <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+
+        <!-- styles -->
+        <link rel="stylesheet" href="{% static "vendor/foundation-sites/dist/foundation.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/styles.css" %}" title="default">
+
+        <script src="{% static 'vendor/modernizr/modernizr.js' %}"></script>
+    </head>
+    <body>
+
+
+    <script src="{% static "vendor/jquery/dist/jquery.min.js" %}"></script>
+    <script src="{% static "vendor/foundation-sites/dist/foundation.min.js" %}"></script>
+    <script src="{% static "vendor/angular/angular.js" %}"></script>
+    <script src="{% static "vendor/angular-route/angular-route.min.js" %}"></script>
+    <script src="{% static "vendor/angular-resource/angular-resource.min.js" %}"></script>
+    <script src="{% static "vendor/angular-loader/angular-loader.js" %}"></script>
+    </body>
+</html>
