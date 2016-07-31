@@ -9,6 +9,11 @@ class Skill(models.Model):
     description = models.CharField(blank=False, max_length=512)
 
 
+class Technology(models.Model):
+    name = models.CharField(blank=False, max_length=127)
+    description = models.TextField(blank=False)
+
+
 class Category(models.Model):
     name = models.CharField(blank=False, max_length=127)
     slug = models.SlugField(unique=True, blank=True, null=None, default='')
