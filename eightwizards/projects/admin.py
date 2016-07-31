@@ -11,6 +11,7 @@ class SkillForm(ModelForm):
         model = Skill
         fields = '__all__'
 
+
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
     form = SkillForm
@@ -22,10 +23,12 @@ class CategoryForm(ModelForm):
         model = Category
         fields = '__all__'
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     form = CategoryForm
     list_display = ('name', 'slug', 'description')
+
 
 class ProjectForm(ModelForm):
     class Meta:
@@ -35,6 +38,7 @@ class ProjectForm(ModelForm):
 
 class MediaInline(admin.StackedInline):
     model = MediaResource
+    extra = 1
 
 
 @admin.register(Project)
