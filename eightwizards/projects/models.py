@@ -6,12 +6,12 @@ from common.constants.models import ACTIVE, ACTIVE_INACTIVE_CHOICES
 
 class Skill(models.Model):
     name = models.CharField(blank=False, max_length=127)
-    description = models.CharField(blank=False, max_length=512)
+    description = models.TextField(blank=False, max_length=2047)
 
 
 class Technology(models.Model):
     name = models.CharField(blank=False, max_length=127)
-    description = models.TextField(blank=False)
+    description = models.TextField(blank=False, max_length=2047)
 
 
 class Category(models.Model):
