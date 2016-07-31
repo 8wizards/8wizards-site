@@ -1,8 +1,9 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('8wizrds', [
+angular.module('8wizards', [
     'ngRoute',
+    'ngResource',
     '8wizards.index',
     '8wizards.projects',
     '8wizards.contacts',

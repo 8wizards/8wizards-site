@@ -15,19 +15,33 @@
         <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
 
         <!-- styles -->
+
+        <!-- vendors -->
         <link rel="stylesheet" href="{% static "vendor/foundation-sites/dist/foundation.min.css" %}">
+
+        <!-- application -->
         <link rel="stylesheet" href="{% static "css/styles.css" %}" title="default">
 
         <script src="{% static 'vendor/modernizr/modernizr.js' %}"></script>
     </head>
-    <body>
+    <body ng-app="8wizards">
 
-
+    <!-- vendors -->
     <script src="{% static "vendor/jquery/dist/jquery.min.js" %}"></script>
     <script src="{% static "vendor/foundation-sites/dist/foundation.min.js" %}"></script>
     <script src="{% static "vendor/angular/angular.js" %}"></script>
     <script src="{% static "vendor/angular-route/angular-route.min.js" %}"></script>
     <script src="{% static "vendor/angular-resource/angular-resource.min.js" %}"></script>
     <script src="{% static "vendor/angular-loader/angular-loader.js" %}"></script>
+
+    <!-- application -->
+    <script src="{% static "js/app.js" %}"></script>
+    <script src="{% static "js/index/index.js" %}"></script>
+    <script src="{% static "js/projects/projects.js" %}"></script>
+    <script src="{% static "js/team/team.js" %}"></script>
+    <script src="{% static "js/contacts/contacts.js" %}"></script>
+    <script src="{% static "js/components/generic/generic.js" %}"></script>
+    <script src="{% static "js/components/generic/filters.js" %}"></script>
+    <script src="{% static "js/components/generic/directives.js" %}"></script>
     </body>
 </html>

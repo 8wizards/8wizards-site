@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('8wizards.generic.filters', [])
+angular.module('8wizards.components.generic.filters', [])
 
 .filter('interpolate', ['version', function(version) {
   return function(text) {

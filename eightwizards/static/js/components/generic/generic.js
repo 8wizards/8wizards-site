@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('8wizards.generic', [
-  '8wizards.generic.filters',
-  '8wizards.generic.directives'
+angular.module('8wizards.components.generic', [
+  '8wizards.components.generic.filters',
+  '8wizards.components.generic.directives'
 ]);
 
