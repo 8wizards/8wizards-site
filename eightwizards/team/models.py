@@ -5,6 +5,7 @@ class Role(models.Model):
     name = models.CharField(blank=False, max_length=127)
     description = models.CharField(blank=True, max_length=255)
 
+
 class Member(models.Model):
     first_name = models.CharField(blank=False, max_length=50)
     last_name = models.CharField(blank=False, max_length=50)
@@ -13,10 +14,28 @@ class Member(models.Model):
     overview = models.TextField()
     is_available = models.BooleanField(default=True)
     birthday = models.DateField()
+    portrait = models.ImageField(blank=False, null=False)
+
+
+PROMO_URLS_CHOICES = (
+    ('behance', 'Behance'),
+    ('linkedin', 'LinkedIn'),
+    ('upwork', 'Uprork'),
+    ('github', 'GitHub'),
+    ('bitbucket', 'BitBucket')
+)
+
+
+class PromoUrl(models.Model):
+    category = models.CharField(max_length=64, choices=PROMO_URLS_CHOICES)
+    url = models.URLField(blank=False, null=False)
+    description = models.CharField(max_length=127)
+    member = models.ForeignKey(Member)
 
 
 class Certification(models.Model):
     name = models.CharField(blank=False, max_length=255)
     description = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(blank=False, null=False)
     received_at = models.DateField()
+    member = models.ForeignKey(Member, null=False)
