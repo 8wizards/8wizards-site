@@ -17,10 +17,14 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from .routers import autodiscover_api_routers
 import landing
 
+api_router = autodiscover_api_routers()
+
+
 urlpatterns = [
+    url(r'^api/v1/', include(api_router.urls)),
     url(r'^', include(landing.urls)),
     url(r'^admin/', include(admin.site.urls)),
 ]
