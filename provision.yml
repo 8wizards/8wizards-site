@@ -74,11 +74,11 @@
         user_install: no
 
     - name: Copy bowerrc to vagrant's fs
-      copy: src=".bowerrc" dest=~/
+      copy: src=".bowerrc" dest={{ vagrant_folder }}
 
     - name: Install Bower dependecies
-      become: false
-      become_user: vagrant
+      #become: True
+      #become_user: vagrant
       # command: ~/node_modules/.bin/bower install {{ item }}
       bower: path={{ vagrant_folder }} relative_execpath=~/node_modules/.bin
 
