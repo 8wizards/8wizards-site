@@ -11,7 +11,7 @@ angular.module('8wizards', [
     '8wizards.components.generic'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+  //$locationProvider.hashPrefix('!');
   $routeProvider.otherwise({redirectTo: '/index'});
 }]).
 config(['$resourceProvider', function($resourceProvider) {

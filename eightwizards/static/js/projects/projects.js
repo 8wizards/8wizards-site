@@ -3,12 +3,12 @@
 angular.module('8wizards.projects', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/', {
+  $routeProvider.when('/projects', {
     templateUrl: '/static/ngtpls/projects.html',
     controller: 'ProjectsCtrl'
   });
 }])
 
 .controller('ProjectsCtrl', [function() {
-
+  console.info('ProjectsCtrl')
 }]);

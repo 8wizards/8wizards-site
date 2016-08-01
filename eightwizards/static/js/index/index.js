@@ -7,8 +7,9 @@ angular.module('8wizards.index', ['ngRoute'])
     templateUrl: '/static/ngtpls/index.html',
     controller: 'IndexCtrl'
   });
+  console.info($routeProvider)
 }])
 
 .controller('IndexCtrl', [function() {
-
+  console.info('IndexCTrl')
 }]);

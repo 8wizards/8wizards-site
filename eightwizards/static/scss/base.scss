@@ -1,0 +1,93 @@
+@import "variables";
+@import "mixins";
+
+body {
+  font: $font-stack;
+  background-color: $reset-color;
+}
+
+
+.frame {
+  position: static;
+  -webkit-transition: opacity $default-animate-time ease;
+  transition: opacity $default-animate-time ease;
+
+    .frame-item {
+      position: fixed;
+      font-size: 1.1rem;
+      text-align: center;
+      cursor: pointer;
+      z-index: 999;
+
+      a {
+        text-decoration: none;
+        color: #C5C5C5;
+        display: block;
+        position: relative;
+        padding: 0.9rem;
+      }
+    }
+    .frame-left {
+
+    }
+    .frame-right {
+
+    }
+    .frame-top {
+    }
+    .frame-bottom {
+    }
+}
+
+#Logo {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  top: 25vh;
+  width: 100%;
+  height: 50%;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+
+  a {
+    background: url("/static/img/8wizards_logo.svg") center center no-repeat transparent;
+    display: block;
+    height: 32rem;
+    margin: auto;
+    position: relative;
+    width: 32rem;
+
+    &:before, &:after {
+      background-size: contain;
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: all $default-animate-time ease 0s;
+      width: 100%;
+    }
+
+  }
+}
+
+#Index {
+  background-color: $index-color;
+}
+
+#Projects {
+  background-color: $projects-color;
+}
+
+#Contacts {
+  background-color: $contacts-color;
+}
+
+#Tech {
+  background-color: $tech-colors;
+}
+
+#Team {
+  background-color: $team-color;
+}
