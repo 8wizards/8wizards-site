@@ -6,36 +6,178 @@ body {
   background-color: $reset-color;
 }
 
-
 .frame {
   position: static;
-  -webkit-transition: opacity $default-animate-time ease;
-  transition: opacity $default-animate-time ease;
 
-    .frame-item {
-      position: fixed;
-      font-size: 1.1rem;
-      text-align: center;
-      cursor: pointer;
-      z-index: 999;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-      a {
-        text-decoration: none;
-        color: #C5C5C5;
-        display: block;
-        position: relative;
-        padding: 0.9rem;
+  .frame-left {
+    left: 0;
+    top: 50vh;
+    text-align: left;
+    a {
+      left:inherit;
+      transition: all $default-animate-time cubic-bezier(.91, .8, .54, 1.89);
+      .bouncer {
+        left: 0;
+        top: 0;
+      }
+      &:hover {
+        left: $default-bouncing-size;
       }
     }
-    .frame-left {
+  }
 
+  .frame-right {
+    top: 50vh;
+    right: 0;
+    text-align: right;
+    a {
+      right: inherit;
+      transition: all $default-animate-time cubic-bezier(.91, .8, .54, 1.89);
+      .bouncer {
+        right: 0;
+        top: 0;
+      }
+      &:hover {
+        right: $default-bouncing-size;
+      }
     }
-    .frame-right {
+  }
 
+  .frame-top {
+    top: 0;
+    left: 50%;
+    position: absolute;
+    a {
+      transition: all $default-animate-time cubic-bezier(.91, .8, .54, 1.89);
+      .bouncer {
+        left: 0;
+        top: 0;
+      }
+      &:hover {
+        margin-top: $default-bouncing-size;
+      }
     }
-    .frame-top {
+  }
+
+  .frame-bottom {
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    a {
+      transition: all $default-animate-time cubic-bezier(.91, .8, .54, 1.89);
+      .bouncer {
+        left: 0;
+        bottom: 0;
+      }
+      &:hover {
+        margin-bottom: $default-bouncing-size;
+      }
     }
-    .frame-bottom {
+  }
+
+  .frame-item {
+    position: fixed;
+    font-size: 1.65rem;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999;
+    letter-spacing: 0.09rem;
+
+    a {
+      position: relative;
+      .icon {
+        background-color: transparent;
+        border-radius: 50%;
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        margin: 0 auto;
+      }
+      .bouncer {
+        position: fixed;
+      }
+    }
+  }
+
+  .frame-vertical {
+    a {
+      display: inline-block;
+      .bouncer {
+        width: 100%;
+        height: 0;
+        transition: height $default-animate-time cubic-bezier(.91, .8, .54, 1.89);
+      }
+      &:hover {
+        .bouncer {
+          height: $default-bouncing-size;
+        }
+      }
+    }
+  }
+
+  .frame-horyzontal {
+    a {
+      .bouncer {
+        transition: width $default-animate-time cubic-bezier(.91, .8, .54, 1.89);
+        height: 100%;
+        width: 0;
+      }
+      &:hover {
+         width: 5rem + $default-bouncing-size;
+        .bouncer {
+          width: $default-bouncing-size;
+        }
+      }
+    }
+  }
+}
+
+.frame {
+  .to_index {
+      .icon {
+        background: url("/static/img/icon.svg") left center no-repeat;
+      }
+      .bouncer {
+        background-color: $index-color;
+      }
+    }
+    .to_projects {
+      .icon {
+        background: url("/static/img/icon.svg") left center no-repeat;
+      }
+      .bouncer {
+        background-color: $projects-color;
+      }
+    }
+    .to_team {
+      .icon {
+        background: url("/static/img/icon.svg") left center no-repeat;
+      }
+      .bouncer {
+        background-color: $team-color;
+      }
+    }
+    .to_tech {
+      .icon {
+        background: url("/static/img/icon.svg") left center no-repeat;
+      }
+      .bouncer {
+        background-color: $tech-colors;
+      }
+    }
+    .to_contacts {
+      .icon {
+        background: url("/static/img/icon.svg") left center no-repeat;
+      }
+      .bouncer {
+        background-color: $contacts-color;
+      }
     }
 }
 
@@ -43,37 +185,57 @@ body {
   margin: auto;
   position: absolute;
   left: 0;
-  top: 25vh;
+  top: 50vh;
   width: 100%;
-  height: 50%;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
+  transform: translateY(-50%) !important;
 
   a {
     background: url("/static/img/8wizards_logo.svg") center center no-repeat transparent;
     display: block;
-    height: 32rem;
+    height: 25rem;
     margin: auto;
     position: relative;
-    width: 32rem;
-
-    &:before, &:after {
-      background-size: contain;
-      content: "";
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      transition: all $default-animate-time ease 0s;
-      width: 100%;
-    }
-
+    width: 25rem;
+    background-size: 100%;
   }
 }
 
 #Index {
   background-color: $index-color;
+  .frame {
+    .icon {
+      background-color: #414142;
+    }
+    .frame-label {
+      color: #C5C5C5;
+      text-decoration: none;
+      position: relative;
+      font-weight: bold;
+      text-align: center;
+    }
+    .frame-right, .frame-left {
+      .icon {
+        display: inline-block;
+        margin: 0 $default-bouncing-size+0.5rem;
+      }
+      .frame-label {
+        top: -2rem;
+      }
+    }
+    .frame-top, .frame-bottom {
+      .icon {
+        margin: $default-bouncing-size+0.5rem auto;
+      }
+    }
+    .frame-top {
+      margin-left: -3.8rem
+    }
+    .frame-bottom {
+      margin-left: -3em;
+    }
+  }
 }
 
 #Projects {
