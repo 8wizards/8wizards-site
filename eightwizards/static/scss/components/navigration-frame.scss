@@ -1,6 +1,7 @@
-$default-animate-time: 0.5s;
+$default-animate-time: 0.2s;
 $default-bouncing-size: 1.2rem;
-$transition: cubic-bezier(.91, .8, .54, 1.89);
+$transition: cubic-bezier(.91,.8,.66,1.85);
+$icon_size: 5rem;
 
 
 
@@ -93,8 +94,8 @@ $transition: cubic-bezier(.91, .8, .54, 1.89);
         background-color: #fff;
         border-radius: 50%;
         display: block;
-        width: 5rem;
-        height: 5rem;
+        width: $icon_size;
+        height: $icon_size;
       }
       .frame-label {
         display: none;
@@ -125,6 +126,7 @@ $transition: cubic-bezier(.91, .8, .54, 1.89);
   }
 
   .frame-vertical {
+    margin-left: -$icon_size/2;
     a {
       display: inline-block;
       .bouncer {
