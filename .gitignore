@@ -1,0 +1,50 @@
+# Vagrant
+.vagrant
+
+# User-specific IDE stuff
+.idea/workspace.xml
+.idea/misc.xml
+.idea/tasks.xml
+.idea/dictionaries
+*~
+
+# Sensitive or high-churn IDE files
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+arena-backend.iml
+
+.idea/inspectionProfiles/
+
+# Local databases
+*.sqlite3
+
+# Local db dump
+arena/dump.json
+
+# RELEASE File
+arena/RELEASE
+
+# Compiler outputs
+*.pyc
+
+# Mac stuff
+.DS_Store
+
+# Ignore local files
+*.local
+*.env
+.venv
+.venv2
+.venv3
+arena/logging.json
+
+# Ignore Sphinx generated HTML Doc
+arena/docs/build/
+.idea/codeStyleSettings.xml
+.idea/dataSources.local.xml
+
+# Vendors
+vendor
