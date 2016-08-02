@@ -1,37 +1,11 @@
-<section id="Index">
+<section id="Index" class="container">
     <h1 id="Logo">
         <a href="#/" title="8Wizards"></a>
     </h1>
-    <nav class="frame">
-      <ul class="frame-list">
-        <li class="frame-item frame-horyzontal frame-left">
-            <a href="/work/" class="transition to_tech">
-                <i class="icon"></i>
-                <span class="frame-label show-for-medium">Technologies</span>
-                <div class="bouncer"></div>
-            </a>
-        </li>
-        <li class="frame-item frame-vertical frame-top">
-            <a href="/about" class="transition to_team">
-                <div class="bouncer"></div>
-                <i class="icon"></i>
-                <span class="frame-label show-for-medium">Our Team</span>
-            </a>
-        </li>
-        <li class="frame-item frame-horyzontal frame-right">
-            <a href="/contact/" class="transition to_projects">
-                <span class="frame-label show-for-medium">Projects</span>
-                 <i class="icon"></i>
-                <div class="bouncer"></div>
-            </a>
-        </li>
-        <li class="frame-item frame-vertical frame-bottom">
-            <a ng-click="out($event)" rel="contacts" class="transition to_contacts">
-                <span class="frame-label show-for-medium">Get in Touch</span>
-                <i class="icon"></i>
-                <div class="bouncer"></div>
-            </a>
-        </li>
-      </ul>
-    </nav>
+    <navigation-frame navigation="[
+          {'id': 'tech', 'title': 'Technologies'},
+          {'id': 'team', 'title': 'Our Team'},
+          {'id': 'projects', 'title': 'Projects'},
+          {'id': 'contacts', 'title': 'Get in Touch'}
+        ]"></navigation-frame>
 </section>

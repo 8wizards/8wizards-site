@@ -9,6 +9,6 @@ angular.module('8wizards.projects', ['ngRoute'])
   });
 }])
 
-.controller('ProjectsCtrl', [function() {
-  console.info('ProjectsCtrl')
+.controller('ProjectsCtrl', ['$scope', function($scope) {
+  console.info('ProjectsCtrl');
 }]);

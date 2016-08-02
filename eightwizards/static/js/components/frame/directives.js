@@ -1,9 +1,21 @@
 'use strict';
 
-angular.module('8wizards.components.frame.directives', [])
+angular.module('8wizards.components.frame.directives', ['ngRoute'])
 
-.directive('appVersion', ['version', function(version) {
-  return function(scope, elm, attrs) {
-    elm.text(version);
+
+.directive('navigationFrame', ['$location', function($location) {
+  return {
+    restrict: 'E',
+    transclude: true,
+    templateUrl: 'static/ngtpls/frame/component.html',
+    scope: {
+      navigation: '='
+    },
+    link: function (scope) {
+      scope.out = function($event) {
+        var redirectTarget = $event.delegateTarget.rel;
+        $location.url('/'+redirectTarget);
+      }
+    }
   };
 }]);
