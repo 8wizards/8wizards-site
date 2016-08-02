@@ -1,13 +1,16 @@
 @import "variables";
 @import "mixins";
-@import "widgets/navigration-frame";
+@import "components/navigration-frame";
 
 body {
   font: $font-stack;
   background-color: $reset-color;
 }
 
-
+.container {
+  width: 100%;
+  height: 100%;
+}
 
 .frame {
   .to_index {
@@ -80,6 +83,7 @@ body {
       background-color: #414142;
     }
     .frame-label {
+      display: inline;
       color: #C5C5C5;
       text-decoration: none;
       position: relative;

@@ -89,16 +89,37 @@ $default-bouncing-size: 1.2rem;
     a {
       position: relative;
       .icon {
-        background-color: transparent;
+        background-color: #fff;
         border-radius: 50%;
         display: block;
         width: 5rem;
         height: 5rem;
-        margin: 0 auto;
+      }
+      .frame-label {
+        display: none;
+        opacity: 0;
+        transition: all $default-animate-time cubic-bezier(.91, .8, .54, 1.89);
       }
       .bouncer {
         position: fixed;
       }
+      &:hover {
+        .frame-label {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .frame-top, .frame-bottom {
+      .icon {
+        margin: $default-bouncing-size auto;
+      }
+  }
+
+  .frame-right, .frame-left {
+    .icon {
+      margin: 0 $default-bouncing-size;
     }
   }
 
