@@ -8,7 +8,7 @@ angular.module('8wizards', [
     '8wizards.projects',
     '8wizards.contacts',
     '8wizards.team',
-    '8wizards.components.generic'
+    '8wizards.components.frame'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   //$locationProvider.hashPrefix('!');

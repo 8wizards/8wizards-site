@@ -10,6 +10,10 @@ angular.module('8wizards.index', ['ngRoute'])
   console.info($routeProvider)
 }])
 
-.controller('IndexCtrl', [function() {
-  console.info('IndexCTrl')
+.controller('IndexCtrl', ['$scope', '$location', function($scope, $location) {
+  console.info('IndexCTrl');
+  $scope.out = function($event) {
+    var redirectTarget = $event.delegateTarget.rel;
+    $location.redirectTo('/'+redirectTarget)
+  }
 }]);
