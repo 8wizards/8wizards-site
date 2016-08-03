@@ -10,6 +10,7 @@ body {
 .container {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .frame {
@@ -21,6 +22,7 @@ body {
         background-color: $index-color;
       }
     }
+
     .to_projects {
       .icon {
         background: url("/static/img/icon.svg") left center no-repeat;
@@ -37,14 +39,16 @@ body {
         background-color: $team-color;
       }
     }
+
     .to_tech {
       .icon {
         background: url("/static/img/icon.svg") left center no-repeat;
       }
       .bouncer {
-        background-color: $tech-colors;
+        background-color: $tech-color;
       }
     }
+
     .to_contacts {
       .icon {
         background: url("/static/img/icon.svg") left center no-repeat;
@@ -53,6 +57,24 @@ body {
         background-color: $contacts-color;
       }
     }
+
+  .frame-overlay {
+    .to_contacts {
+       background-color: $contacts-color;
+    }
+    .to_tech {
+       background-color: $tech-color;
+    }
+    .to_index {
+       background-color: $index-color;
+    }
+    .to_team {
+       background-color: $team-color;
+    }
+    .to_projects {
+       background-color: $projects-color;
+    }
+  }
 }
 
 #Logo {
@@ -122,7 +144,7 @@ body {
 }
 
 #Tech {
-  background-color: $tech-colors;
+  background-color: $tech-color;
 }
 
 #Team {
