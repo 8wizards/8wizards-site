@@ -1,0 +1,219 @@
+.frame-overlay .overlay {
+  position: fixed;
+  transition: all 0.4s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
+.frame-overlay .left {
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%; }
+.frame-overlay .right {
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 100%; }
+.frame-overlay .top {
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%; }
+.frame-overlay .bottom {
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%; }
+.frame-overlay .left.transition, .frame-overlay .right.transition {
+  width: 100%; }
+.frame-overlay .top.transition, .frame-overlay .bottom.transition {
+  height: 100%; }
+
+.frame {
+  position: static; }
+  .frame ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .frame .frame-left {
+    left: 0;
+    top: 50vh;
+    text-align: left; }
+    .frame .frame-left a {
+      left: inherit;
+      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
+      .frame .frame-left a .bouncer {
+        left: 0;
+        top: 0; }
+      .frame .frame-left a:hover, .frame .frame-left a:active, .frame .frame-left a:focus {
+        left: 1.2rem; }
+  .frame .frame-right {
+    top: 50vh;
+    right: 0;
+    text-align: right; }
+    .frame .frame-right a {
+      right: inherit;
+      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
+      .frame .frame-right a .bouncer {
+        right: 0;
+        top: 0; }
+      .frame .frame-right a:hover, .frame .frame-right a:active, .frame .frame-right a:focus {
+        right: 1.2rem; }
+  .frame .frame-top {
+    top: 0;
+    left: 50%;
+    position: absolute; }
+    .frame .frame-top a {
+      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
+      .frame .frame-top a .bouncer {
+        left: 0;
+        top: 0; }
+      .frame .frame-top a:hover, .frame .frame-top a:active, .frame .frame-top a:focus {
+        margin-top: 1.2rem; }
+  .frame .frame-bottom {
+    bottom: 0;
+    left: 50%;
+    position: absolute; }
+    .frame .frame-bottom a {
+      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
+      .frame .frame-bottom a .bouncer {
+        left: 0;
+        bottom: 0; }
+      .frame .frame-bottom a:hover, .frame .frame-bottom a:active, .frame .frame-bottom a:focus {
+        margin-bottom: 1.2rem; }
+  .frame .frame-item {
+    position: fixed;
+    font-size: 1.15rem;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 0.09rem; }
+    .frame .frame-item a {
+      position: relative; }
+      .frame .frame-item a .icon {
+        background-color: #fff;
+        border-radius: 50%;
+        display: block;
+        width: 5rem;
+        height: 5rem; }
+      .frame .frame-item a .frame-label {
+        display: none;
+        opacity: 0;
+        transition: all cubic-bezier(0.91, 0.8, 0.66, 1.85); }
+      .frame .frame-item a .bouncer {
+        position: fixed; }
+      .frame .frame-item a:hover .frame-label, .frame .frame-item a:active .frame-label, .frame .frame-item a:focus .frame-label {
+        opacity: 1; }
+  .frame .frame-top .icon, .frame .frame-bottom .icon {
+    margin: 1.2rem auto; }
+  .frame .frame-right .icon, .frame .frame-left .icon {
+    margin: 0 1.2rem; }
+  .frame .frame-vertical {
+    margin-left: -2.5rem; }
+    .frame .frame-vertical a {
+      display: inline-block; }
+      .frame .frame-vertical a .bouncer {
+        width: 100%;
+        height: 0;
+        transition: height 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
+      .frame .frame-vertical a:hover .bouncer, .frame .frame-vertical a:active .bouncer, .frame .frame-vertical a:focus .bouncer {
+        height: 1.2rem; }
+  .frame .frame-horyzontal a .bouncer {
+    transition: width 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85);
+    height: 100%;
+    width: 0; }
+  .frame .frame-horyzontal a:hover, .frame .frame-horyzontal a:active, .frame .frame-horyzontal a:focus {
+    width: 6.2rem; }
+    .frame .frame-horyzontal a:hover .bouncer, .frame .frame-horyzontal a:active .bouncer, .frame .frame-horyzontal a:focus .bouncer {
+      width: 1.2rem; }
+
+body {
+  font: 100% "Didact Gothic", sans-serif;
+  background-color: #fff; }
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.frame .to_index .icon {
+  background: url("/static/img/icon.svg") left center no-repeat; }
+.frame .to_index .bouncer {
+  background-color: #fff; }
+.frame .to_projects .icon {
+  background: url("/static/img/icon.svg") left center no-repeat; }
+.frame .to_projects .bouncer {
+  background-color: orange; }
+.frame .to_team .icon {
+  background: url("/static/img/icon.svg") left center no-repeat; }
+.frame .to_team .bouncer {
+  background-color: blue; }
+.frame .to_tech .icon {
+  background: url("/static/img/icon.svg") left center no-repeat; }
+.frame .to_tech .bouncer {
+  background-color: pink; }
+.frame .to_contacts .icon {
+  background: url("/static/img/icon.svg") left center no-repeat; }
+.frame .to_contacts .bouncer {
+  background-color: purple; }
+.frame .frame-overlay .to_contacts {
+  background-color: purple; }
+.frame .frame-overlay .to_tech {
+  background-color: pink; }
+.frame .frame-overlay .to_index {
+  background-color: #fff; }
+.frame .frame-overlay .to_team {
+  background-color: blue; }
+.frame .frame-overlay .to_projects {
+  background-color: orange; }
+
+#Logo {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  top: 50vh;
+  width: 100%;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  transform: translateY(-50%) !important; }
+  #Logo a {
+    background: url("/static/img/8wizards_logo.svg") center center no-repeat transparent;
+    display: block;
+    height: 25rem;
+    margin: auto;
+    position: relative;
+    width: 25rem;
+    background-size: 100%; }
+
+#Index {
+  background-color: #fff; }
+  #Index .frame .icon {
+    background-color: #414142; }
+  #Index .frame .frame-label {
+    display: inline;
+    color: #C5C5C5;
+    text-decoration: none;
+    position: relative;
+    font-weight: bold;
+    text-align: center; }
+  #Index .frame .frame-right .icon, #Index .frame .frame-left .icon {
+    display: inline-block;
+    margin: 0 1.7rem; }
+  #Index .frame .frame-right .frame-label, #Index .frame .frame-left .frame-label {
+    top: -2rem; }
+  #Index .frame .frame-top .icon, #Index .frame .frame-bottom .icon {
+    margin: 1.7rem auto; }
+  #Index .frame .frame-top {
+    margin-left: -2.6rem; }
+  #Index .frame .frame-bottom {
+    margin-left: -3em; }
+
+#Projects {
+  background-color: orange; }
+
+#Contacts {
+  background-color: purple; }
+
+#Tech {
+  background-color: pink; }
+
+#Team {
+  background-color: blue; }
+
+/*# sourceMappingURL=base.css.map */
