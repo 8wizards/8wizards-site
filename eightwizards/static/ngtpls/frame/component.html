@@ -1,33 +1,39 @@
 <nav class="frame">
+    <div class="frame-overlay">
+        <div class="overlay left  to_{{ navigation[0].id }}"></div>
+        <div  class="overlay top  to_{{ navigation[1].id }}"></div>
+        <div  class="overlay right  to_{{ navigation[2].id }}"></div>
+        <div  class="overlay bottom  to_{{ navigation[3].id }}"></div>
+    </div>
     <ul class="frame-list">
         <li class="frame-item frame-horyzontal frame-left">
             <a ng-click="out($event)" rel="{{ navigation[0].id }}" class="transition to_{{ navigation[0].id }}"
-            title="{{ navigation[0].title }}">
+            title="{{ navigation[0].title }}" data-position="left">
                 <i class="icon" title="{{ navigation[0].title }}"></i>
-                <span class="frame-label show-for-medium">{{ navigation[0].title }}</span>
+                <span class="frame-label show-for-large">{{ navigation[0].title }}</span>
                 <div class="bouncer"></div>
             </a>
         </li>
         <li class="frame-item frame-vertical frame-top">
             <a ng-click="out($event)" rel="{{ navigation[1].id }}" class="transition to_{{ navigation[1].id }}"
-            title="{{ navigation[1].title }}">
+            title="{{ navigation[1].title }}" data-position="top">
                 <div class="bouncer"></div>
                 <i class="icon" title="{{ navigation[1].title }}"></i>
-                <span class="frame-label show-for-medium">{{ navigation[1].title }}</span>
+                <span class="frame-label show-for-large">{{ navigation[1].title }}</span>
             </a>
         </li>
         <li class="frame-item frame-horyzontal frame-right">
             <a ng-click="out($event)" rel="{{ navigation[2].id }}" class="transition to_{{ navigation[2].id }}"
-            title="{{ navigation[2].title }}">
-                <span class="frame-label show-for-medium">{{ navigation[2].title }}</span>
+            title="{{ navigation[2].title }}" data-position="right">
+                <span class="frame-label show-for-large">{{ navigation[2].title }}</span>
                 <i class="icon" title="{{ navigation[2].title }}"></i>
                 <div class="bouncer"></div>
             </a>
         </li>
         <li class="frame-item frame-vertical frame-bottom">
             <a ng-click="out($event)" rel="{{ navigation[3].id }}" class="transition to_{{ navigation[3].id }}"
-            title="{{ navigation[3].title }}">
-                <span class="frame-label show-for-medium">{{ navigation[3].title }}</span>
+            title="{{ navigation[3].title }}" data-position="bottom">
+                <span class="frame-label show-for-large">{{ navigation[3].title }}</span>
                 <i class="icon" title="{{ navigation[3].title }}"></i>
                 <div class="bouncer"></div>
             </a>

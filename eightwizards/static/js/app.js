@@ -4,6 +4,7 @@
 angular.module('8wizards', [
     'ngRoute',
     'ngResource',
+    'ngAnimate',
     '8wizards.index',
     '8wizards.projects',
     '8wizards.contacts',
