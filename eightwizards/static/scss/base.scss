@@ -14,9 +14,9 @@ body {
 }
 
 .frame {
-  .to_index {
+    .to_index {
       .icon {
-        background: url("/static/img/icon.svg") left center no-repeat;
+        background: url("/static/img/index_w.svg") left center no-repeat;
       }
       .bouncer {
         background-color: $index-color;
@@ -25,7 +25,7 @@ body {
 
     .to_projects {
       .icon {
-        background: url("/static/img/icon.svg") left center no-repeat;
+        background: url("/static/img/works_w.svg") left center no-repeat;
       }
       .bouncer {
         background-color: $projects-color;
@@ -33,7 +33,7 @@ body {
     }
     .to_team {
       .icon {
-        background: url("/static/img/icon.svg") left center no-repeat;
+        background: url("/static/img/team_w.svg") left center no-repeat;
       }
       .bouncer {
         background-color: $team-color;
@@ -42,7 +42,7 @@ body {
 
     .to_tech {
       .icon {
-        background: url("/static/img/icon.svg") left center no-repeat;
+        background: url("/static/img/technology_w.svg") left center no-repeat;
       }
       .bouncer {
         background-color: $tech-color;
@@ -51,7 +51,7 @@ body {
 
     .to_contacts {
       .icon {
-        background: url("/static/img/icon.svg") left center no-repeat;
+        background: url("/static/img/get_in_touch_w.svg") left center no-repeat;
       }
       .bouncer {
         background-color: $contacts-color;
@@ -59,17 +59,19 @@ body {
     }
 
   .frame-overlay {
+    .to_index {
+       background-color: $index-color;
+    }
     .to_contacts {
        background-color: $contacts-color;
     }
     .to_tech {
        background-color: $tech-color;
-    }
-    .to_index {
-       background-color: $index-color;
+
     }
     .to_team {
        background-color: $team-color;
+
     }
     .to_projects {
        background-color: $projects-color;
@@ -101,9 +103,6 @@ body {
 #Index {
   background-color: $index-color;
   .frame {
-    .icon {
-      background-color: #414142;
-    }
     .frame-label {
       display: inline;
       color: #C5C5C5;
@@ -131,6 +130,37 @@ body {
     }
     .frame-bottom {
       margin-left: -3em;
+    }
+
+    .to_index {
+      .icon {
+        background: url("/static/img/index.svg") left center no-repeat;
+      }
+    }
+
+    .to_projects {
+      .icon {
+        background: url("/static/img/works.svg") left center no-repeat;
+      }
+    }
+    .to_team {
+      .icon {
+        background: url("/static/img/team.svg") left center no-repeat;
+      }
+
+    }
+
+    .to_tech {
+      .icon {
+        background: url("/static/img/technology.svg") left center no-repeat;
+      }
+
+    }
+
+    .to_contacts {
+      .icon {
+        background: url("/static/img/get_in_touch.svg") left center no-repeat;
+      }
     }
   }
 }
