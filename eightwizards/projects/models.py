@@ -13,11 +13,18 @@ class Technology(models.Model):
     name = models.CharField(blank=False, max_length=127)
     description = models.TextField(blank=False, max_length=2047)
 
+    class Meta:
+        verbose_name_plural = "categories"
+
+
 
 class Category(models.Model):
     name = models.CharField(blank=False, max_length=127, help_text="Web Development, Mobile Development etc")
     slug = models.SlugField(unique=True, blank=True, null=None, default='')
     description = models.TextField(blank=True, max_length=512)
+
+    class Meta:
+        verbose_name_plural = "categories"
 
 
 class Project(models.Model):
