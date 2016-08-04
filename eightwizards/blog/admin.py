@@ -19,7 +19,7 @@ class ArticleForm(ModelForm):
 @admin.register(Article)
 class ConfigParamAdmin(admin.ModelAdmin):
     """
-    The HistoryModelAdmin for ConfigParam Model, provides views of the history of the ConfigParam model
+    The HistoryModelAdmin for ConfigParam Model, provides views of the history of the Article model
     """
     form = ArticleForm
     list_display = ('title', 'published_at', 'is_visible')
