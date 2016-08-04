@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ConfigurationConfig(AppConfig):
+class StorageConfig(AppConfig):
     name = 'configuration'
-    verbose_name = 'Configuration: Settings, Params, Templates'
+    verbose_name = 'Storage: Spells, Scrolls, Ingredients'

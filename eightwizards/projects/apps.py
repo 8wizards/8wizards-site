@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ProjectsConfig(AppConfig):
+class WizardryConfig(AppConfig):
     name = 'projects'
-    verbose_name = 'Work: Projects & Skills'
+    verbose_name = 'Wizardry: Magic Tower'

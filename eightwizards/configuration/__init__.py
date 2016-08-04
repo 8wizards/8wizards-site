@@ -1,1 +1,1 @@
-default_app_config = 'configuration.apps.ConfigurationConfig'
+default_app_config = 'configuration.apps.StorageConfig'
