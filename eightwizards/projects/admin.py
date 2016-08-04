@@ -1,7 +1,7 @@
 import logging
 from django.contrib import admin
 from django.forms import ModelForm
-from .models import Project, MediaResource, Skill, Category
+from .models import Project, MediaResource, Skill, Category, Technology
 
 logger = logging.getLogger(__name__)
 
@@ -15,6 +15,18 @@ class SkillForm(ModelForm):
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
     form = SkillForm
+    list_display = ('name', 'description')
+
+
+class TechnologyForm(ModelForm):
+    class Meta:
+        model = Technology
+        fields = '__all__'
+
+
+@admin.register(Technology)
+class TechnologyAdmin(admin.ModelAdmin):
+    form = TechnologyForm
     list_display = ('name', 'description')
 
 
@@ -46,4 +58,5 @@ class ProjectAdmin(admin.ModelAdmin):
     form = ProjectForm
     inlines = [MediaInline]
     list_display = ('name', 'status', 'category')
+    readonly_fields = ('slug',)
     list_filter = ('status', 'category')
