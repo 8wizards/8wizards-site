@@ -10,5 +10,9 @@ angular.module('8wizards.tech', ['ngRoute'])
 }])
 
 .controller('TechCtrl', [function() {
+<<<<<<< HEAD
   console.info('TechCtrl')
+=======
+  console.info('Tech')
+>>>>>>> master
 }]);

@@ -126,11 +126,11 @@ $icon_size: 5rem;
     a {
       position: relative;
       .icon {
-        background-color: #fff;
         border-radius: 50%;
         display: block;
         width: $icon_size;
         height: $icon_size;
+        background-size: 100% !important;
       }
       .frame-label {
         display: none;

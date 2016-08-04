@@ -87,11 +87,11 @@
     .frame .frame-item a {
       position: relative; }
       .frame .frame-item a .icon {
-        background-color: #fff;
         border-radius: 50%;
         display: block;
         width: 5rem;
-        height: 5rem; }
+        height: 5rem;
+        background-size: 100% !important; }
       .frame .frame-item a .frame-label {
         display: none;
         opacity: 0;
@@ -133,35 +133,35 @@ body {
   position: relative; }
 
 .frame .to_index .icon {
-  background: url("/static/img/icon.svg") left center no-repeat; }
+  background: url("/static/img/index_w.svg") left center no-repeat; }
 .frame .to_index .bouncer {
   background-color: #fff; }
 .frame .to_projects .icon {
-  background: url("/static/img/icon.svg") left center no-repeat; }
+  background: url("/static/img/works_w.svg") left center no-repeat; }
 .frame .to_projects .bouncer {
-  background-color: orange; }
+  background-color: #d16300; }
 .frame .to_team .icon {
-  background: url("/static/img/icon.svg") left center no-repeat; }
+  background: url("/static/img/team_w.svg") left center no-repeat; }
 .frame .to_team .bouncer {
-  background-color: blue; }
+  background-color: #009377; }
 .frame .to_tech .icon {
-  background: url("/static/img/icon.svg") left center no-repeat; }
+  background: url("/static/img/technology_w.svg") left center no-repeat; }
 .frame .to_tech .bouncer {
-  background-color: pink; }
+  background-color: #6600b5; }
 .frame .to_contacts .icon {
-  background: url("/static/img/icon.svg") left center no-repeat; }
+  background: url("/static/img/get_in_touch_w.svg") left center no-repeat; }
 .frame .to_contacts .bouncer {
-  background-color: purple; }
-.frame .frame-overlay .to_contacts {
-  background-color: purple; }
-.frame .frame-overlay .to_tech {
-  background-color: pink; }
+  background-color: #820060; }
 .frame .frame-overlay .to_index {
   background-color: #fff; }
+.frame .frame-overlay .to_contacts {
+  background-color: #820060; }
+.frame .frame-overlay .to_tech {
+  background-color: #6600b5; }
 .frame .frame-overlay .to_team {
-  background-color: blue; }
+  background-color: #009377; }
 .frame .frame-overlay .to_projects {
-  background-color: orange; }
+  background-color: #d16300; }
 
 #Logo {
   margin: auto;
@@ -183,8 +183,6 @@ body {
 
 #Index {
   background-color: #fff; }
-  #Index .frame .icon {
-    background-color: #414142; }
   #Index .frame .frame-label {
     display: inline;
     color: #C5C5C5;
@@ -203,17 +201,27 @@ body {
     margin-left: -2.6rem; }
   #Index .frame .frame-bottom {
     margin-left: -3em; }
+  #Index .frame .to_index .icon {
+    background: url("/static/img/index.svg") left center no-repeat; }
+  #Index .frame .to_projects .icon {
+    background: url("/static/img/works.svg") left center no-repeat; }
+  #Index .frame .to_team .icon {
+    background: url("/static/img/team.svg") left center no-repeat; }
+  #Index .frame .to_tech .icon {
+    background: url("/static/img/technology.svg") left center no-repeat; }
+  #Index .frame .to_contacts .icon {
+    background: url("/static/img/get_in_touch.svg") left center no-repeat; }
 
 #Projects {
-  background-color: orange; }
+  background-color: #d16300; }
 
 #Contacts {
-  background-color: purple; }
+  background-color: #820060; }
 
 #Tech {
-  background-color: pink; }
+  background-color: #6600b5; }
 
 #Team {
-  background-color: blue; }
+  background-color: #009377; }
 
 /*# sourceMappingURL=base.css.map */

@@ -1,9 +1,14 @@
 from django.conf import settings
 from django.core.urlresolvers import resolve, Resolver404
+from configuration.models import ConfigParam
 
 
 def site_info(request):
-    return {'SITE_INFO': settings.SITE_VARIABLES}
+    return {'SITE_INFO': {
+            'site_name': ConfigParam.get_param('SEO_SITE_NAME', settings.SITE_VARIABLES.get('site_name')),
+            'site_description': ConfigParam.get_param('SEO_SITE_DESCRIPTION', settings.SITE_VARIABLES.get('site_description')),
+            'site_keywords': ConfigParam.get_param('SEO_SITE_KEYWORDS', settings.SITE_VARIABLES.get('site_keywords'))
+        }}
 
 
 def url_name(request):
