@@ -160,7 +160,7 @@ body {
     .frame-right, .frame-left {
       .icon {
         display: inline-block;
-        margin: 0 $default-bouncing-size+0.5rem;
+        //margin: 0 $default-bouncing-size+0.5rem;
       }
       .frame-label {
         top: -$unit_size;
@@ -168,7 +168,7 @@ body {
     }
     .frame-top, .frame-bottom {
       .icon {
-        margin: $default-bouncing-size+0.5rem auto;
+        //margin: $default-bouncing-size+0.5rem auto;
       }
     }
     .frame-top {

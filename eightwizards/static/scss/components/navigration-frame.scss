@@ -1,3 +1,5 @@
+@import "../mixins";
+
 $default-animate-time: 0.2s;
 $default-bouncing-size: 1.2rem;
 $transition: cubic-bezier(.91,.8,.66,1.85);
@@ -122,9 +124,10 @@ $icon_size: 5rem;
     text-align: center;
     cursor: pointer;
     letter-spacing: 0.09rem;
-
+    @include prevent-highlight;
     a {
       position: relative;
+      @include prevent-highlight;
       .icon {
         border-radius: 50%;
         display: block;
@@ -149,6 +152,7 @@ $icon_size: 5rem;
         position: fixed;
       }
       &:hover, &:active, &:focus {
+        @include prevent-highlight;
         .frame-label {
           opacity: 1;
         }
@@ -159,17 +163,39 @@ $icon_size: 5rem;
   .frame-top, .frame-bottom {
       .icon {
         margin: $default-bouncing-size auto;
+        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+          margin-top: 0.5*$default-bouncing-size;
+          margin-bottom: 0.5*$default-bouncing-size;
+        }
+        @media screen and (max-width: 39.9375em) {
+          margin-top: 0.35*$default-bouncing-size;
+          margin-bottom: 0.35*$default-bouncing-size;
+        }
       }
   }
 
   .frame-right, .frame-left {
     .icon {
       margin: 0 $default-bouncing-size;
+      @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        margin-left: 0.5*$default-bouncing-size;
+        margin-right: 0.5*$default-bouncing-size;
+      }
+      @media screen and (max-width: 39.9375em) {
+         margin-right: 0.35*$default-bouncing-size;
+        margin-left: 0.35*$default-bouncing-size;
+      }
     }
   }
 
   .frame-vertical {
     margin-left: -$icon_size/2;
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      margin-left: -$icon_size/2.94;
+    }
+    @media screen and (max-width: 39.9375em) {
+      margin-left: -$icon_size/3.3333;
+    }
     a {
       display: inline-block;
       .bouncer {

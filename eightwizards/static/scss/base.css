@@ -83,9 +83,25 @@
     font-size: 1.15rem;
     text-align: center;
     cursor: pointer;
-    letter-spacing: 0.09rem; }
+    letter-spacing: 0.09rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    outline: none; }
     .frame .frame-item a {
-      position: relative; }
+      position: relative;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      outline: none; }
       .frame .frame-item a .icon {
         border-radius: 50%;
         display: block;
@@ -106,14 +122,45 @@
         transition: all cubic-bezier(0.91, 0.8, 0.66, 1.85); }
       .frame .frame-item a .bouncer {
         position: fixed; }
-      .frame .frame-item a:hover .frame-label, .frame .frame-item a:active .frame-label, .frame .frame-item a:focus .frame-label {
-        opacity: 1; }
+      .frame .frame-item a:hover, .frame .frame-item a:active, .frame .frame-item a:focus {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        outline: none; }
+        .frame .frame-item a:hover .frame-label, .frame .frame-item a:active .frame-label, .frame .frame-item a:focus .frame-label {
+          opacity: 1; }
   .frame .frame-top .icon, .frame .frame-bottom .icon {
     margin: 1.2rem auto; }
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      .frame .frame-top .icon, .frame .frame-bottom .icon {
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem; } }
+    @media screen and (max-width: 39.9375em) {
+      .frame .frame-top .icon, .frame .frame-bottom .icon {
+        margin-top: 0.42rem;
+        margin-bottom: 0.42rem; } }
   .frame .frame-right .icon, .frame .frame-left .icon {
     margin: 0 1.2rem; }
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      .frame .frame-right .icon, .frame .frame-left .icon {
+        margin-left: 0.6rem;
+        margin-right: 0.6rem; } }
+    @media screen and (max-width: 39.9375em) {
+      .frame .frame-right .icon, .frame .frame-left .icon {
+        margin-right: 0.42rem;
+        margin-left: 0.42rem; } }
   .frame .frame-vertical {
     margin-left: -2.5rem; }
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      .frame .frame-vertical {
+        margin-left: -1.70068rem; } }
+    @media screen and (max-width: 39.9375em) {
+      .frame .frame-vertical {
+        margin-left: -1.50002rem; } }
     .frame .frame-vertical a {
       display: inline-block; }
       .frame .frame-vertical a .bouncer {
@@ -151,7 +198,7 @@ body {
 .frame .to_team .icon {
   background: url("/static/img/team_w.svg") left center no-repeat; }
 .frame .to_team .bouncer {
-  background-color: #009377; }
+  background-color: #009356; }
 .frame .to_tech .icon {
   background: url("/static/img/technology_w.svg") left center no-repeat; }
 .frame .to_tech .bouncer {
@@ -167,7 +214,7 @@ body {
 .frame .frame-overlay .to_tech {
   background-color: #6600b5; }
 .frame .frame-overlay .to_team {
-  background-color: #009377; }
+  background-color: #009356; }
 .frame .frame-overlay .to_projects {
   background-color: #d16300; }
 
@@ -228,12 +275,9 @@ body {
     font-weight: bold;
     text-align: center; }
   #Index .frame .frame-right .icon, #Index .frame .frame-left .icon {
-    display: inline-block;
-    margin: 0 1.7rem; }
+    display: inline-block; }
   #Index .frame .frame-right .frame-label, #Index .frame .frame-left .frame-label {
     top: -2rem; }
-  #Index .frame .frame-top .icon, #Index .frame .frame-bottom .icon {
-    margin: 1.7rem auto; }
   #Index .frame .frame-top {
     margin-left: -2.6rem; }
     @media screen and (max-width: 39.9375em) {
@@ -271,6 +315,6 @@ body {
   background-color: #6600b5; }
 
 #Team {
-  background-color: #009377; }
+  background-color: #009356; }
 
 /*# sourceMappingURL=base.css.map */
