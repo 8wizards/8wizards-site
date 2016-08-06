@@ -131,6 +131,14 @@ $icon_size: 5rem;
         width: $icon_size;
         height: $icon_size;
         background-size: 100% !important;
+        @media screen and (max-width: 39.9375em) {
+          width: 0.6*$icon_size;
+          height: 0.6*$icon_size;
+        }
+        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+          width: 0.75*$icon_size;
+          height: 0.75*$icon_size;
+        }
       }
       .frame-label {
         display: none;

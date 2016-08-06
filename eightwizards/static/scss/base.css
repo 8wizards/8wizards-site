@@ -92,6 +92,14 @@
         width: 5rem;
         height: 5rem;
         background-size: 100% !important; }
+        @media screen and (max-width: 39.9375em) {
+          .frame .frame-item a .icon {
+            width: 3rem;
+            height: 3rem; } }
+        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+          .frame .frame-item a .icon {
+            width: 3.75rem;
+            height: 3.75rem; } }
       .frame .frame-item a .frame-label {
         display: none;
         opacity: 0;
@@ -163,7 +171,7 @@ body {
 .frame .frame-overlay .to_projects {
   background-color: #d16300; }
 
-#Logo {
+.main-logo {
   margin: auto;
   position: absolute;
   left: 0;
@@ -172,14 +180,43 @@ body {
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
   transform: translateY(-50%) !important; }
-  #Logo a {
+  .main-logo a {
     background: url("/static/img/8wizards_logo.svg") center center no-repeat transparent;
     display: block;
-    height: 25rem;
+    height: 26rem;
     margin: auto;
     position: relative;
-    width: 25rem;
+    width: 26rem;
     background-size: 100%; }
+  .main-logo.medium a {
+    height: 20rem;
+    width: 20rem; }
+  .main-logo.small a {
+    height: 16rem;
+    width: 16rem; }
+
+.title-logo {
+  margin: 2.4rem auto 0;
+  position: absolute;
+  left: 2.4rem; }
+  .title-logo a {
+    background: url("/static/img/logo_.svg") center center no-repeat transparent;
+    display: block;
+    height: 2rem;
+    margin: auto;
+    position: relative;
+    width: 10rem;
+    background-size: 100%; }
+  .title-logo.medium {
+    margin: 1.2rem auto 0;
+    left: 1.2rem; }
+    .title-logo.medium a {
+      width: 8rem; }
+  .title-logo.small {
+    margin: 1.02rem auto 0;
+    left: 1.02rem; }
+    .title-logo.small a {
+      width: 6rem; }
 
 #Index {
   background-color: #fff; }
@@ -199,8 +236,20 @@ body {
     margin: 1.7rem auto; }
   #Index .frame .frame-top {
     margin-left: -2.6rem; }
+    @media screen and (max-width: 39.9375em) {
+      #Index .frame .frame-top {
+        margin-left: -1.5rem; } }
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      #Index .frame .frame-top {
+        margin-left: -1.8rem; } }
   #Index .frame .frame-bottom {
     margin-left: -3em; }
+    @media screen and (max-width: 39.9375em) {
+      #Index .frame .frame-bottom {
+        margin-left: -1.3rem; } }
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      #Index .frame .frame-bottom {
+        margin-left: -1.6rem; } }
   #Index .frame .to_index .icon {
     background: url("/static/img/index.svg") left center no-repeat; }
   #Index .frame .to_projects .icon {
