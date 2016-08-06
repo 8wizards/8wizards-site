@@ -5,6 +5,7 @@ angular.module('8wizards', [
     'ngRoute',
     'ngResource',
     'ngAnimate',
+    'angular-blocks',
     '8wizards.index',
     '8wizards.projects',
     '8wizards.contacts',
