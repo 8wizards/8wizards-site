@@ -1,11 +1,24 @@
-<section id="Index" class="container">
-    <h1 id="Logo">
-        <a href="#/" title="8Wizards"></a>
-    </h1>
-    <navigation-frame navigation="[
+<section id="Index" class="container" data-extend-template="/static/ngtpls/layout.html">
+    <div data-block="header">
+        <h1 class="main-logo show-for-large">
+            <a href="#/" title="8Wizards"></a>
+        </h1>
+
+        <h1 class="main-logo medium show-for-medium-only" data-block="header">
+            <a href="#/" title="8Wizards"></a>
+        </h1>
+
+        <h1 class="main-logo small show-for-small-only" data-block="header">
+            <a href="#/" title="8Wizards"></a>
+        </h1>
+     </div>
+
+    <div data-block="nav">
+        <navigation-frame navigation="[
           {'id': 'tech', 'title': 'Technologies'},
           {'id': 'team', 'title': 'Our Team'},
           {'id': 'projects', 'title': 'Projects'},
           {'id': 'contacts', 'title': 'Get in Touch'}
         ]"></navigation-frame>
+    </div>
 </section>
