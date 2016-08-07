@@ -91,13 +91,15 @@ $icon_size: 5rem;
     left: 50%;
     position: absolute;
     a {
+      top:inherit;
       transition: all $default-animate-time $transition;
+      margin-top: inherit;
       .bouncer {
         left: 0;
         top: 0;
       }
       &:hover, &:active, &:focus {
-        margin-top: $default-bouncing-size;
+        top: $default-bouncing-size;
       }
     }
   }
@@ -107,13 +109,14 @@ $icon_size: 5rem;
     left: 50%;
     position: absolute;
     a {
+      bottom: inherit;
       transition: all $default-animate-time $transition;
       .bouncer {
         left: 0;
         bottom: 0;
       }
       &:hover, &:active, &:focus {
-        margin-bottom: $default-bouncing-size;
+        bottom: $default-bouncing-size;
       }
     }
   }

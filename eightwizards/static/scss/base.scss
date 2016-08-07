@@ -13,6 +13,11 @@ body {
   position: relative;
 }
 
+.content {
+  width: 70%;
+  padding-top: 9%;
+}
+
 // Prepare uniqueness per section
 .frame {
     .to_index {
@@ -145,6 +150,36 @@ body {
   }
 }
 
+
+.sub-tabs{
+  .button {
+    background: transparent;
+    font-size: 1.7rem;
+    padding: 0.5rem 1rem;
+    margin: 0 !important;
+    border: 0.1rem solid #fff;
+    @include prevent-highlight;
+    &:hover, &:focus, &:active {
+      background: transparent;
+      @include prevent-highlight;
+    }
+    &.active {
+      background: #fff;
+      color: transparent;
+    }
+    &.left {
+      border-top-left-radius: $border-radius-size;
+      border-bottom-left-radius: $border-radius-size;
+      border-right: 0;
+    }
+    &.right {
+      border-top-right-radius: $border-radius-size;
+      border-bottom-right-radius: $border-radius-size;
+      border-left: 0;
+    }
+  }
+}
+
 // Extend frame styles for main screen
 #Index {
   background-color: $index-color;
@@ -231,6 +266,13 @@ body {
 
 #Tech {
   background-color: $tech-color;
+  .sub-tabs {
+    .button {
+      &.active {
+        color: $tech-color;
+      }
+    }
+  }
 }
 
 #Team {

@@ -61,23 +61,26 @@
     left: 50%;
     position: absolute; }
     .frame .frame-top a {
-      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
+      top: inherit;
+      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85);
+      margin-top: inherit; }
       .frame .frame-top a .bouncer {
         left: 0;
         top: 0; }
       .frame .frame-top a:hover, .frame .frame-top a:active, .frame .frame-top a:focus {
-        margin-top: 1.2rem; }
+        top: 1.2rem; }
   .frame .frame-bottom {
     bottom: 0;
     left: 50%;
     position: absolute; }
     .frame .frame-bottom a {
+      bottom: inherit;
       transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
       .frame .frame-bottom a .bouncer {
         left: 0;
         bottom: 0; }
       .frame .frame-bottom a:hover, .frame .frame-bottom a:active, .frame .frame-bottom a:focus {
-        margin-bottom: 1.2rem; }
+        bottom: 1.2rem; }
   .frame .frame-item {
     position: fixed;
     font-size: 1.15rem;
@@ -185,6 +188,10 @@ body {
   height: 100%;
   position: relative; }
 
+.content {
+  width: 70%;
+  padding-top: 9%; }
+
 .frame .to_index .icon {
   background: url("/static/img/index_w.svg") left center no-repeat; }
 .frame .to_index .bouncer {
@@ -263,6 +270,42 @@ body {
     .title-logo.small a {
       width: 6rem; }
 
+.sub-tabs .button {
+  background: transparent;
+  font-size: 1.7rem;
+  padding: 0.5rem 1rem;
+  margin: 0 !important;
+  border: 0.1rem solid #fff;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  outline: none; }
+  .sub-tabs .button:hover, .sub-tabs .button:focus, .sub-tabs .button:active {
+    background: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    outline: none; }
+  .sub-tabs .button.active {
+    background: #fff;
+    color: transparent; }
+  .sub-tabs .button.left {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-right: 0; }
+  .sub-tabs .button.right {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-left: 0; }
+
 #Index {
   background-color: #fff; }
   #Index .frame .frame-label {
@@ -311,6 +354,8 @@ body {
 
 #Tech {
   background-color: #6600b5; }
+  #Tech .sub-tabs .button.active {
+    color: #6600b5; }
 
 #Team {
   background-color: #009356; }

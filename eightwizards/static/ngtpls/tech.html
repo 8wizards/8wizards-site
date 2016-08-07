@@ -1,10 +1,16 @@
-<section id="Tech"  class="container" data-extend-template="/static/ngtpls/layout.html">
-    <div data-block="nav">
-        <navigation-frame navigation="[
-            {'id': 'projects', 'title': 'Projects'},
-            {'id': 'team', 'title': 'Team'},
-            {'id': 'index', 'title': 'Back Home'},
-            {'id': 'contacts', 'title': 'Get in Touch'}
-        ];"></navigation-frame>
-    </div>
-</section>
+<div class="container" id="/static/ngtpls/tech.html">
+    <section id="Tech"  class="container" data-extend-template="/static/ngtpls/layout.html">
+        <div data-block="nav">
+            <navigation-frame navigation="[
+                {'id': 'projects', 'title': 'Projects'},
+                {'id': 'team', 'title': 'Team'},
+                {'id': 'index', 'title': 'Back Home'},
+                {'id': 'contacts', 'title': 'Get in Touch'}
+            ];"></navigation-frame>
+        </div>
+        <div data-block="content" class="row content">
+            <div data-block="tabs"></div>
+            <div data-block="tabs-content"></div>
+        </div>
+    </section>
+</div>
