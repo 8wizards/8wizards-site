@@ -135,12 +135,12 @@ $icon_size: 5rem;
         height: $icon_size;
         background-size: 100% !important;
         @media screen and (max-width: 39.9375em) {
-          width: 0.6*$icon_size;
-          height: 0.6*$icon_size;
+          width: 0.4*$icon_size;
+          height: 0.4*$icon_size;
         }
         @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-          width: 0.75*$icon_size;
-          height: 0.75*$icon_size;
+          width: 0.5*$icon_size;
+          height: 0.5*$icon_size;
         }
       }
       .frame-label {
@@ -191,13 +191,12 @@ $icon_size: 5rem;
   .frame-vertical {
     margin-left: -$icon_size/2;
     @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-      margin-left: -$icon_size/2.94;
+      margin-left: -($icon_size/4.0);
     }
     @media screen and (max-width: 39.9375em) {
-      margin-left: -$icon_size/3.3333;
+      margin-left: -($icon_size/5.0);
     }
     a {
-      display: inline-block;
       .bouncer {
         width: 100%;
         height: 0;
