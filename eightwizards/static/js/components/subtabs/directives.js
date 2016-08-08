@@ -20,4 +20,16 @@ angular.module('8wizards.components.subtabs.directives', ['ngRoute', 'ngAnimate'
       }
     }
   };
-}]);
+}]).directive('eLastInserted', function () {
+        return function (scope, element) {
+            if (scope.$last) {
+                window.setTimeout(function () {
+                    scope.$apply(function () {
+                        scope.$emit('LastElem');
+                        $(document).foundation();
+                        element.closest('.hidden').removeClass('hidden')
+                    })
+                }, 500);
+            }
+        }
+    });;
