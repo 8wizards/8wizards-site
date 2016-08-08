@@ -5,6 +5,18 @@
         <a class="button right" ng-click="activate($event)" rel="certificates">Certificates</a>
     </div>
     <div class="row" data-block="tabs-content">
-
+        <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+            <ul class="orbit-container">
+                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+                <li class="is-active orbit-slide">
+                    <div class="columns large-4" ng-repeat="tech in technologies">
+                        <h3>{{ tech.name }}</h3>
+                        <p>{{  tech.description }}</p>
+                    </div>
+                </li ng-if="$index % 6 / 0">
+                <li class="is-active orbit-slide" ng-if="$index % 6 / 0">
+                </li>
+            </ul>
     </div>
 </div>
