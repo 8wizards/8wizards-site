@@ -14,8 +14,7 @@ class Technology(models.Model):
     description = models.TextField(blank=False, max_length=2047)
 
     class Meta:
-        verbose_name_plural = "categories"
-
+        verbose_name_plural = "Technologies"
 
 
 class Category(models.Model):
