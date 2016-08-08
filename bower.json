@@ -8,6 +8,7 @@
     "angular-loader": "~1.5.0",
     "angular-resource": "~1.5.0",
     "angular-animate": "~1.5.0",
+    "angular-block": "~0.1.10",
     "modernizr": "~2.6.2",
     "jquery": "~2.2.4"
   }
