@@ -41,7 +41,7 @@ class PromoUrl(models.Model):
     member = models.ForeignKey(Member)
 
     def __str__(self):
-        return self.name
+        return self.category
 
 
 class Certification(models.Model):

@@ -4,13 +4,13 @@
         <a class="button" ng-click="activate($event)" rel="skills">Skills</a>
         <a class="button right" ng-click="activate($event)" rel="certificates">Certificates</a>
     </div>
-    <div class="row" data-block="tabs-content">
+    <div class="row vertical" data-block="tabs-content">
         <div class="orbit row show-for-large hidden" role="region" data-orbit>
             <ul class="orbit-container">
-                <li class="is-active orbit-slide" ng-repeat="index in [0, technologies.length, 6] | makeRange"
-                    ng-init="subs=technologies.slice($index*6, index)">
-                    <div class="row tabscontent" ng-repeat="rindex in [0, subs.length, 3] | makeRange" ng-init="techs=subs.slice($index*3, rindex)">
-                         <div class="columns large-4" ng-repeat="tech in techs">
+                <li class="is-active orbit-slide" ng-repeat="index in [0, technologies.length, 3] | makeRange"
+                    ng-init="subs=technologies.slice($index*3, index)">
+                    <div class="row tabscontent")">
+                         <div class="columns large-4" ng-repeat="tech in subs">
                              <h3>{{ tech.name }}</h3>
                              <p> {{  tech.description }}</p>
                          </div>
@@ -18,17 +18,16 @@
                 </li>
             </ul>
             <nav class="orbit-bullets">
-                <button ng-class="$first ? 'is-active': ''" data-slide="{{ $index }}" ng-repeat="index in [0, technologies.length, 6] | makeRange" e-last-inserted></button>
+                <button ng-class="$first ? 'is-active': ''" data-slide="{{ $index }}" ng-repeat="index in [0, technologies.length, 3] | makeRange" e-last-inserted></button>
             </nav>
         </div>
 
         <div class="orbit row show-for-medium-only hidden" role="region" data-orbit>
             <ul class="orbit-container">
-                <li class="is-active orbit-slide" ng-repeat="index in [0, technologies.length, 4] | makeRange"
-                    ng-init="subs=technologies.slice($index*4, index)">
-                    <div class="row tabscontent" ng-repeat="rindex in [0, subs.length, 2] | makeRange"
-                         ng-init="techs=subs.slice($index*2, rindex)">
-                         <div class="columns medium-6" ng-repeat="tech in techs">
+                <li class="is-active orbit-slide" ng-repeat="index in [0, technologies.length, 2] | makeRange"
+                    ng-init="subs=technologies.slice($index*2, index)">
+                    <div class="row tabscontent">
+                         <div class="columns medium-6" ng-repeat="tech in subs">
                              <h3>{{ tech.name }}</h3>
                              <p> {{  tech.description }}</p>
                          </div>
@@ -36,7 +35,7 @@
                 </li>
             </ul>
             <nav class="orbit-bullets">
-                <button ng-class="$first ? 'is-active': ''" data-slide="{{ $index }}" ng-repeat="index in [0, technologies.length, 4] | makeRange" e-last-inserted></button>
+                <button ng-class="$first ? 'is-active': ''" data-slide="{{ $index }}" ng-repeat="index in [0, technologies.length, 2] | makeRange" e-last-inserted></button>
             </nav>
         </div>
     </div>

@@ -16,13 +16,17 @@ body {
 
 .content {
   width: 70%;
-  padding-top: 9%;
+  padding-top: 11%;
 }
 
 .hidden {
   visibility: hidden;
   opacity: 0;
   overflow: hidden;
+}
+
+.vertical {
+  transform: translateY(50%);
 }
 
 // Prepare uniqueness per section
@@ -157,8 +161,12 @@ body {
   }
 }
 
-
 .sub-tabs{
+  margin: -1rem auto 1rem !important;
+  width: 60%;
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    width: 90%;
+  }
   .button {
     background: transparent;
     font-size: 1.7rem;
@@ -184,10 +192,15 @@ body {
       border-bottom-right-radius: $border-radius-size;
       border-left: 0;
     }
-    @media screen and (max-width: 39.9375em) {
-       font-size: 0.95rem;
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      font-size: 1.4rem;
       margin-top: 1rem !important;
-      padding: 0.3rem 0rem 0.35rem;
+      padding: 0.4em 1rem 0.5rem;
+    }
+    @media screen and (max-width: 39.9375em) {
+      font-size: 1.3rem;
+      margin-top: 1rem !important;
+      padding: 0.4em 1rem 0.5rem;
     }
   }
 }
