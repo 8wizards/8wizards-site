@@ -317,3 +317,13 @@ body {
 #Team {
   background-color: $team-color;
 }
+
+
+
+// Extend foundation
+.orbit-bullets {
+  button {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
