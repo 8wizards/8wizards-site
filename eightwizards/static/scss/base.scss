@@ -6,6 +6,7 @@ body {
   font: $font-stack;
   background-color: $reset-color;
   overflow: hidden;
+  min-height: 550px;
 }
 
 .container {
@@ -206,8 +207,10 @@ body {
 }
 
 .tabscontent {
-  width: 90%;
   margin: 0 auto !important;
+  @media screen and (max-width: 39.9375em) {
+    overflow: scroll;
+  }
 
   h3 {
     color: #fff;
@@ -216,8 +219,10 @@ body {
   p {
     color: #fff;
   }
+  .row {
+    margin: 0 auto !important; // prevent row margins
+  }
 }
-
 
 // Extend frame styles for main screen
 #Index {
