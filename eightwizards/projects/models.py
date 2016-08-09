@@ -8,10 +8,17 @@ class Skill(models.Model):
     name = models.CharField(blank=False, max_length=127, help_text="Generic abilities")
     description = models.TextField(blank=False, max_length=2047)
 
+    def __str__(self):
+        return self.name
+
 
 class Technology(models.Model):
     name = models.CharField(blank=False, max_length=127)
     description = models.TextField(blank=False, max_length=2047)
+
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name_plural = "Technologies"
@@ -24,6 +31,9 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "categories"
+
+    def __str__(self):
+        return self.name
 
 
 class Project(models.Model):
@@ -49,6 +59,10 @@ class Project(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         return super().save(**kwargs)
+
+
+    def __str__(self):
+        return self.name
 
 
 class MediaResource(models.Model):

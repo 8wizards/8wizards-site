@@ -33,6 +33,7 @@ class ProjectViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ProjectSerializer
 
 
+
 class MediaViewSet(viewsets.mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     ReadOnly View set to provide public API for the Media.

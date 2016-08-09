@@ -5,6 +5,9 @@ class Role(models.Model):
     name = models.CharField(blank=False, max_length=127)
     description = models.CharField(blank=True, max_length=255)
 
+    def __str__(self):
+        return self.name
+
 
 class Member(models.Model):
     first_name = models.CharField(blank=False, max_length=50)
@@ -15,6 +18,11 @@ class Member(models.Model):
     is_available = models.BooleanField(default=True)
     birthday = models.DateField()
     portrait = models.ImageField(blank=False, null=False)
+
+
+    def __str__(self):
+        return '{} {}'.format(self.first_name, self.last_name)
+
 
 
 PROMO_URLS_CHOICES = (
@@ -32,6 +40,9 @@ class PromoUrl(models.Model):
     description = models.CharField(max_length=127)
     member = models.ForeignKey(Member)
 
+    def __str__(self):
+        return self.name
+
 
 class Certification(models.Model):
     name = models.CharField(blank=False, max_length=255)
@@ -39,3 +50,6 @@ class Certification(models.Model):
     image = models.ImageField(blank=False, null=False)
     received_at = models.DateField()
     member = models.ForeignKey(Member, null=False)
+
+    def __str__(self):
+        return self.name
