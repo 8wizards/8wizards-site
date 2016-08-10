@@ -1,4 +1,4 @@
-<div id="/static/ngtpls/layout1.html">
+<div id="/static/ngtpls/layout.html">
     <header data-block="header">
         <h1 data-block="header" class="title-logo show-for-large">
             <a href="#/" title="8Wizards"></a>
@@ -13,13 +13,13 @@
     </header>
 
 
-
-    <div data-block="content">
+    <div class="row content">
         <div sub-tabs class="button-group expanded sub-tabs" id="example-menu">
             <a class="button left active" rel="tech">Technologies</a>
             <a class="button" ng-click="activate($event)" rel="skills">Skills</a>
             <a class="button right" ng-click="activate($event)" rel="certificates">Certificates</a>
         </div>
+        <div data-block="tabs-content"></div>
     </div>
 
     <div data-block="nav">

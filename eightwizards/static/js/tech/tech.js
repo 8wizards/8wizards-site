@@ -4,7 +4,7 @@ angular.module('8wizards.tech', ['ngRoute', '8wizards.tech.services'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/tech', {
-    templateUrl: '/static/ngtpls/technologies1.html',
+    templateUrl: '/static/ngtpls/technologies.html',
     controller: 'TechCtrl'
   });
   $routeProvider.when('/skills', {
