@@ -16,21 +16,28 @@ angular.module('8wizards.tech', ['ngRoute', '8wizards.tech.services'])
     controller: 'CertsCtrl'
   });
 }])
-
-.controller('TechCtrl', ['$scope', 'Technology', function($scope, Technology) {
-  console.info('Tech');
+.controller('TechTabsCtrl', function($scope) {
+  $scope.tabs = [
+        {name: 'tech', publicName: 'Technologies'},
+        {name: 'skills', publicName: 'Skills'},
+        {name: 'certificates', publicName: 'Certificates'}
+  ]
+})
+.controller('TechCtrl', ['$scope', '$controller', 'Technology', function($scope, $controller, Technology) {
+  $controller('TechTabsCtrl', {$scope: $scope});
   Technology.query(function(technologies) {
     $scope.technologies = technologies;
   });
+
 }])
-.controller('SkillsCtrl', ['$scope', 'Skill', function($scope, Skill) {
-  console.info('Skills');
+.controller('SkillsCtrl', ['$scope', '$controller', 'Skill', function($scope, $controller, Skill) {
+  $controller('TechTabsCtrl', {$scope: $scope});
   Skill.query(function(skills) {
     $scope.skills = skills;
   });
 }])
-.controller('CertsCtrl', ['$scope', 'Certification', function($scope, Certification) {
-  console.info('Certificates');
+.controller('CertsCtrl', ['$scope', '$controller', 'Certification', function($scope, $controller, Certification) {
+  $controller('TechTabsCtrl', {$scope: $scope});
   Certification.query(function(certificates) {
     $scope.certificates = certificates;
   });
