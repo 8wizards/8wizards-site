@@ -6,7 +6,13 @@ angular.module('8wizards.components.mobileNav.directives', ['ngRoute', 'ngAnimat
 .directive('navigationMobile', ['$location', '$animate', '$document', '$timeout', function($location, $animate, $document, $timeout) {
   return {
     restrict: 'E',
-    template: '<button>Menu</button>'
+    templateUrl: 'static/ngtpls/mobileNav.html',
+    scope: {
+      'navOptions': '='
+    },
+    link: function(scope) {
+      console.log(scope.navOptions)
+    }
 
   };
 }]);

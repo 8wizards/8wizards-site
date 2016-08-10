@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixins";
 @import "components/navigration-frame";
+@import "components/navigration-mobile";
 
 body {
   font: $font-stack;
