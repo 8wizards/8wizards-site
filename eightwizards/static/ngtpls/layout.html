@@ -14,7 +14,7 @@
 
     <div class="row content">
         <div sub-tabs class="button-group expanded sub-tabs" id="example-menu">
-            <a class="button left active" rel="{{ tabs[0].name }}">{{ tabs[0].publicName }}</a>
+            <a class="button left" ng-click="activate($event)" rel="{{ tabs[0].name }}">{{ tabs[0].publicName }}</a>
             <a class="button" ng-click="activate($event)" rel="{{ tabs[1].name }}">{{ tabs[1].publicName }}</a>
             <a class="button right" ng-click="activate($event)" rel="{{ tabs[2].name }}">{{ tabs[2].publicName }}</a>
         </div>
