@@ -15,6 +15,7 @@ class Skill(models.Model):
 class Technology(models.Model):
     name = models.CharField(blank=False, max_length=127)
     description = models.TextField(blank=False, max_length=2047)
+    logo = models.ImageField(blank=False, null=False)
 
 
     def __str__(self):
@@ -54,6 +55,8 @@ class Project(models.Model):
     importance = models.IntegerField(default=0, help_text="Ordering Rank")
 
     repo_url = models.URLField(null=True, help_text="Open Source repository URL")
+    preview = models.ImageField(blank=False, null=False)
+
 
     def save(self, **kwargs):
         if not self.slug:
