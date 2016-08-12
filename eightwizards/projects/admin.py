@@ -56,7 +56,7 @@ class MediaInline(admin.StackedInline):
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectForm
-    inlines = [MediaInline]
+    #inlines = [MediaInline]
     list_display = ('name', 'status', 'category')
     readonly_fields = ('slug',)
     list_filter = ('status', 'category')
