@@ -1,5 +1,6 @@
 <div id="/static/ngtpls/layout.html">
     <header data-block="header">
+
         <h1 data-block="header" class="title-logo show-for-large">
             <a href="#/" title="8Wizards"></a>
         </h1>
@@ -9,17 +10,23 @@
         <h1 data-block="header" class="title-logo small show-for-small-only">
             <a href="#/" title="8Wizards"></a>
         </h1>
-        <navigation-mobile nav-options="[1,2,3,4,5]"></navigation-mobile>
+
+        <navigation-mobile nav-options="[1,2,3,4,5]" toggle-id="'tabs-menu'"></navigation-mobile>
+
     </header>
 
     <div class="row content">
-        <div sub-tabs class="button-group expanded sub-tabs" id="example-menu">
-            <a class="button left" ng-click="activate($event)" rel="{{ tabs[0].name }}">{{ tabs[0].publicName }}</a>
-            <a class="button" ng-click="activate($event)" rel="{{ tabs[1].name }}">{{ tabs[1].publicName }}</a>
-            <a class="button right" ng-click="activate($event)" rel="{{ tabs[2].name }}">{{ tabs[2].publicName }}</a>
+
+        <div data-block="tabs" >
+            <div sub-tabs class="button-group expanded sub-tabs hide-for-small-only" id="tabs-menu">
+                <a class="button left" ng-click="activate($event)" rel="{{ tabs[0].name }}">{{ tabs[0].publicName }}</a>
+                <a class="button" ng-click="activate($event)" rel="{{ tabs[1].name }}">{{ tabs[1].publicName }}</a>
+                <a class="button right" ng-click="activate($event)" rel="{{ tabs[2].name }}">{{ tabs[2].publicName }}</a>
+            </div>
         </div>
 
         <div data-block="tabs-content"></div>
+
     </div>
 
     <div data-block="nav">

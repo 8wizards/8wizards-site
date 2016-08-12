@@ -8,10 +8,21 @@ angular.module('8wizards.components.mobileNav.directives', ['ngRoute', 'ngAnimat
     restrict: 'E',
     templateUrl: 'static/ngtpls/mobileNav.html',
     scope: {
-      'navOptions': '='
+      'navOptions': '=',
+      'toggleId': '='
     },
     link: function(scope) {
-      console.log(scope.navOptions)
+      //console.log(scope.navOptions)
+      scope.addStyle = function() {
+        var tabMenu = $( '#' + scope.toggleId );
+        if (tabMenu.hasClass( 'hide-for-small-only')) {
+          tabMenu.removeClass('hide-for-small-only');
+        }
+        else {
+          tabMenu.addClass('hide-for-small-only');
+        }
+      }
+
     }
 
   };
