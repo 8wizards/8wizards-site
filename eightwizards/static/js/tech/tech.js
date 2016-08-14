@@ -25,7 +25,6 @@ angular.module('8wizards.tech', ['ngRoute', '8wizards.tech.services'])
 })
 .controller('TechCtrl', ['$scope', '$controller', 'Technology', function($scope, $controller, Technology) {
   $controller('TechTabsCtrl', {$scope: $scope});
-  $scope.pageIdent = '1';
   Technology.query(function(technologies) {
     $scope.technologies = technologies;
   });
@@ -33,14 +32,12 @@ angular.module('8wizards.tech', ['ngRoute', '8wizards.tech.services'])
 }])
 .controller('SkillsCtrl', ['$scope', '$controller', 'Skill', function($scope, $controller, Skill) {
   $controller('TechTabsCtrl', {$scope: $scope});
-  $scope.pageIdent = '2';
   Skill.query(function(skills) {
     $scope.skills = skills;
   });
 }])
 .controller('CertsCtrl', ['$scope', '$controller', 'Certification', function($scope, $controller, Certification) {
   $controller('TechTabsCtrl', {$scope: $scope});
-  $scope.pageIdent = '3';
   Certification.query(function(certificates) {
     $scope.certificates = certificates;
   });

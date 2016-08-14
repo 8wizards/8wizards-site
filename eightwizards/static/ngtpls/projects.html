@@ -7,4 +7,22 @@
         {'id': 'contacts', 'title': 'Get in Touch'}
       ];"></navigation-frame>
     </div>
+
+    <div data-block="tabs-content" dynamic-height>
+        <ul data-orbit>
+            <li ng-repeat="project in projects">
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.large_description }}</p>
+                <a href="{{ project.web_url }}">visit site</a>
+                <img ng-src="{{ project.preview }}"/>
+            </li>
+            <li ng-repeat="project in projects">
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.large_description }}</p>
+                <a href="{{ project.web_url }}">visit site</a>
+                <img ng-src="{{ project.preview }}"/>
+            </li>
+        </ul>
+    </div>
+
 </section>

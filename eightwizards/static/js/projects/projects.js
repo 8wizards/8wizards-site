@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('8wizards.projects', ['ngRoute'])
+angular.module('8wizards.projects', ['ngRoute', '8wizards.projects.services'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -10,6 +10,13 @@ angular.module('8wizards.projects', ['ngRoute'])
       })
 }])
 
-.controller('ProjectsCtrl', ['$scope', function($scope) {
-
+.controller('ProjectsCtrl', ['$scope', 'Projects', function($scope, Projects) {
+  $scope.tabs = [
+    {name: 'web', publicName: 'Web'},
+    {name: 'mob', publicName: 'Mobile'},
+    {name: 'games', publicName: 'Games'}
+  ];
+  Projects.query(function(projects) {
+    $scope.projects = projects;
+  });
 }]);
