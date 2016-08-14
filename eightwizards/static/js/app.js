@@ -6,6 +6,7 @@ angular.module('8wizards', [
     'ngResource',
     'ngAnimate',
     'angular-blocks',
+    'mm.foundation',
     '8wizards.index',
     '8wizards.projects',
     '8wizards.contacts',
