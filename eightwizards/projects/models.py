@@ -45,21 +45,20 @@ class Category(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=127, blank=None, null=None, db_index=True)
     slug = models.SlugField(unique=True, blank=True, null=None, default='', help_text="")
+    importance = models.IntegerField(default=0, help_text="Ordering Rank")
     short_description = models.TextField(blank=None, null=None, help_text="Short preview, SEO description")
-    large_description = models.TextField(help_text="Full project Info")
+    large_description = models.TextField(help_text="Full project Info", blank=True)
     status = models.BooleanField(choices=ACTIVE_INACTIVE_CHOICES, default=ACTIVE)
-    keywords = models.TextField(help_text='SEO')
+    keywords = models.TextField(help_text='SEO', blank=True)
     category = models.ForeignKey(Category)
     technologies= models.ManyToManyField(Technology)
     members = models.ManyToManyField(Member)
 
-    web_url = models.URLField(null=True, help_text="Website?")
-    android_url = models.URLField(null=True, help_text="Android Market Link?")
-    ios_url = models.URLField(null=True, help_text="Apple Store/iTunes Link?")
+    web_url = models.URLField(null=True, blank=True, help_text="Website?")
+    android_url = models.URLField(null=True, blank=True, help_text="Android Market Link?")
+    ios_url = models.URLField(null=True, blank=True, help_text="Apple Store/iTunes Link?")
 
-    importance = models.IntegerField(default=0, help_text="Ordering Rank")
-
-    repo_url = models.URLField(null=True, help_text="Open Source repository URL")
+    repo_url = models.URLField(null=True, blank=True, help_text="Open Source repository URL")
     preview = models.ImageField(blank=False, null=False)
 
 
