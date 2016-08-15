@@ -12,15 +12,18 @@ angular.module('8wizards.components.mobileNav.directives', ['ngRoute', 'ngAnimat
       'toggleId': '='
     },
     link: function(scope) {
+
       //console.log(scope.navOptions)
       scope.addStyle = function() {
+        $(document).foundation();
+        /*
         var tabMenu = $( '#' + scope.toggleId );
         if (tabMenu.hasClass( 'hide-for-small-only')) {
           tabMenu.removeClass('hide-for-small-only');
         }
         else {
           tabMenu.addClass('hide-for-small-only');
-        }
+        }*/
       }
 
     }
