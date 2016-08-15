@@ -1,7 +1,8 @@
 import logging
 from django.contrib import admin
-from django.forms import ModelForm
+from django.forms import ModelForm, ModelMultipleChoiceField, CheckboxSelectMultiple
 from .models import Project, MediaResource, Skill, Category, Technology
+from team.models import Member
 
 logger = logging.getLogger(__name__)
 
@@ -10,7 +11,6 @@ class SkillForm(ModelForm):
     class Meta:
         model = Skill
         fields = '__all__'
-
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
@@ -43,6 +43,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ProjectForm(ModelForm):
+    members = ModelMultipleChoiceField(queryset=Member.objects.all(), widget=CheckboxSelectMultiple)
+    technologies = ModelMultipleChoiceField(queryset=Technology.objects.all(), widget=CheckboxSelectMultiple)
     class Meta:
         model = Project
         fields = '__all__'
