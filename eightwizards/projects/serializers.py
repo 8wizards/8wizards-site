@@ -1,6 +1,12 @@
 from rest_framework import serializers
-from .models import Skill, Project, MediaResource, Technology
+from .models import Skill, Project, MediaResource, Technology, Category
 
+class CategorySerializer(serializers.ModelSerializer):
+    """
+    Controls serialization of Skill model for REST API.
+    """
+    class Meta:
+        model = Category
 
 class SkillSerializer(serializers.ModelSerializer):
     """

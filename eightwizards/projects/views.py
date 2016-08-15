@@ -1,6 +1,18 @@
 from rest_framework import viewsets
-from .serializers import SkillSerializer, ProjectSerializer, MediaSerializer, TechnologySerializer
-from .models import Skill, Project, MediaResource, Technology
+from .serializers import SkillSerializer, ProjectSerializer, MediaSerializer, TechnologySerializer, CategorySerializer
+from .models import Skill, Project, MediaResource, Technology, Category
+
+
+class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    ReadOnly View set to provide public API for the Category.
+    Writable operation will be allowed just for tuning machine
+    """
+
+    queryset = Category.objects.all()
+    lookup_field = 'slug'
+    serializer_class = CategorySerializer
+
 
 
 class SkillViewSet(viewsets.ReadOnlyModelViewSet):
