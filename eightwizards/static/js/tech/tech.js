@@ -25,6 +25,37 @@ angular.module('8wizards.tech', ['ngRoute', '8wizards.tech.services'])
 })
 .controller('TechCtrl', ['$scope', '$controller', 'Technology', function($scope, $controller, Technology) {
   $controller('TechTabsCtrl', {$scope: $scope});
+    $scope.breakpoints = [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }];
+
+    $scope.slickConfig = {
+    enabled: true,
+    autoplay: true,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false,
+    draggable: true,
+    autoplaySpeed: 3000,
+    method: {},
+    event: {
+        beforeChange: function (event, slick, currentSlide, nextSlide) {
+        },
+        afterChange: function (event, slick, currentSlide, nextSlide) {
+        }
+    }
+};
+
   Technology.query(function(technologies) {
     $scope.technologies = technologies;
   });
