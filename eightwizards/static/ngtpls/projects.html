@@ -5,49 +5,74 @@
         {'id': 'tech', 'title': 'Technologies'},
         {'id': 'team', 'title': 'Our Team'},
         {'id': 'contacts', 'title': 'Get in Touch'}
-      ];"></navigation-frame>
+        ];"></navigation-frame>
+    </div>
+    <div sub-tabs class="button-group expanded show-for-medium sub-tabs" data-block="tabs">
+        <a class="button left active" rel="tech">Web</a>
+        <a class="button" ng-click="activate($event)" rel="skills">Mobile</a>
+        <a class="button right" ng-click="activate($event)" rel="certificates">Games</a>
     </div>
 
-    <div class="row tabscontent" data-block="tabs-content" dynamic-height>
-        <div class="orbit row show-for-large vertical hidden" role="region" data-orbit>
-            <ul class="orbit-container">
-                <li class="is-active orbit-slide" ng-repeat="index in [0, projects.length, 3] | makeRange"
-                    ng-init="subs=projects.slice($index*3, index)">
-                    <div class="row">
-                         <div class="columns large-4" ng-repeat="tech in subs">
-                             <h3>{{ tech.name }}</h3>
-                             <p> {{ tech.large_description }}</p>k
-                         </div>
-                    </div>
-                </li>
-            </ul>
-            <nav class="orbit-bullets">
-                <button ng-class="$first ? 'is-active': ''" data-slide="{{ $index }}" ng-repeat="index in [0, projects.length, 3] | makeRange" e-last-inserted></button>
-            </nav>
-        </div>
-
-        <div class="orbit row show-for-medium-only hidden" role="region" data-orbit>
-            <ul class="orbit-container">
-                <li class="is-active orbit-slide" ng-repeat="index in [0, projects.length, 2] | makeRange"
-                    ng-init="subs=projects.slice($index*2, index)">
-                    <div class="row">
-                         <div class="columns medium-6" ng-repeat="tech in subs">
-                             <h3>{{ tech.name }}</h3>
-                             <p> {{  tech.large_description }}</p>
-                         </div>
-                    </div>
-                </li>
-            </ul>
-            <nav class="orbit-bullets">
-                <button ng-class="$first ? 'is-active': ''" data-slide="{{ $index }}" ng-repeat="index in [0, projects.length, 2] | makeRange" e-last-inserted></button>
-            </nav>
-        </div>
-        <div class="row show-for-small-only">
-            <div class="columns medium-12" ng-repeat="tech in projects" e-last-inserted>
-                <h3>{{ tech.name }}</h3>
-                <p> {{  tech.large_description }}</p>
+    <div class="row tabscontent" data-block="tabs-content">
+     <slick class="slider single-item"  settings="slickConfig" responsive="breakpoints" slides-to-show=1 slides-to-scroll=1>
+        <div class="slide">
+            <div class="rows-flex1">
+                <img src="static/img/portfolio1.jpg" alt="ALT">
             </div>
-        </div>
-    </div>
+            <div class="rows-flex2">
+                <h3>Mahabiz</h3>
+                <p> Mahabiz is an e-commerce website that offers originally designed
+                    slipers and is appreciated by</p>
+
+                 <p>customers from over 150 countries. This online shop is built with
+                 Shopify solution coupled up with</p>
+
+                 <p>clean and functional design, it works great across varios desktop
+                 and mobile browsers.</p>
+
+                 <p>Visit website</p>
+            </div>
+         </div>
+
+         <div class="slide">
+            <div class="rows-flex1">
+                <img src="static/img/portfolio1.jpg" alt="ALT">
+            </div>
+            <div class="rows-flex2">
+                <h3>Mahabiz</h3>
+                <p> Mahabiz is an e-commerce website that offers originally designed
+                    slipers and is appreciated by</p>
+
+                 <p>customers from over 150 countries. This online shop is built with
+                 Shopify solution coupled up with</p>
+
+                 <p>clean and functional design, it works great across varios desktop
+                 and mobile browsers.</p>
+
+                 <p>Visit website</p>
+            </div>
+         </div>
+
+         <div class="slide">
+            <div class="rows-flex1">
+                <img src="static/img/portfolio1.jpg" alt="ALT">
+            </div>
+            <div class="rows-flex2">
+                <h3>Mahabiz</h3>
+                <p> Mahabiz is an e-commerce website that offers originally designed
+                    slipers and is appreciated by</p>
+
+                 <p>customers from over 150 countries. This online shop is built with
+                 Shopify solution coupled up with</p>
+
+                 <p>clean and functional design, it works great across varios desktop
+                 and mobile browsers.</p>
+
+                 <p>Visit website</p>
+            </div>
+         </div>
+
+    </slick>
+</div>
 
 </section>

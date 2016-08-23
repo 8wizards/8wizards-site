@@ -1,0 +1,60 @@
+#Projects {
+  .slider{
+    .slide{
+      flex-direction: row-reverse;
+      flex-wrap: nowrap!important;
+      .rows-flex1{
+        flex-shrink: 1;
+      }
+      .rows-flex2{
+        flex-shrink: 1;
+        padding-right: 30px;
+      }
+
+      @media screen and (max-width: 1024px){
+        flex-wrap: wrap!important;
+        flex-direction: row;
+        img{
+          max-width: 350px;
+        }
+        .rows-flex2{
+          padding-right: 0!important;
+        }
+      }
+
+       @media screen and (min-width: 1024px) and (max-height: 720px){
+          .rows-flex1{
+              flex-shrink: 5;
+            }
+           .rows-flex2{
+              flex-shrink: 1;
+              padding-right: 50px;
+             }
+        }
+
+       @media screen and (max-width: 600px){
+        img{
+          max-width: 100%;
+        }
+      }
+
+
+    p{
+    color: #fff;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+     }
+    h3{
+    text-align: left;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    }
+    }
+  }
+}

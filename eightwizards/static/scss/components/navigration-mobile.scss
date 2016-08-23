@@ -1,3 +1,10 @@
+navigation-mobile{
+     @media screen and (max-width: 767px) {
+    height: 55px;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
 .title-bar {
   background: transparent;
   position: absolute;
@@ -7,4 +14,6 @@
   color: #fefefe;
   text-align: right;
   padding: 0;
+
+}
 }

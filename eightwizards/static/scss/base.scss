@@ -2,6 +2,8 @@
 @import "mixins";
 @import "components/navigration-frame";
 @import "components/navigration-mobile";
+@import "components/project";
+@import "components/team";
 
 .slick-dots {
   bottom: -5px;
@@ -50,10 +52,12 @@
 }
 
 body {
-  font: $font-stack;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   background-color: $reset-color;
-  min-height: 568px;
+  min-height: 550px;
   overflow: hidden;
+
 }
 
 .container {
@@ -73,17 +77,29 @@ body {
  @media screen and (min-width: 1366px){
     padding: 15% 0 11%;
   }
-    @media screen and (min-width: 768px) and (max-width: 1240px) {
-    padding: 16% 0 11%;
+    @media screen and (max-width: 1240px) {
+    padding: 15% 0 11%;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     width:75%;
-    padding: 11% 0 11%;
+    padding: 21% 0 11%;
   }
   @media screen and (max-width: 767px){
     width:65%;
-    padding: 18% 0 18%;
+    padding: 0;
   }
+   @media screen and (max-width: 450px){
+    height:80%;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 330px){
+    height: 77%;
+  }
+
+
 }
 
 .hidden {
@@ -230,13 +246,17 @@ body {
   top: 130px;
   margin: 0!important;
   width: 60%;
+
    @media screen and (max-width: 1024px) {
     top: 85px;
     width: 70%;
   }
+
   @media screen and (max-width: 767px) {
     display: none;
   }
+
+
   .button {
     background: transparent;
     font-size: 1.7rem;
@@ -276,12 +296,6 @@ body {
 }
 
 .tabscontent {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  @media screen and (max-width: 39.9375em) {
-    overflow-y: scroll;
-  }
 
   h3 {
     color: #fff;
