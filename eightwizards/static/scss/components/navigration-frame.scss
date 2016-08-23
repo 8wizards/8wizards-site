@@ -54,7 +54,7 @@ $icon_size: 5rem;
 
   .frame-left {
     left: 0;
-    top: 50vh;
+    top: 45vh;
     text-align: left;
     a {
       left:inherit;
@@ -70,7 +70,7 @@ $icon_size: 5rem;
   }
 
   .frame-right {
-    top: 50vh;
+    top: 45vh;
     right: 0;
     text-align: right;
     a {
@@ -137,13 +137,13 @@ $icon_size: 5rem;
         width: $icon_size;
         height: $icon_size;
         background-size: 100% !important;
-        @media screen and (max-width: 39.9375em) {
-          width: 0.4*$icon_size;
-          height: 0.4*$icon_size;
-        }
-        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        @media screen and (max-width: 767px)  {
           width: 0.5*$icon_size;
           height: 0.5*$icon_size;
+        }
+       @media screen and (min-width: 768px) and (max-width: 1024px) {
+          width: 0.7*$icon_size;
+          height: 0.7*$icon_size;
         }
       }
       .frame-label {
@@ -166,13 +166,13 @@ $icon_size: 5rem;
   .frame-top, .frame-bottom {
       .icon {
         margin: $default-bouncing-size auto;
-        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          margin-top: 0.7*$default-bouncing-size;
+          margin-bottom: 0.7*$default-bouncing-size;
+        }
+        @media screen and (max-width: 768px) {
           margin-top: 0.5*$default-bouncing-size;
           margin-bottom: 0.5*$default-bouncing-size;
-        }
-        @media screen and (max-width: 39.9375em) {
-          margin-top: 0.35*$default-bouncing-size;
-          margin-bottom: 0.35*$default-bouncing-size;
         }
       }
   }
@@ -180,23 +180,23 @@ $icon_size: 5rem;
   .frame-right, .frame-left {
     .icon {
       margin: 0 $default-bouncing-size;
-      @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-        margin-left: 0.5*$default-bouncing-size;
-        margin-right: 0.5*$default-bouncing-size;
+     @media screen and (min-width: 768px) and (max-width: 1024px) {
+        margin-left: 0.7*$default-bouncing-size;
+        margin-right: 0.7*$default-bouncing-size;
       }
-      @media screen and (max-width: 39.9375em) {
-         margin-right: 0.35*$default-bouncing-size;
-        margin-left: 0.35*$default-bouncing-size;
+      @media screen and (max-width: 767px)  {
+         margin-right: 0.5*$default-bouncing-size;
+        margin-left: 0.5*$default-bouncing-size;
       }
     }
   }
 
   .frame-vertical {
     margin-left: -$icon_size/2;
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+   @media screen and (min-width: 768px) and (max-width: 1024px) {
       margin-left: -($icon_size/4.0);
     }
-    @media screen and (max-width: 39.9375em) {
+    @media screen and (max-width: 767px)  {
       margin-left: -($icon_size/5.0);
     }
     a {
