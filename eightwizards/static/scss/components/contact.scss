@@ -3,19 +3,30 @@
 #Contacts{
   .tabscontent{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     .flex-half{
-
+      @media screen and (max-width: 770px){
+        width: 100%;
+      }
     width: 48%;
     &:last-child{
       width: 48%;
       margin-left: 4%;
-      padding-bottom: 75px;
+      @media screen and (max-width: 770px){
+        width: 100%;
+        margin-left: 0;
+        margin-top: 40px;
+      }
     }
     }
+  }
+  span{
+     @media screen and (max-width: 770px){
+        text-align: center;
+      }
   }
   .contact-email{
     margin-top: 40px;
@@ -23,6 +34,7 @@
     line-height: 25px;
     display: block;
     color: #fff;
+
   }
   .contact-phone{
     color: #fff;
@@ -38,10 +50,24 @@
     font-size: 17px;
     line-height: 22px;
     display: block;
+    @media screen and (max-width: 770px){
+        font-size: 15px;
+        line-height: 20px;
+      }
   }
   .contact-social{
     height: 50px;
     width: 100%;
+    @media screen and (max-width: 1100px){
+        height: 38px;
+        width: 268px;
+    }
+    @media screen and (max-width: 770px){
+        margin: 0 auto;
+        height: 30px;
+        width: 208px;
+    }
+
     a{
       display: inline-block;
       width: 50px;
@@ -49,6 +75,17 @@
       margin-right: 20px;
       -webkit-background-size: cover;
       background-size: cover;
+       @media screen and (max-width: 1100px){
+        width: 38px;
+        height: 38px;
+        margin-right: 12px;
+       }
+       @media screen and (max-width: 400px){
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+       }
+
       &:first-child{
         background-image: url("/static/img/social/be.svg");
       }
@@ -117,6 +154,9 @@
           top: 0;
           left: -23%;
           border-radius: 5px;
+           @media screen and (max-width: 770px){
+              font-size: 13px;
+           }
         }
 
 

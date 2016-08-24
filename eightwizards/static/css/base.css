@@ -520,7 +520,7 @@ navigation-mobile .title-bar {
 }
 
 #Team .back span {
-  color: #009356;
+  color: #339999;
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
@@ -557,15 +557,15 @@ navigation-mobile .title-bar {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
 }
 
@@ -573,10 +573,29 @@ navigation-mobile .title-bar {
   width: 48%;
 }
 
+@media screen and (max-width: 770px) {
+  #Contacts .tabscontent .flex-half {
+    width: 100%;
+  }
+}
+
 #Contacts .tabscontent .flex-half:last-child {
   width: 48%;
   margin-left: 4%;
-  padding-bottom: 75px;
+}
+
+@media screen and (max-width: 770px) {
+  #Contacts .tabscontent .flex-half:last-child {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #Contacts span {
+    text-align: center;
+  }
 }
 
 #Contacts .contact-email {
@@ -604,9 +623,31 @@ navigation-mobile .title-bar {
   display: block;
 }
 
+@media screen and (max-width: 770px) {
+  #Contacts .contact-descr {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
 #Contacts .contact-social {
   height: 50px;
   width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+  #Contacts .contact-social {
+    height: 38px;
+    width: 268px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #Contacts .contact-social {
+    margin: 0 auto;
+    height: 30px;
+    width: 208px;
+  }
 }
 
 #Contacts .contact-social a {
@@ -615,6 +656,22 @@ navigation-mobile .title-bar {
   height: 50px;
   margin-right: 20px;
   background-size: cover;
+}
+
+@media screen and (max-width: 1100px) {
+  #Contacts .contact-social a {
+    width: 38px;
+    height: 38px;
+    margin-right: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #Contacts .contact-social a {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
 }
 
 #Contacts .contact-social a:first-child {
@@ -686,7 +743,7 @@ navigation-mobile .title-bar {
 #Contacts form > div > label {
   opacity: 1;
   text-align: center;
-  color: #820060;
+  color: #333;
   padding: 7px 0;
   font-weight: bold;
   position: absolute;
@@ -696,6 +753,12 @@ navigation-mobile .title-bar {
   top: 0;
   left: -23%;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 770px) {
+  #Contacts form > div > label {
+    font-size: 13px;
+  }
 }
 
 #Contacts form > div > input[type="text"],
@@ -757,7 +820,7 @@ navigation-mobile .title-bar {
   display: block;
   width: 100%;
   background: #fff;
-  color: #820060;
+  color: #333;
   border: 0;
   font-weight: 600;
   border-radius: 5px;
@@ -770,7 +833,7 @@ navigation-mobile .title-bar {
 }
 
 #Contacts .button.active {
-  color: #820060;
+  color: #333;
   background-color: transparent;
 }
 
@@ -962,7 +1025,7 @@ body {
 }
 
 .frame .to_team .bouncer {
-  background-color: #009356;
+  background-color: #339999;
 }
 
 .frame .to_tech .icon {
@@ -970,7 +1033,7 @@ body {
 }
 
 .frame .to_tech .bouncer {
-  background-color: #6600b5;
+  background-color: #333399;
 }
 
 .frame .to_contacts .icon {
@@ -978,7 +1041,7 @@ body {
 }
 
 .frame .to_contacts .bouncer {
-  background-color: #820060;
+  background-color: #333;
 }
 
 .frame .frame-overlay .to_index {
@@ -986,15 +1049,15 @@ body {
 }
 
 .frame .frame-overlay .to_contacts {
-  background-color: #820060;
+  background-color: #333;
 }
 
 .frame .frame-overlay .to_tech {
-  background-color: #6600b5;
+  background-color: #333399;
 }
 
 .frame .frame-overlay .to_team {
-  background-color: #009356;
+  background-color: #339999;
 }
 
 .frame .frame-overlay .to_projects {
@@ -1244,23 +1307,23 @@ body {
 }
 
 #Contacts {
-  background-color: #820060;
+  background-color: #333;
 }
 
 #Contacts .sub-tabs .button.active {
-  color: #820060;
+  color: #333;
 }
 
 #Tech {
-  background-color: #6600b5;
+  background-color: #333399;
 }
 
 #Tech .sub-tabs .button.active {
-  color: #6600b5;
+  color: #333399;
 }
 
 #Team {
-  background-color: #009356;
+  background-color: #339999;
 }
 
 .orbit-bullets button {
