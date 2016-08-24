@@ -35,6 +35,8 @@ angular.module('8wizards.tech', ['ngRoute', '8wizards.tech.services'])
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
+        vertical: true,
+        verticalSwiping: true,
         slidesToScroll: 1
       }
     }];
