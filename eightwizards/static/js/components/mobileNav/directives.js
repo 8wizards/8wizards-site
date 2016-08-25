@@ -14,7 +14,7 @@ angular.module('8wizards.components.mobileNav.directives', ['ngRoute', 'ngAnimat
     link: function(scope) {
       $(".toggle-mnu").click(function() {
     $(this).toggleClass("on");
-    $(".sub-tabs").slideToggle();
+    $(".sub-tabs").toggleClass("on");
     return false;
   });
      /* $(document).foundation();

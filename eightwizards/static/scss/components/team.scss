@@ -1,4 +1,9 @@
   #Team {
+    .content{
+    @media screen and (max-width: 450px){
+    justify-content: center;
+  }
+    }
    .slider{
   width:60vw!important;
   margin:0 auto!important;
@@ -16,6 +21,7 @@
   }
     @media screen and (max-width: 500px){
     width:65vw!important;
+    padding:0!important;
   }
   .slide{
     display:flex!important;
@@ -34,7 +40,7 @@
     width: 23.4vw!important;
   }
    @media screen and (max-width: 740px){
-    width: 35vw!important;
+    width: 34.9vw!important;
   }
     @media screen and (max-width: 500px){
     width: 65vw!important;
