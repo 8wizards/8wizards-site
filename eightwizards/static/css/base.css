@@ -469,6 +469,7 @@ navigation-mobile .title-bar {
 @media screen and (max-width: 500px) {
   #Team .slider .slide {
     width: 65vw !important;
+    padding: 0 0 20px 0;
   }
 }
 
@@ -849,6 +850,69 @@ navigation-mobile .title-bar {
   width: 14%;
 }
 
+.toggle-mnu {
+  display: none;
+  width: 28px;
+  height: 28px;
+  margin-top: 7px;
+}
+
+@media screen and (max-width: 767px) {
+  .toggle-mnu {
+    display: block;
+  }
+}
+
+.toggle-mnu span:after,
+.toggle-mnu span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+
+.toggle-mnu span:after {
+  top: 18px;
+}
+
+.toggle-mnu span {
+  position: relative;
+  display: block;
+}
+
+.toggle-mnu span,
+.toggle-mnu span:after,
+.toggle-mnu span:before {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 2px;
+}
+
+.toggle-mnu.on span {
+  background-color: transparent;
+}
+
+.toggle-mnu.on span:before {
+  -webkit-transform: rotate(45deg) translate(-1px, 0px);
+      -ms-transform: rotate(45deg) translate(-1px, 0px);
+          transform: rotate(45deg) translate(-1px, 0px);
+}
+
+.toggle-mnu.on span:after {
+  -webkit-transform: rotate(-45deg) translate(6px, -7px);
+      -ms-transform: rotate(-45deg) translate(6px, -7px);
+          transform: rotate(-45deg) translate(6px, -7px);
+}
+
+.toggle-mnu.on + #menu {
+  opacity: 1;
+  visibility: visible;
+}
+
 .slick-dots {
   bottom: -5px;
 }
@@ -938,6 +1002,7 @@ body {
 
 .content {
   width: 70%;
+  margin: auto;
   height: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1150,6 +1215,22 @@ body {
 @media screen and (max-width: 767px) {
   .sub-tabs {
     display: none;
+    float: right;
+    max-width: 295px;
+    text-align: right;
+    background-color: #1C242C;
+    top: 60px;
+    border-bottom: #111821 4px solid;
+    border-top: #232D3B 4px solid;
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .sub-tabs {
+    display: block !important;
   }
 }
 
@@ -1166,6 +1247,16 @@ body {
   user-select: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  .sub-tabs .button {
+    width: auto;
+    display: block;
+    border: 1px solid #fff !important;
+    border-radius: 5px;
+    margin: 20px !important;
+  }
 }
 
 .sub-tabs .button:hover, .sub-tabs .button:focus, .sub-tabs .button:active {

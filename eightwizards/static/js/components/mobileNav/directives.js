@@ -12,12 +12,17 @@ angular.module('8wizards.components.mobileNav.directives', ['ngRoute', 'ngAnimat
       'toggleId': '='
     },
     link: function(scope) {
-      $(document).foundation();
+      $(".toggle-mnu").click(function() {
+    $(this).toggleClass("on");
+    $(".sub-tabs").slideToggle();
+    return false;
+  });
+     /* $(document).foundation();
       //console.log(scope.navOptions)
       scope.addStyle = function() {
         $(document).foundation();
 
-      }
+      }*/
 
     }
 
