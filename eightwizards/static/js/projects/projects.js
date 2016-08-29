@@ -7,18 +7,38 @@ angular.module('8wizards.projects', ['ngRoute', '8wizards.projects.services'])
       .when('/projects', {
         templateUrl: '/static/ngtpls/projects.html',
         controller: 'ProjectsCtrl'
-      })
+      });
+  $routeProvider
+      .when('/projects/mobile', {
+        templateUrl: '/static/ngtpls/mobile.html',
+        controller: 'MobileCtrl'
+      });
+  $routeProvider
+      .when('/projects/games', {
+        templateUrl: '/static/ngtpls/games.html',
+        controller: 'GamesCtrl'
+      });
+
 }])
 
-.controller('ProjectsCtrl', ['$scope', 'Projects', function($scope, Projects) {
+.controller('ProjectsTabsCtrl', function($scope) {
   $scope.tabs = [
     {name: 'web', publicName: 'Web'},
     {name: 'mob', publicName: 'Mobile'},
     {name: 'games', publicName: 'Games'}
   ];
-  Projects.query(function(projects) {
-    $scope.projects = projects;
-  });
+
+   $scope.breakpoints = [{
+      breakpoint: 740,
+      settings: {
+        dots: false,
+      }
+    },{
+      breakpoint: 480,
+      settings: {
+        dots: false,
+       }
+    }];
    $scope.slickConfig = {
     enabled: true,
     autoplay: true,
@@ -35,4 +55,26 @@ angular.module('8wizards.projects', ['ngRoute', '8wizards.projects.services'])
         }
     }
 };
+})
+
+.controller('ProjectsCtrl', ['$scope', '$controller', 'Projects', function($scope, $controller, Projects) {
+  $controller('ProjectsTabsCtrl', {$scope: $scope});
+  $scope.selected = 0;
+  Projects.query(function(projects) {
+    $scope.projects = projects;
+  });
+}])
+.controller('MobileCtrl', ['$scope', '$controller', 'Mobile', function($scope, $controller, Projects) {
+  $controller('ProjectsTabsCtrl', {$scope: $scope});
+  $scope.selected = 1;
+  Mobiles.query(function(mobiles) {
+    $scope.mobiles = mobiles;
+  });
+}])
+.controller('GamesCtrl', ['$scope', '$controller', 'Game', function($scope, $controller, Game) {
+  $controller('ProjectsTabsCtrl', {$scope: $scope});
+  $scope.selected = 2;
+  Game.query(function(games) {
+    $scope.games = games;
+  });
 }]);

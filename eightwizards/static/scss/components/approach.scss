@@ -1,0 +1,116 @@
+#Approach {
+  background: $team-color;
+  .slider{
+    .slide{
+      flex-direction: column;
+      flex-wrap: nowrap!important;
+    p{
+      &:first-child{
+        font-size: 14px;
+        font-weight: 600;
+      }
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    padding: 0 8vw 10px 8vw;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 0;
+     }
+    h3{
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    }
+    h2{
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #fff;
+    }
+    .rows-steps{
+       @media screen and (max-width: 768px){
+        flex-direction: column!important;
+        justify-content: center;
+       }
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      ol{
+        margin: 0 0 0 15px;
+        @media screen and (max-width: 768px){
+          margin: 0;
+       }
+      }
+      li{
+        text-align: left;
+        color: #fff;
+        font-size: 15px;
+        @media screen and (max-width: 768px){
+          text-align: center;
+          display: table;
+          margin: 0 auto;
+       }
+      }
+      h4{
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        text-align: left;
+        margin-bottom: 20px;
+         @media screen and (max-width: 768px){
+          text-align: center;
+       }
+      }
+      .steps-item1{
+        padding-right: 40px;
+        @media screen and (max-width: 768px){
+          padding-right: 0;
+          margin-bottom: 30px;
+       }
+      }
+      .steps-item2{
+
+      }
+    }
+
+    .rows-photo{
+      display: flex;
+      flex-direction: row;
+       @media screen and (max-width: 1020px){
+        width: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+       }
+        @media screen and (max-width: 768px){
+        width: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+       }
+      .photo-item{
+        margin-top: 20px;
+        width: 230px;
+        overflow: hidden;
+        background-color: #ccc;
+        margin-right: 15px;
+        border-radius: 7px;
+         @media screen and (max-width: 768px){
+          width: 190px;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+
+    }
+  }
+}

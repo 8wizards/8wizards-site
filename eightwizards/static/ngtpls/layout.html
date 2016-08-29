@@ -13,6 +13,11 @@
 
         <navigation-mobile nav-options="[1,2,3,4,5]"></navigation-mobile>
 
+           <div sub-tabs class="sub-tabs clearfix" data-block="tabs">
+              <a ng-repeat="tab in tabs" class="button" ng-class="{active: selected == $index}" ng-click="activate($event)" rel="{{ tab.name }}">{{ tab.publicName }}</a>
+           </div>
+
+
     </header>
 
    <!--  <div class="row content">

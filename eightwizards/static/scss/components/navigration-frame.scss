@@ -88,7 +88,7 @@ $icon_size: 5rem;
 
   .frame-top {
     top: 0;
-    left: 50%;
+    left: 49%;
     position: absolute;
     a {
       top:inherit;
@@ -106,7 +106,7 @@ $icon_size: 5rem;
 
   .frame-bottom {
     bottom: 0;
-    left: 50%;
+    left: 49%;
     position: absolute;
     a {
       bottom: inherit;
@@ -171,8 +171,8 @@ $icon_size: 5rem;
           margin-bottom: 0.7*$default-bouncing-size;
         }
         @media screen and (max-width: 768px) {
-          margin-top: 0.5*$default-bouncing-size;
-          margin-bottom: 0.5*$default-bouncing-size;
+          margin-top: 0.6rem;
+          margin-bottom: 0.6rem;
         }
       }
   }

@@ -34,6 +34,9 @@
     line-height: 25px;
     display: block;
     color: #fff;
+     @media screen and (max-width: 770px){
+        margin-top: 25px;
+       }
 
   }
   .contact-phone{
@@ -80,7 +83,7 @@
         height: 38px;
         margin-right: 12px;
        }
-       @media screen and (max-width: 400px){
+       @media screen and (max-width: 770px){
         width: 30px;
         height: 30px;
         margin-right: 8px;
@@ -226,8 +229,9 @@
     .button {
       background-color: transparent;
       border-color: transparent;
+      cursor: default;
       &.active {
-        color: $contacts-color;
+        color: #fff!important;
         background-color: transparent;
       }
       &:hover{
@@ -248,7 +252,7 @@
     }
 
     .sub-tabs{
-      width: 14%;
+      width: auto;
     }
 
  }

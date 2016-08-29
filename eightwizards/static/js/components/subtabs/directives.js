@@ -10,7 +10,7 @@ angular.module('8wizards.components.subtabs.directives', ['ngRoute', 'ngAnimate'
         var el = $event.target;
         $animate.addClass(el, 'active').done(function() {
           $timeout(function() {
-            $location.url('/'+$event.delegateTarget.attributes.id.value);
+            $location.url('/'+$event.delegateTarget.attributes.rel.value);
           }, 0)
         })
       }
