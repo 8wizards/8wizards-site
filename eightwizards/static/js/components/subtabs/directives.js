@@ -28,9 +28,9 @@ angular.module('8wizards.components.subtabs.directives', ['ngRoute', 'ngAnimate'
                 }, 500);
             }
         }
-    }).directive('dynamicHeight', function(){
+    });/*.directive('dynamicHeight', function(){
         return function(scope, element) {
             console.info($(window).height());
             element.height(($(window).height() - $(window).height()*0.15));
         }
-});
+});*/

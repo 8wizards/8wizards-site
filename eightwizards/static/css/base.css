@@ -1,3 +1,27 @@
+.frame .frame-item:hover .large {
+  opacity: 1;
+  visibility: visible;
+  transition: .35s ease;
+}
+
+.large {
+  opacity: 0;
+  visibility: hidden;
+  transition: .35s ease;
+}
+
+.frame .frame-item:hover .large {
+  opacity: 1;
+  visibility: visible;
+  transition: .35s ease;
+}
+
+.large {
+  opacity: 0;
+  visibility: hidden;
+  transition: .35s ease;
+}
+
 .frame-overlay .overlay {
   position: fixed;
   transition: all 0.4s cubic-bezier(0.91, 0.8, 0.66, 1.85);
@@ -55,6 +79,10 @@
   text-align: left;
 }
 
+.frame .frame-left .frame-label {
+  padding-left: 30px;
+}
+
 .frame .frame-left a {
   left: inherit;
   transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85);
@@ -75,6 +103,10 @@
   text-align: right;
 }
 
+.frame .frame-right .frame-label {
+  padding-right: 30px;
+}
+
 .frame .frame-right a {
   right: inherit;
   transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85);
@@ -91,8 +123,20 @@
 
 .frame .frame-top {
   top: 0;
-  left: 49%;
+  left: 50%;
   position: absolute;
+}
+
+@media screen and (max-width: 1024px) {
+  .frame .frame-top {
+    left: 47%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .frame .frame-top {
+    left: 47.5%;
+  }
 }
 
 .frame .frame-top a {
@@ -112,8 +156,20 @@
 
 .frame .frame-bottom {
   bottom: 0;
-  left: 49%;
+  left: 50%;
   position: absolute;
+}
+
+@media screen and (max-width: 1024px) {
+  .frame .frame-bottom {
+    left: 47%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .frame .frame-bottom {
+    left: 47.5%;
+  }
 }
 
 .frame .frame-bottom a {
@@ -147,6 +203,11 @@
 
 .frame .frame-item a {
   position: relative;
+  padding: 1.2rem;
+  box-sizing: content-box;
+  width: 80px;
+  height: 80px;
+  display: block;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -154,6 +215,30 @@
   user-select: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .frame .frame-item a {
+    width: 56px;
+    height: 56px;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .frame .frame-item a {
+    width: 44px;
+    height: 44px;
+    padding: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .frame .frame-item a {
+    width: 40px;
+    height: 40px;
+    padding: 0.6rem;
+  }
 }
 
 .frame .frame-item a .icon {
@@ -164,17 +249,24 @@
   background-size: 100% !important;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .frame .frame-item a .icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 56px;
+    height: 56px;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 767px) {
   .frame .frame-item a .icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .frame .frame-item a .icon {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -202,40 +294,32 @@
   opacity: 1;
 }
 
-.frame .frame-top .icon, .frame .frame-bottom .icon {
-  margin: 1.2rem auto;
+.frame .frame-top, .frame .frame-bottom {
+  /*  .icon {
+        margin: $default-bouncing-size auto;
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+          margin-top: 0.7*$default-bouncing-size;
+          margin-bottom: 0.7*$default-bouncing-size;
+        }
+        @media screen and (max-width: 768px) {
+          margin-top: 0.6rem;
+          margin-bottom: 0.6rem;
+        }
+      }*/
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .frame .frame-top .icon, .frame .frame-bottom .icon {
-    margin-top: 0.84rem;
-    margin-bottom: 0.84rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .frame .frame-top .icon, .frame .frame-bottom .icon {
-    margin-top: 0.6rem;
-    margin-bottom: 0.6rem;
-  }
-}
-
-.frame .frame-right .icon, .frame .frame-left .icon {
-  margin: 0 1.2rem;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .frame .frame-right .icon, .frame .frame-left .icon {
-    margin-left: 0.84rem;
-    margin-right: 0.84rem;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .frame .frame-right .icon, .frame .frame-left .icon {
-    margin-right: 0.6rem;
-    margin-left: 0.6rem;
-  }
+.frame .frame-right, .frame .frame-left {
+  /*.icon {
+      margin: 0 $default-bouncing-size;
+     @media screen and (min-width: 768px) and (max-width: 1024px) {
+        margin-left: 0.7*$default-bouncing-size;
+        margin-right: 0.7*$default-bouncing-size;
+      }
+      @media screen and (max-width: 767px)  {
+         margin-right: 0.5*$default-bouncing-size;
+        margin-left: 0.5*$default-bouncing-size;
+      }
+    }*/
 }
 
 .frame .frame-vertical {
@@ -271,7 +355,7 @@
 }
 
 .frame .frame-horyzontal a:hover, .frame .frame-horyzontal a:active, .frame .frame-horyzontal a:focus {
-  width: 6.2rem;
+  width: 80px;
 }
 
 .frame .frame-horyzontal a:hover .bouncer, .frame .frame-horyzontal a:active .bouncer, .frame .frame-horyzontal a:focus .bouncer {
@@ -620,6 +704,18 @@ navigation-mobile .title-bar {
 
 #Team img {
   max-width: 164px !important;
+}
+
+.frame .frame-item:hover .large {
+  opacity: 1;
+  visibility: visible;
+  transition: .35s ease;
+}
+
+.large {
+  opacity: 0;
+  visibility: hidden;
+  transition: .35s ease;
 }
 
 #Contacts .tabscontent {
@@ -1781,10 +1877,9 @@ body {
     float: right;
     max-width: 295px;
     text-align: right;
-    background-color: #1C242C;
+    background-color: rgba(0, 0, 0, 0.8);
     top: 60px;
-    border-bottom: #111821 4px solid;
-    border-top: #232D3B 4px solid;
+    border: #111 4px solid;
     position: absolute;
     right: 10px;
     z-index: 2;
@@ -1800,10 +1895,12 @@ body {
 
 .sub-tabs .button {
   background: transparent;
+  position: relative;
+  transition: .25s ease;
   font-size: 1.7rem;
   padding: 0.4rem 3vw 0.5rem;
   margin: 0 !important;
-  border: 0.1rem solid #fff;
+  border: 0.15rem solid #fff;
   float: left;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -1814,14 +1911,25 @@ body {
   outline: none;
 }
 
-.sub-tabs .button:first-child {
-  border-radius: 0.5rem 0 0 0.5rem;
+.sub-tabs .button:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: .25s ease;
 }
 
-@media screen and (max-width: 767px) {
-  .sub-tabs .button:first-child {
-    border-radius: none !important;
-  }
+.sub-tabs .button:hover:after {
+  opacity: 1;
+  height: 5px;
+}
+
+.sub-tabs .button:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .sub-tabs .button:nth-child(2) {
@@ -1831,12 +1939,6 @@ body {
 
 .sub-tabs .button:last-child {
   border-radius: 0 0.5rem 0.5rem 0;
-}
-
-@media screen and (max-width: 767px) {
-  .sub-tabs .button:last-child {
-    border-radius: none !important;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1872,10 +1974,9 @@ body {
     width: 100%;
     display: block;
     border: 1px solid #fff !important;
-    border-radius: 5px;
-    margin: 0 0 20px !important;
-    font-size: 1.4rem;
-    padding: 0.4rem 0 0.5rem;
+    border-radius: 5px !important;
+    margin: 0 0 15px !important;
+    font-size: 1.2rem;
   }
 }
 
@@ -1901,52 +2002,62 @@ body {
 }
 
 #Index .frame .frame-label {
-  display: inline;
+  display: block;
   color: #C5C5C5;
   text-decoration: none;
-  position: relative;
+  position: absolute;
   font-weight: bold;
   text-align: center;
 }
 
-#Index .frame .frame-right .icon, #Index .frame .frame-left .icon {
+#Index .frame .frame-right .icon {
   display: inline-block;
 }
 
-#Index .frame .frame-right .frame-label, #Index .frame .frame-left .frame-label {
-  top: -2rem;
+#Index .frame .frame-right .frame-label {
+  top: 44px;
+  right: 95px;
+}
+
+#Index .frame .frame-left .icon {
+  display: inline-block;
+}
+
+#Index .frame .frame-left .frame-label {
+  top: 44px;
+  left: 95px;
 }
 
 #Index .frame .frame-top {
-  margin-left: -2.6rem;
+  /* margin-left: -2.6rem;
+      @media screen and (max-width: 39.9375em) {
+        margin-left: -1.05rem;
+      }
+      @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        margin-left: -1.25rem;
+      }*/
 }
 
-@media screen and (max-width: 39.9375em) {
-  #Index .frame .frame-top {
-    margin-left: -1.05rem;
-  }
-}
-
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {
-  #Index .frame .frame-top {
-    margin-left: -1.25rem;
-  }
+#Index .frame .frame-top .frame-label {
+  top: 80px;
+  padding-top: 30px;
+  left: 10px;
 }
 
 #Index .frame .frame-bottom {
-  margin-left: -3em;
+  /*margin-left: -3em;
+      @media screen and (max-width: 39.9375em) {
+        margin-left: -1rem;
+      }
+      @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        margin-left: -1.2rem;
+      }*/
 }
 
-@media screen and (max-width: 39.9375em) {
-  #Index .frame .frame-bottom {
-    margin-left: -1rem;
-  }
-}
-
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {
-  #Index .frame .frame-bottom {
-    margin-left: -1.2rem;
-  }
+#Index .frame .frame-bottom .frame-label {
+  bottom: 80px;
+  padding-bottom: 30px;
+  right: 0;
 }
 
 #Index .frame .to_index .icon {

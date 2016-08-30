@@ -25,6 +25,7 @@ angular.module('8wizards.tech', ['ngRoute', '8wizards.tech.services'])
 })
 .controller('TechCtrl', ['$scope', '$controller', 'Technology', function($scope, $controller, Technology) {
   $controller('TechTabsCtrl', {$scope: $scope});
+  $scope.selected = 0;
     $scope.breakpoints = [{
       breakpoint: 768,
       settings: {
@@ -71,6 +72,7 @@ angular.module('8wizards.tech', ['ngRoute', '8wizards.tech.services'])
 }])
 .controller('SkillsCtrl', ['$scope', '$controller', 'Skill', function($scope, $controller, Skill) {
   $controller('TechTabsCtrl', {$scope: $scope});
+  $scope.selected = 1;
   Skill.query(function(skills) {
     $scope.skills = skills;
   });

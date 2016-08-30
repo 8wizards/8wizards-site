@@ -56,6 +56,9 @@ $icon_size: 5rem;
     left: 0;
     top: 45vh;
     text-align: left;
+    .frame-label{
+      padding-left: 30px;
+    }
     a {
       left:inherit;
       transition: all $default-animate-time $transition;
@@ -73,6 +76,9 @@ $icon_size: 5rem;
     top: 45vh;
     right: 0;
     text-align: right;
+    .frame-label{
+      padding-right: 30px;
+    }
     a {
       right: inherit;
       transition: all $default-animate-time $transition;
@@ -88,8 +94,14 @@ $icon_size: 5rem;
 
   .frame-top {
     top: 0;
-    left: 49%;
+    left: 50%;
     position: absolute;
+     @media screen and (max-width: 1024px) {
+      left: 47%;
+     }
+    @media screen and (max-width: 767px) {
+      left: 47.5%;
+     }
     a {
       top:inherit;
       transition: all $default-animate-time $transition;
@@ -105,8 +117,14 @@ $icon_size: 5rem;
   }
 
   .frame-bottom {
+     @media screen and (max-width: 1024px) {
+      left: 47%;
+     }
+     @media screen and (max-width: 767px) {
+      left: 47.5%;
+     }
     bottom: 0;
-    left: 49%;
+    left: 50%;
     position: absolute;
     a {
       bottom: inherit;
@@ -130,6 +148,26 @@ $icon_size: 5rem;
     @include prevent-highlight;
     a {
       position: relative;
+      padding: 1.2rem;
+      box-sizing: content-box;
+      width: 80px;
+      height: 80px;
+      display: block;
+       @media screen and (max-width: 1024px) {
+          width: 56px;
+          height: 56px;
+          padding: 1rem;
+        }
+        @media screen and (max-width: 767px) {
+          width: 44px;
+          height: 44px;
+          padding: 0.6rem;
+        }
+       @media screen and (max-width: 350px) {
+          width: 40px;
+          height: 40px;
+          padding: 0.6rem;
+        }
       @include prevent-highlight;
       .icon {
       /*  border-radius: 50%;*/
@@ -137,13 +175,17 @@ $icon_size: 5rem;
         width: $icon_size;
         height: $icon_size;
         background-size: 100% !important;
-        @media screen and (max-width: 767px)  {
-          width: 0.5*$icon_size;
-          height: 0.5*$icon_size;
+       @media screen and (max-width: 1024px) {
+          width: 56px;
+          height: 56px;
         }
-       @media screen and (min-width: 768px) and (max-width: 1024px) {
-          width: 0.7*$icon_size;
-          height: 0.7*$icon_size;
+      @media screen and (max-width: 767px)  {
+          width: 44px;
+          height: 44px;
+        }
+       @media screen and (max-width: 350px) {
+          width: 40px;
+          height: 40px;
         }
       }
       .frame-label {
@@ -164,7 +206,7 @@ $icon_size: 5rem;
   }
 
   .frame-top, .frame-bottom {
-      .icon {
+    /*  .icon {
         margin: $default-bouncing-size auto;
         @media screen and (min-width: 768px) and (max-width: 1024px) {
           margin-top: 0.7*$default-bouncing-size;
@@ -174,11 +216,11 @@ $icon_size: 5rem;
           margin-top: 0.6rem;
           margin-bottom: 0.6rem;
         }
-      }
+      }*/
   }
 
   .frame-right, .frame-left {
-    .icon {
+    /*.icon {
       margin: 0 $default-bouncing-size;
      @media screen and (min-width: 768px) and (max-width: 1024px) {
         margin-left: 0.7*$default-bouncing-size;
@@ -188,7 +230,7 @@ $icon_size: 5rem;
          margin-right: 0.5*$default-bouncing-size;
         margin-left: 0.5*$default-bouncing-size;
       }
-    }
+    }*/
   }
 
   .frame-vertical {
@@ -221,7 +263,7 @@ $icon_size: 5rem;
         width: 0;
       }
       &:hover, &:active, &:focus {
-         width: 5rem + $default-bouncing-size;
+         width: 80px;
         .bouncer {
           width: $default-bouncing-size;
         }
