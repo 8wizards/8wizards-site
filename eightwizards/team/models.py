@@ -1,4 +1,5 @@
 from django.db import models
+from markupfield.fields import MarkupField
 
 
 class Role(models.Model):
@@ -14,7 +15,7 @@ class Member(models.Model):
     last_name = models.CharField(blank=False, max_length=50)
     nick_name = models.CharField(blank=True, max_length=127)
     role = models.ForeignKey(Role)
-    overview = models.TextField()
+    overview = MarkupField(blank=False, max_length=2047, markup_type='markdown')
     is_available = models.BooleanField(default=True)
     birthday = models.DateField()
     portrait = models.ImageField(blank=False, null=False)
