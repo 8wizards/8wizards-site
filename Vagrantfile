@@ -89,6 +89,7 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
+
   if OS.windows?
         config.vm.provision :shell, :inline => "/vagrant/provision.sh"
   else
@@ -97,4 +98,6 @@ Vagrant.configure(2) do |config|
         ansible.verbose = "vvvv"
       end
   end
+
+  config.django.app_path = '/vagrant/eightwizards'
 end

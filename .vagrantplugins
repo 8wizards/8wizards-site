@@ -1,0 +1,219 @@
+###
+### Implements project specific vagrant commands.
+###
+
+
+###
+### Base classes
+###
+
+class DjangoConfig < Vagrant.plugin(2, :config)
+  attr_accessor :app_path
+
+  def initialize
+    @app_path = UNSET_VALUE
+  end
+
+  def finalize!
+    @app_path = '~' if @widgets == UNSET_VALUE
+  end
+end
+
+class CommandConstructor
+
+  def initialize(command, config)
+    @command = command.dup
+    @config = config
+  end
+
+
+  def construct_command
+    ''.tap do |constructed_command|
+      # directory is applied only once in the beginning
+      @config.reverse.each do |command|
+        if command_matches?(command[:cmd], @command) && !directory_added?
+          constructed_command << add_directory(app_directory)
+        end
+      end
+
+      # apply environment variables
+      @config.each do |command|
+        if command_matches?(command[:cmd], @command)
+          constructed_command << add_env(command[:opts][:env])
+        end
+      end
+
+      # apply prepend in the end
+      @config.each do |command|
+        if command_matches?(command[:cmd], @command)
+          constructed_command << add_prepend(command[:opts][:prepend])
+        end
+      end
+
+      constructed_command << @command
+    end
+  end
+
+  private
+
+  def add_directory(directory)
+    ''.tap do |str|
+      if directory
+        str << "cd #{directory} && "
+        @directory_added = true
+      end
+    end
+  end
+
+  def add_env(env)
+    ''.tap do |str|
+      env.each do |key, value|
+        value = %("#{value}") if value.is_a?(String) && value.include?(' ')
+        str << "export #{key}=#{value} && "
+      end if env
+    end
+  end
+
+  def add_prepend(prep)
+    ''.tap do |str|
+      str << "#{prep.strip} " if prep
+    end
+  end
+
+  def command_matches?(expected, actual)
+    expected == '*' || expected == actual || expected.include?(actual)
+  end
+
+
+  def directory_added?
+    !!@directory_added
+  end
+
+end # CommandConstructor
+
+class VagrantEnvironmentCommand < Vagrant.plugin('2', :command)
+  def initialize(*)
+    super
+  end
+
+  def app_directory
+    app_path = '/vagrant/eightwizards'
+    return app_path
+  end
+
+  def execute
+    cmd, cmd_args = parse_args
+
+    with_target_vms(nil, single_target: true) do |vm|
+      constructor = CommandConstructor.new('', vm.config.exec.commands)
+      command = constructor.construct_command
+      command << ' ' << box_command
+      command << ' ' << cmd if cmd
+      command << ' ' << cmd_args.join(' ') if cmd_args.any?
+
+      @logger.info('Executing single command on remote machine: #{command}')
+      ssh_opts = {extra_args: ['-q']}
+      env = vm.action(:ssh_run, ssh_run_command: command, ssh_opts: ssh_opts)
+
+      status = env[:ssh_run_exit_status] || 0
+      return status
+    end
+  end
+
+  def parse_args
+    opts = OptionParser.new do |o|
+      o.banner = 'Usage: vagrant django-manage [command]'
+      o.separator ''
+
+      o.on('-h', '--help', 'Print this help') do
+        safe_puts(opts.help)
+      end
+    end
+
+    argv = split_main_and_subcommand(@argv.dup)
+    exec_args, cmd, cmd_args = argv[0], argv[1], argv[2]
+
+    if exec_args.any? { |a| a == '-h' || a == '--help' }
+      safe_puts(opts.help)
+      return nil
+    end
+
+    cmd_args.delete_if { |a| a == '--' }
+
+    return cmd, cmd_args
+  end
+end
+
+###
+### Implement 'django-manage' command
+###
+
+class DjangoManageCommand < VagrantEnvironmentCommand
+  def box_command
+    'cd ' + app_directory + '; python3 manage.py'
+  end
+
+  def self.synopsis
+    'executes a Django manage.py command inside of the vagrant environment'
+  end
+end
+
+class DjangoManage < Vagrant.plugin('2')
+  name "django-manage"
+  description "Runs a Django manage.py command inside the vagrant box."
+
+  command "django-manage" do
+    DjangoManageCommand
+  end
+
+  config "django" do
+    DjangoConfig
+  end
+end
+
+###
+### Implement 'django-pip' command
+###
+
+class DjangoPipCommand < VagrantEnvironmentCommand
+  def box_command
+    'cd ' + app_directory + '; sudo pip3'
+  end
+
+  def self.synopsis
+    'executes a pip command inside of the vagrant box'
+  end
+end
+
+class DjangoManage < Vagrant.plugin('2')
+  name "django-pip"
+  description "Runs a pip command inside the vagrant box."
+
+  command "django-pip" do
+    DjangoPipCommand
+  end
+end
+
+###
+### Implement 'django-prospector' command
+###
+
+class DjangoProspectorCommand < VagrantEnvironmentCommand
+  def box_command
+    'prospector'
+  end
+
+  def self.synopsis
+    'executes a prospector command inside of the vagrant box'
+  end
+end
+
+class DjangoManage < Vagrant.plugin('2')
+  name "django-prospector"
+  description "Runs a prospector command inside the vagrant box."
+
+  command "django-prospector" do
+    DjangoProspectorCommand
+  end
+end
+
