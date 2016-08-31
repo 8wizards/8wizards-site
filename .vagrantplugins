@@ -200,7 +200,7 @@ end
 
 class DjangoProspectorCommand < VagrantEnvironmentCommand
   def box_command
-    'prospector'
+    'cd ' + app_directory + '; prospector'
   end
 
   def self.synopsis
