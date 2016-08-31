@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework_extensions.mixins import NestedViewSetMixin
 from .serializers import SkillSerializer, ProjectSerializer, MediaSerializer, TechnologySerializer, CategorySerializer
 from .models import Skill, Project, MediaResource, Technology, Category
 
@@ -35,7 +36,7 @@ class TechnologyViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = TechnologySerializer
 
 
-class ProjectViewSet(viewsets.ReadOnlyModelViewSet):
+class ProjectViewSet(NestedViewSetMixin, viewsets.ReadOnlyModelViewSet):
     """
     ReadOnly View set to provide public API for the Project.
     Writable operation will be allowed just for tuning machine

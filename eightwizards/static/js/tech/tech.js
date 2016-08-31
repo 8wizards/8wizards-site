@@ -26,6 +26,7 @@ angular
   .controller('TechCtrl', ['$scope', '$controller', 'Technology', function($scope, $controller, Technology) {
     $controller('TechTabsCtrl', {$scope: $scope});
     $scope.selected = 0;
+    $scope.technologies = [];
     $scope.breakpoints = [{
       breakpoint: 768,
       settings: {

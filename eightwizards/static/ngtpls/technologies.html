@@ -2,23 +2,11 @@
 
     <div class="tabscontent" data-block="tabs-content">
 
-       <slick class="slider single-item"  settings="slickConfig" responsive="breakpoints" slides-to-show=3 slides-to-scroll=3>
-            <div class="slide" ng-repeat="">
-                <img src="static/img/1.png" alt="ALT">
-              </div>
-            <div class="slide">
-                <img src="static/img/2.png" alt="ALT">
-            </div>
-              <div class="slide">
-                <img src="static/img/3.png" alt="ALT">
-            </div>
+       <slick ng-if="technologies.length" class="slider single-item"  settings="slickConfig" responsive="breakpoints"
+              slides-to-show=3 slides-to-scroll=3>
 
-             <div class="slide">
-                <img src="static/img/1.png" alt="ALT">
-            </div>
-
-             <div class="slide">
-                <img src="static/img/2.png" alt="ALT">
+           <div class="slide" ng-repeat="t in technologies">
+                <img ng-src="{{ t.logo }}" alt="ALT">
             </div>
 
         </slick>

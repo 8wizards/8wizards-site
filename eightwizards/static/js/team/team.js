@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('8wizards.team', ['ngRoute'])
+angular.module('8wizards.team', ['ngRoute', '8wizards.team.services'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/team', {
@@ -28,7 +28,7 @@ angular.module('8wizards.team', ['ngRoute'])
 
 
 })
-.controller('TeamCtrl', ['$scope', '$controller', 'Technology', function($scope, $controller, Technology) {
+.controller('TeamCtrl', ['$scope', '$controller', 'Team', function($scope, $controller, Team) {
   $controller('TeamTabsCtrl', {$scope: $scope});
   $scope.selected = 0;
     $scope.breakpoints = [{
@@ -77,10 +77,10 @@ angular.module('8wizards.team', ['ngRoute'])
         afterChange: function (event, slick, currentSlide, nextSlide) {
         }
     }
-};
+  };
 
-  Technology.query(function(technologies) {
-    $scope.technologies = technologies;
+  Team.query(function(team) {
+    $scope.team = team;
   });
 
 }])
