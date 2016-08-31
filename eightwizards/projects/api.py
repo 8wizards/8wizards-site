@@ -16,7 +16,7 @@ router = ExtendedSimpleRouter()
           .register(r'projects',
                     views.ProjectViewSet,
                     base_name='category-projects',
-                    parents_query_lookups=['category__slug', 'category'])
+                    parents_query_lookups=['category__slug'])
 )
 router.register(r'skills', views.SkillViewSet, base_name='skills')
 router.register(r'technologies', views.SkillViewSet, base_name='technologies')
