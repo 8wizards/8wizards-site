@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from markupfield.fields import MarkupField
 from team.models import Member
 from common.constants.models import ACTIVE, ACTIVE_INACTIVE_CHOICES
 
@@ -14,7 +15,7 @@ class Skill(models.Model):
 
 class Technology(models.Model):
     name = models.CharField(blank=False, max_length=127)
-    description = models.TextField(blank=False, max_length=2047)
+    description = MarkupField(blank=False, max_length=2047, markup_type='markdown')
     logo = models.ImageField(blank=False, null=False)
 
 
@@ -47,7 +48,7 @@ class Project(models.Model):
     slug = models.SlugField(unique=True, blank=True, null=None, default='', help_text="")
     importance = models.IntegerField(default=0, help_text="Ordering Rank")
     short_description = models.TextField(blank=None, null=None, help_text="Short preview, SEO description")
-    large_description = models.TextField(help_text="Full project Info", blank=True)
+    large_description = MarkupField(help_text="Full project Info", blank=True,  markup_type='markdown')
     status = models.BooleanField(choices=ACTIVE_INACTIVE_CHOICES, default=ACTIVE)
     keywords = models.TextField(help_text='SEO', blank=True)
     category = models.ForeignKey(Category)
