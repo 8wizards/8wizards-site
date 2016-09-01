@@ -18,14 +18,11 @@ angular.module('8wizards.team', ['ngRoute', '8wizards.team.services'])
 }])
 
 .controller('TeamTabsCtrl', function($scope) {
-
   $scope.tabs = [
         {name: 'team', publicName: 'Team'},
         {name: 'approach', publicName: 'Approach'},
         {name: 'hiring', publicName: 'Hiring'}
   ];
-
-
 
 })
 .controller('TeamCtrl', ['$scope', '$controller', 'Team', function($scope, $controller, Team) {

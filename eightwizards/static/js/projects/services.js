@@ -16,4 +16,9 @@ angular
         return $resource('/api/v1/categories/mobile-development/projects/', {}, {
             query: {method: 'GET', params: {}, isArray: true}
         });
+    })
+    .factory('gameProjects', function ($resource) {
+        return $resource('/api/v1/categories/game-development/projects/', {}, {
+            query: {method: 'GET', params: {}, isArray: true}
+        });
     });

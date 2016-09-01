@@ -10,17 +10,22 @@
 
 
     <div class="tabscontent" data-block="tabs-content">
-     <slick ng-if="projects.length" class="slider single-item"  settings="slickConfig" responsive="breakpoints"
-            slides-to-show=1 slides-to-scroll=1>
-        <div class="slide" ng-repeat="project in projects">
-            <div class="rows-flex1">
-                <img ng-src="{{ project.preview }}" alt="ALT">
-            </div>
-            <div class="rows-flex2">
-                <h3>{{ project.name }}</h3>
-                <p>{{ project.large_description }}</p>
-            </div>
-         </div>
+     <slick ng-if="projects.length"
+            class="slider single-item slide-opacity-zero"
+            settings="slickConfig" responsive="breakpoints"
+            slides-to-show=1 slides-to-scroll=1 >
+
+        <div class="slide-custom" ng-repeat="project in projects">
+            <div class="slide">
+                <div class="rows-flex1">
+                    <img ng-src="{{ project.preview }}" alt="ALT">
+                </div>
+                <div class="rows-flex2">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.large_description }}</p>
+                </div>
+             </div>
+        </div>
 
     </slick>
 </div>

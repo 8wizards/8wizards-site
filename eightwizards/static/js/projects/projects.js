@@ -21,6 +21,7 @@ angular
 
     }])
     .controller('ProjectsTabsCtrl', function($scope) {
+
       $scope.tabs = [
         {name: 'projects', publicName: 'Web'},
         {name: 'mobile', publicName: 'Mobile'},
@@ -55,13 +56,24 @@ angular
     };
     })
 
-    .controller('ProjectsCtrl', ['$scope', '$controller', 'Projects', function($scope, $controller, webProjects) {
+    .controller('ProjectsCtrl', ['$timeout', '$scope', '$controller', 'webProjects', function($timeout, $scope, $controller, webProjects) {
       $controller('ProjectsTabsCtrl', {$scope: $scope});
       $scope.selected = 0;
       $scope.projects = [];
+      $scope.showSlider = false;
       webProjects.query(function(projects) {
         $scope.projects = projects;
+        /*$timeout(
+            function () {
+                $scope.showSlider = true;
+            },
+            1000
+        );*/
+
       });
+      $scope.getLastElement = function (el) {
+          console.log(el);
+      }
     }])
     .controller('MobileCtrl', ['$scope', '$controller', 'mobileProjects', function($scope, $controller, mobileProjects) {
       $controller('ProjectsTabsCtrl', {$scope: $scope});

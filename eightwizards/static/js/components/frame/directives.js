@@ -13,7 +13,7 @@ angular.module('8wizards.components.frame.directives', ['ngRoute', 'ngAnimate'])
     },
     link: function (scope) {
       scope.out = function($event) {
-        var el = $document.find('.frame-overlay .'+$event.delegateTarget.dataset.position)
+        var el = $document.find('.frame-overlay .'+$event.delegateTarget.dataset.position);
         $animate.addClass(el, 'transition').done(function() {
           $timeout(function() {
             $location.url('/'+$event.delegateTarget.rel);
