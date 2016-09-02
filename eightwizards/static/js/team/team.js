@@ -11,7 +11,7 @@ angular.module('8wizards.team', ['ngRoute', '8wizards.team.services'])
     templateUrl: '/static/ngtpls/approach.html',
     controller: 'ApproachCtrl'
   });
-      $routeProvider.when('/hiring', {
+    $routeProvider.when('/hiring', {
     templateUrl: '/static/ngtpls/hiring.html',
     controller: 'HiringCtrl'
   });
@@ -87,7 +87,7 @@ angular.module('8wizards.team', ['ngRoute', '8wizards.team.services'])
    $scope.breakpoints = [{
       breakpoint: 480,
       settings: {
-        dots: false,
+        dots: false
       }
     }];
      $scope.slickConfig = {

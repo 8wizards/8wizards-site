@@ -1,12 +1,4 @@
-<section id="Team" class="container" data-extend-template="/static/ngtpls/layout.html">
-    <div data-block="nav">
-        <navigation-frame navigation="[
-        {'id': 'tech', 'title': 'Technologies'},
-        {'id': 'projects', 'title': 'Projects'},
-        {'id': 'contacts', 'title': 'Get in Touch'},
-        {'id': 'index', 'title': 'Back Home'}
-        ];"></navigation-frame>
-    </div>
+<div id="Team" data-extend-template="/static/ngtpls/navigation/team-nav.html" class="container">
 
     <div class="tabscontent" data-block="tabs-content">
          <slick ng-if="team.length" class="slider slide-opacity-zero"  settings="slickConfig" responsive="breakpoints" slides-to-show=8 slides-to-scroll=8>
@@ -32,4 +24,4 @@
 
          </slick>
     </div>
-</section>
+</div>

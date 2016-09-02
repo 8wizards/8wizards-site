@@ -14,8 +14,8 @@ angular
             controller: 'MobileCtrl'
           });
       $routeProvider
-          .when('/projects/games', {
-            templateUrl: '/static/ngtpls/games.html',
+          .when('/games', {
+            templateUrl: '/static/ngtpls/projects.html',
             controller: 'GamesCtrl'
           });
 
@@ -25,7 +25,7 @@ angular
       $scope.tabs = [
         {name: 'projects', publicName: 'Web'},
         {name: 'mobile', publicName: 'Mobile'},
-        //{name: 'games', publicName: 'Games'}
+        {name: 'games', publicName: 'Games'}
       ];
       $scope.breakpoints = [{
           breakpoint: 740,
@@ -82,10 +82,10 @@ angular
         $scope.projects = mobiles;
       });
     }])
-    .controller('GamesCtrl', ['$scope', '$controller', 'Game', function($scope, $controller, Game) {
+    .controller('GamesCtrl', ['$scope', '$controller', 'mobileProjects', function($scope, $controller, mobileProjects) {
       $controller('ProjectsTabsCtrl', {$scope: $scope});
       $scope.selected = 2;
-      Game.query(function(games) {
-        $scope.games = games;
+      mobileProjects.query(function(games) {
+        $scope.projects = games;
   });
 }]);
