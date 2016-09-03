@@ -240,3 +240,27 @@ class VagrantManage < Vagrant.plugin('2')
     NodeNPMCommand
   end
 end
+
+
+###
+### Implement 'node-bower' command
+###
+
+class NodeBowerCommand < VagrantEnvironmentCommand
+  def box_command
+    'cd /vagrant && ~/node_modules/.bin/bower'
+  end
+
+  def self.synopsis
+    'executes a bower command inside of the vagrant box'
+  end
+end
+
+class VagrantManage < Vagrant.plugin('2')
+  name "node-bower"
+  description "Runs bower commands."
+
+  command "node-bower" do
+    NodeBowerCommand
+  end
+end
