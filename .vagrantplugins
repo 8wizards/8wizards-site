@@ -217,3 +217,26 @@ class DjangoManage < Vagrant.plugin('2')
   end
 end
 
+
+###
+### Implement 'node-npm' command
+###
+
+class NodeNPMCommand < VagrantEnvironmentCommand
+  def box_command
+    'cd ~/.; npm'
+  end
+
+  def self.synopsis
+    'executes a npm command inside of the vagrant box'
+  end
+end
+
+class VagrantManage < Vagrant.plugin('2')
+  name "node-npm"
+  description "Runs node npm commands."
+
+  command "node-npm" do
+    NodeNPMCommand
+  end
+end
