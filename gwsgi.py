@@ -13,8 +13,6 @@ bind = 'unix:/var/tmp/wizards.sock'
 
 workers = (multiprocessing.cpu_count() + 1)
 
-loglevel = 'WARNING'
-
 timeout = 60
 max_requests = 8192
 
@@ -28,10 +26,4 @@ proc_name = 'wizards'
 # pylint: disable=C0301
 access_log_format = '%(t)s %({X-Forwarded-For}i)s %(l)s %(u)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s" %(D)s'
 accesslog = '/srv/wizards/wizards_access.log'
-
-secure_scheme_headers = {'X-FORWARDED-PROTO': 'https'}
-
-
-def pre_request(worker, req):
-    # pylint: disable=unused-argument
-    pass
+errorlog = '/srv/wizards/wizards_error.log'
