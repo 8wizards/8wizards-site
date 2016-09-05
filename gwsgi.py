@@ -27,11 +27,9 @@ proc_name = 'wizards'
 
 # pylint: disable=C0301
 access_log_format = '%(t)s %({X-Forwarded-For}i)s %(l)s %(u)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s" %(D)s'
-accesslog = '/var/log/wizards_access.log'
+accesslog = '/srv/wizards/wizards_access.log'
 
 secure_scheme_headers = {'X-FORWARDED-PROTO': 'https'}
-
-django_settings = 'eightwizards.settings.prod'
 
 
 def pre_request(worker, req):
