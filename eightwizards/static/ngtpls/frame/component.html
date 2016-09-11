@@ -7,7 +7,7 @@
 </div> -->
     <ul class="frame-list">
         <li class="frame-item frame-horyzontal frame-left">
-            <a ng-click="out($event, 'slideLeft')" rel="{{ navigation[0].id }}" class="transition to_{{ navigation[0].id }}"
+            <a ng-click="out($event, 'slideRight')" rel="{{ navigation[0].id }}" class="transition to_{{ navigation[0].id }}"
             title="{{ navigation[0].title }}" data-position="left">
                 <i class="icon" title="{{ navigation[0].title }}"></i>
                 <span class="frame-label show-for-large">{{ navigation[0].title }}</span>
@@ -24,7 +24,7 @@
             </a>
         </li>
         <li class="frame-item frame-horyzontal frame-right">
-            <a ng-click="out($event, 'slideRight')" rel="{{ navigation[2].id }}" class="transition to_{{ navigation[2].id }}"
+            <a ng-click="out($event, 'slideLeft')" rel="{{ navigation[2].id }}" class="transition to_{{ navigation[2].id }}"
             title="{{ navigation[2].title }}" data-position="right">
                 <span class="frame-label show-for-large">{{ navigation[2].title }}</span>
                 <i class="icon" title="{{ navigation[2].title }}"></i>

@@ -63,12 +63,6 @@ angular
       $scope.showSlider = false;
       webProjects.query(function(projects) {
         $scope.projects = projects;
-        /*$timeout(
-            function () {
-                $scope.showSlider = true;
-            },
-            1000
-        );*/
 
       });
       $scope.getLastElement = function (el) {

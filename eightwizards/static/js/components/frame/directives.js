@@ -21,15 +21,14 @@ angular.module('8wizards.components.frame.directives', ['ngRoute', 'ngAnimate'])
         })
       }*/
       scope.out = function($event, pageAnimationClass) {
-        //debugger;
         $rootScope.pageAnimationClass = pageAnimationClass;
-
+        $location.url('/'+$event.delegateTarget.rel);
  /*       if (path === 'back') {debugger // Allow a 'back' keyword to go to previous page
             $window.history.back();
         }*/
         
         //else { debugger// Go to the specified path
-            $location.url('/'+$event.delegateTarget.rel);
+
         //}
       }
     }
