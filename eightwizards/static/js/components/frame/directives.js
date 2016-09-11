@@ -3,7 +3,7 @@
 angular.module('8wizards.components.frame.directives', ['ngRoute', 'ngAnimate'])
 
 
-.directive('navigationFrame', ['$location', '$animate', '$document', '$timeout', function($location, $animate, $document, $timeout) {
+.directive('navigationFrame', ['$location', '$animate', '$document', '$timeout', '$rootScope', function($location, $animate, $document, $timeout, $rootScope) {
   return {
     restrict: 'E',
     transclude: true,
@@ -12,13 +12,25 @@ angular.module('8wizards.components.frame.directives', ['ngRoute', 'ngAnimate'])
       navigation: '='
     },
     link: function (scope) {
-      scope.out = function($event) {
-        var el = $document.find('.frame-overlay .'+$event.delegateTarget.dataset.position);
+      /*scope.out = function($event) {
+        var el = $document.find('.frame-overlay .'+$event.delegateTarget.dataset.position)
         $animate.addClass(el, 'transition').done(function() {
           $timeout(function() {
             $location.url('/'+$event.delegateTarget.rel);
           }, 0)
         })
+      }*/
+      scope.out = function($event, pageAnimationClass) {
+        //debugger;
+        $rootScope.pageAnimationClass = pageAnimationClass;
+
+ /*       if (path === 'back') {debugger // Allow a 'back' keyword to go to previous page
+            $window.history.back();
+        }*/
+        
+        //else { debugger// Go to the specified path
+            $location.url('/'+$event.delegateTarget.rel);
+        //}
       }
     }
   };
