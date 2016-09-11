@@ -13,8 +13,29 @@ angular.module('8wizards.components.frame.directives', ['ngRoute', 'ngAnimate'])
     },
     link: function (scope) {
       scope.out = function($event, pageAnimationClass) {
+
+        //debugger;
+        //$rootScope.pageAnimationClass = pageAnimationClass;
+         if (typeof(pageAnimationClass) === 'undefined') { // Use a default, your choice
+            $rootScope.pageAnimationClass = 'crossFade';
+        }
+        
+        else { // Use the specified animation
+            $rootScope.pageAnimationClass = pageAnimationClass;
+        }
+
+
+ /*       if (path === 'back') {debugger // Allow a 'back' keyword to go to previous page
+            $window.history.back();
+        }*/
+        
+        //else { debugger// Go to the specified path
+            $location.url('/'+$event.delegateTarget.rel);
+        //}
+
         $rootScope.pageAnimationClass = pageAnimationClass;
         $location.url('/'+$event.delegateTarget.rel);
+
       }
     }
   };

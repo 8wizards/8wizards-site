@@ -91,7 +91,7 @@ angular.module('8wizards.team', ['ngRoute', '8wizards.team.services'])
       }
     }];
      $scope.slickConfig = {
-      adaptiveHeight: true,
+      adaptiveHeight: false,
     enabled: true,
     autoplay: true,
     slidesToScroll: 1,

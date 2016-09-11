@@ -16,7 +16,7 @@
 
         </li>
         <li class="frame-item frame-vertical frame-top">
-            <a ng-click="out($event, 'slideTop')" rel="{{ navigation[1].id }}" class="transition to_{{ navigation[1].id }}"
+            <a ng-click="out($event, 'slideDown')" rel="{{ navigation[1].id }}" class="transition to_{{ navigation[1].id }}"
             title="{{ navigation[1].title }}" data-position="top">
                 <div class="bouncer"></div>
                 <i class="icon" title="{{ navigation[1].title }}"></i>
@@ -32,7 +32,7 @@
             </a>
         </li>
         <li class="frame-item frame-vertical frame-bottom">
-            <a ng-click="out($event, 'slideBottom')" rel="{{ navigation[3].id }}" class="transition to_{{ navigation[3].id }}"
+            <a ng-click="out($event, 'crossFade')" rel="{{ navigation[3].id }}" class="transition to_{{ navigation[3].id }}"
             title="{{ navigation[3].title }}" data-position="bottom">
                 <span class="frame-label show-for-large">{{ navigation[3].title }}</span>
                 <i class="icon" title="{{ navigation[3].title }}"></i>

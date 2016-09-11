@@ -11,6 +11,15 @@
 }
 
 /* Transitions */
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
 body .container {
   position: absolute;
   top: 0;
@@ -32,7 +41,8 @@ body .container {
   /*transition-timing-function*/
   transition-timing-function: ease;
   /*transition-duration*/
-  transition-duration: 800ms;
+  transition-duration: 850ms;
+  transition-duration: 850ms;
   /*transition-property*/
   transition-property: opacity;
 }
@@ -56,7 +66,7 @@ body .container {
 /* crossFade */
 .crossFade.ng-enter {
   /*transition-duration*/
-  transition-duration: 100ms;
+  transition-duration: 1100ms;
   opacity: 0;
 }
 
@@ -66,7 +76,7 @@ body .container {
 
 .crossFade.ng-leave {
   /*transition-duration*/
-  transition-duration: 100ms;
+  transition-duration: 1100ms;
   opacity: 1;
 }
 
@@ -346,27 +356,20 @@ body .container {
 }
 
 .frame .frame-top {
-  top: 0;
-  left: 50%;
+  margin: auto;
   position: absolute;
-}
-
-@media screen and (max-width: 1024px) {
-  .frame .frame-top {
-    left: 47%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .frame .frame-top {
-    left: 47.5%;
-  }
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
 }
 
 .frame .frame-top a {
   top: inherit;
   transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85);
   margin-top: inherit;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .frame .frame-top a .bouncer {
@@ -379,24 +382,18 @@ body .container {
 }
 
 .frame .frame-bottom {
+  margin: auto;
+  position: absolute;
+  left: 0;
   bottom: 0;
-  left: 50%;
+  right: 0;
+  position: absolute;
   position: absolute;
 }
 
-@media screen and (max-width: 1024px) {
-  .frame .frame-bottom {
-    left: 47%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .frame .frame-bottom {
-    left: 47.5%;
-  }
-}
-
 .frame .frame-bottom a {
+  margin-left: auto;
+  margin-right: auto;
   bottom: inherit;
   transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85);
 }
@@ -544,22 +541,6 @@ body .container {
         margin-left: 0.5*$default-bouncing-size;
       }
     }*/
-}
-
-.frame .frame-vertical {
-  margin-left: -2.5rem;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .frame .frame-vertical {
-    margin-left: -1.25rem;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .frame .frame-vertical {
-    margin-left: -1rem;
-  }
 }
 
 .frame .frame-vertical a .bouncer {
@@ -1306,6 +1287,14 @@ navigation-mobile .title-bar {
 .toggle-mnu.on + #menu {
   opacity: 1;
   visibility: visible;
+}
+
+#Tech .slider {
+  display: block !important;
+}
+
+#Tech .slider .slide {
+  display: block !important;
 }
 
 #Approach {

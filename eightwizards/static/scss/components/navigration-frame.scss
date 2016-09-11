@@ -93,19 +93,16 @@ $icon_size: 5rem;
   }
 
   .frame-top {
-    top: 0;
-    left: 50%;
+    margin: auto;
     position: absolute;
-     @media screen and (max-width: 1024px) {
-      left: 47%;
-     }
-    @media screen and (max-width: 767px) {
-      left: 47.5%;
-     }
+    top: 0; left: 0; right: 0;
+    position: absolute;
     a {
       top:inherit;
       transition: all $default-animate-time $transition;
       margin-top: inherit;
+      margin-left: auto;
+      margin-right: auto;
       .bouncer {
         left: 0;
         top: 0;
@@ -117,16 +114,14 @@ $icon_size: 5rem;
   }
 
   .frame-bottom {
-     @media screen and (max-width: 1024px) {
-      left: 47%;
-     }
-     @media screen and (max-width: 767px) {
-      left: 47.5%;
-     }
-    bottom: 0;
-    left: 50%;
+     margin: auto;
+    position: absolute;
+    left: 0; bottom: 0; right: 0;
+    position: absolute;
     position: absolute;
     a {
+      margin-left: auto;
+      margin-right: auto;
       bottom: inherit;
       transition: all $default-animate-time $transition;
       .bouncer {
@@ -234,13 +229,6 @@ $icon_size: 5rem;
   }
 
   .frame-vertical {
-    margin-left: -$icon_size/2;
-   @media screen and (min-width: 768px) and (max-width: 1024px) {
-      margin-left: -($icon_size/4.0);
-    }
-    @media screen and (max-width: 767px)  {
-      margin-left: -($icon_size/5.0);
-    }
     a {
       .bouncer {
         width: 100%;

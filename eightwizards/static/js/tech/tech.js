@@ -52,7 +52,6 @@ angular
     $scope.slickConfig = {
       enabled: true,
       autoplay: true,
-      slidesToScroll: 1,
       dots: true,
       arrows: false,
       draggable: true,
