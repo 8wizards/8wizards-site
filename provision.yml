@@ -1,7 +1,8 @@
 - name: Provision Vagrant
   hosts: all
   become: true
-  user: vagrant
+  become_user: root
+  become_method: sudo
   vars:
     - mysql_pass: 123asd3d
     - mysql_database: eightwizards
@@ -63,9 +64,11 @@
         - git
 
     - name: Copy package.json to vagrant's fs
+      become_user: vagrant
       copy: src="package.json" dest=~/
 
     - name: Install npm packages
+      become_user: vagrant
       npm: path=~/
 
     - name: Install SASS
@@ -74,12 +77,14 @@
         user_install: no
 
     - name: Copy bowerrc to vagrant's fs
+      become_user: vagrant
       copy: src=".bowerrc" dest={{ vagrant_folder }}
 
     - name: Install Bower dependecies
       #become: True
       #become_user: vagrant
       # command: ~/node_modules/.bin/bower install {{ item }}
+      become_user: vagrant
       bower: path={{ vagrant_folder }} relative_execpath=~/node_modules/.bin
 
     # - name: Run Gulp

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&a59@nx#f7ms1=0dk=)8yn_kxyzy)io(kac-(qfavm4vg5g17e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get('DEBUG', True))
 
 ALLOWED_HOSTS = []
 
@@ -48,12 +48,10 @@ INSTALLED_APPS = [
     'team'
 ]
 
-DEBUG_APPS = [
-    'debug_toolbar'
-]
-
-if DEBUG:
-    INSTALLED_APPS += DEBUG_APPS
+# it's unstable now due to strange behaviour of sqlparse
+# DEBUG_APPS = [
+#     'debug_toolbar'
+# ]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -117,7 +115,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-# STATIC_ROOT = os.path.join(BASE, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, '../static_collected')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, '../static'),
 ]

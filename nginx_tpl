@@ -1,0 +1,46 @@
+# Do not edit the conf files directly, update the template in the repo.
+upstream wizards_server {
+    server unix://var/tmp/wizards.sock fail_timeout=0;
+}
+
+
+server {
+    server_name $hostname;
+    listen 80;
+    root /srv/wizards;
+
+
+    # the fewer of these mappings we have, the better
+    location ^~/static/ {
+        alias /srv/wizards/eightwizards/static_collected/;
+    }
+
+    location ^~/media/ {
+        alias /srv/wizards/eightwizards/media/;
+    }
+
+    location = /favicon.ico {
+        expires      7d;
+        access_log   off;
+        alias /srv/wizards/eightwizards/static/favicon.ico;
+    }
+
+    location ~* [.](jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|tar|mid|midi|wav|bmp|rtf|js|mov)$ {
+        access_log   off;
+        expires      24h;
+    }
+
+
+    location / {
+        proxy_redirect off;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        proxy_connect_timeout 60;
+        proxy_read_timeout 60;
+        proxy_send_timeout 60;
+        proxy_pass http://wizards_server;
+    }
+}
