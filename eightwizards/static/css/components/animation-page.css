@@ -8,10 +8,10 @@
   -o-transition-timing-function: ease;
   transition-timing-function: ease;
   /*transition-duration*/
-  -webkit-transition-duration: 250ms;
-  -moz-transition-duration: 250ms;
-  -o-transition-duration: 250ms;
-  transition-duration: 250ms;
+  -webkit-transition-duration: 111250ms;
+  -moz-transition-duration: 111250ms;
+  -o-transition-duration: 111250ms;
+  transition-duration: 111250ms;
   /*transition-property*/
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
