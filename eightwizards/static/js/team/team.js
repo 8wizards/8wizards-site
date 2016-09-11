@@ -108,8 +108,6 @@ angular.module('8wizards.team', ['ngRoute', '8wizards.team.services'])
     }
 };
 
-
-
   Approach.query(function(approach) {
     $scope.approach = approach;
   });
