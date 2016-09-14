@@ -3,6 +3,8 @@
     width: 28px;
     height: 28px;
     margin-top: 7px;
+    position: relative;
+    z-index: 10;
       @media screen and (max-width: 767px) {
         display: block;
       }

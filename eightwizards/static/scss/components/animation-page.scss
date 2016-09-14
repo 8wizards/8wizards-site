@@ -35,19 +35,15 @@ body{
 .ng-leave
 {
     /*transition-timing-function*/
-    -webkit-transition-timing-function: ease;
-       -moz-transition-timing-function: ease;
-         -o-transition-timing-function: ease;
-            transition-timing-function: ease;
+    -webkit-transition-timing-function: ease-in-out;
+       -moz-transition-timing-function: ease-in-out;
+         -o-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
     /*transition-duration*/
-    -webkit-transition-duration: 850ms;
-       -moz-transition-duration: 850ms;
-         -o-transition-duration: 850ms;
-            transition-duration: 850ms;
-    -webkit-transition-duration: 850ms;
-       -moz-transition-duration: 850ms;
-         -o-transition-duration: 850ms;
-            transition-duration: 850ms;
+    -webkit-transition-duration: 800ms;
+       -moz-transition-duration: 800ms;
+         -o-transition-duration: 800ms;
+            transition-duration: 800ms;
 
     /*transition-property*/
     -webkit-transition-property: opacity;
@@ -75,10 +71,10 @@ body{
 .crossFade.ng-enter
 {
     /*transition-duration*/
-    -webkit-transition-duration: 1100ms;
-       -moz-transition-duration: 1100ms;
-         -o-transition-duration: 1100ms;
-            transition-duration: 1100ms;
+    -webkit-transition-duration: 800ms;
+       -moz-transition-duration: 800ms;
+         -o-transition-duration: 800ms;
+            transition-duration: 800ms;
 
     opacity: 0;
 }
@@ -89,10 +85,10 @@ body{
 .crossFade.ng-leave
 {
     /*transition-duration*/
-    -webkit-transition-duration: 1100ms;
-       -moz-transition-duration: 1100ms;
-         -o-transition-duration: 1100ms;
-            transition-duration: 1100ms;
+    -webkit-transition-duration: 800ms;
+       -moz-transition-duration: 800ms;
+         -o-transition-duration: 800ms;
+            transition-duration: 800ms;
 
     opacity: 1;
 }

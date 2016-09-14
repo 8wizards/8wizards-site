@@ -10,7 +10,25 @@
 @import "components/technology";
 @import "components/approach";
 
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
 
+html{
+  width: 100%;
+  height: 100%;
+}
+body{
+  margin: 0;
+}
 
 .slick-dots {
   bottom: -20px;
@@ -20,7 +38,9 @@
   }
 }
 }
-
+.slick-slide{
+  outline: none!important;
+}
 .slider{
   width:70vw!important;
   margin:0 auto!important;
@@ -50,7 +70,7 @@
     outline: none!important;
   }
 
-  img{display: block;margin:auto;}
+  img{display: block;margin:auto;max-width: 100%;}
 }
 
 
@@ -378,22 +398,23 @@ body {
     position: relative;
     width: 5*$unit_size;
     background-size: 100%;
+       @media screen and (max-width: 1024px){
+   width: 4*$unit_size;
   }
-  &.medium {
+   @media screen and (max-width: 600px){
+     width: 3*$unit_size;
+  }
+  }
+      @media screen and (max-width: 1024px){
     margin: $default-bouncing-size auto 0;
     left: $default-bouncing-size;
-    a {
-      width: 4*$unit_size;
-    }
   }
-  &.small {
+   @media screen and (max-width: 600px){
     margin: 0;
     left: 10px;
     top: 7px;
-    a {
-      width: 3*$unit_size;
-    }
   }
+
 }
 .sub-tabs.on{
   opacity: 1;

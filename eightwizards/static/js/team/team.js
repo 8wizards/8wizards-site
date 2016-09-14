@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('8wizards.team', ['ngRoute', '8wizards.team.services'])
+angular.module('8wizards.team', ['ngRoute', 'ngAnimate', '8wizards.team.services'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/team', {
@@ -17,12 +17,13 @@ angular.module('8wizards.team', ['ngRoute', '8wizards.team.services'])
   });
 }])
 
-.controller('TeamTabsCtrl', function($scope) {
+.controller('TeamTabsCtrl', function($scope, $rootScope) {
   $scope.tabs = [
         {name: 'team', publicName: 'Team'},
         {name: 'approach', publicName: 'Approach'},
         {name: 'hiring', publicName: 'Hiring'}
   ];
+  $rootScope.pageAnimationClass = 'crossFade';
 
 })
 .controller('TeamCtrl', ['$scope', '$controller', 'Team', function($scope, $controller, Team) {

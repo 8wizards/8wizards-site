@@ -116,7 +116,9 @@
         min-height: 175px;
         background-color: transparent;
         border: 1px solid #fff;
+        width: 100%;
         border-radius: 5px;
+        box-sizing: border-box;
         color: #fff;
         margin: 0;
         padding: 10px 20px;
@@ -157,6 +159,7 @@
           top: 0;
           left: -23%;
           border-radius: 5px;
+          box-sizing: border-box;
            @media screen and (max-width: 770px){
               font-size: 13px;
            }
@@ -168,6 +171,7 @@
         > input[type="password"] {
           border-radius: 0 5px 5px 0;
           width: 100%;
+          font-size: 17px;
           margin: 0;
           background: transparent;
           color: #fff;
@@ -175,6 +179,7 @@
           display: inline-block;
           border: 1px solid #fff;
           padding: 7px 20px 7px 30px;
+          box-sizing: border-box;
 
           &:focus {
 
@@ -221,6 +226,7 @@
         font-weight: 600;
         border-radius: 5px;
         padding: 10px;
+        box-sizing: border-box;
       }
 
     }

@@ -28,7 +28,7 @@ angular
     $scope.selected = 0;
     $scope.technologies = [];
     $scope.breakpoints = [{
-      breakpoint: 768,
+      breakpoint: 1000,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2
@@ -55,7 +55,7 @@ angular
       dots: true,
       arrows: false,
       draggable: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 6000,
       method: {},
       event: {
           beforeChange: function (event, slick, currentSlide, nextSlide) {
