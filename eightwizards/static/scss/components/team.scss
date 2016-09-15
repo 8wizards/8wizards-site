@@ -110,6 +110,7 @@
     }
 
     .back {
+      box-sizing: border-box;
       span{
         color: $team-color;
         font-size: 14px;

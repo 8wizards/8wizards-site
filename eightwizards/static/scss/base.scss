@@ -8,6 +8,7 @@
 @import "components/menu";
 @import "components/technology";
 @import "components/approach";
+@import "components/animation-page";
 
 a{
   outline: none!important;
@@ -30,6 +31,8 @@ html{
 }
 body{
   margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .slick-dots {
