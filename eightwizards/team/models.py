@@ -20,7 +20,6 @@ class Member(models.Model):
     birthday = models.DateField()
     portrait = models.ImageField(blank=False, null=False)
 
-
     def __str__(self):
         return '{} {}'.format(self.first_name, self.last_name)
 
@@ -39,7 +38,7 @@ class PromoUrl(models.Model):
     category = models.CharField(max_length=64, choices=PROMO_URLS_CHOICES)
     url = models.URLField(blank=False, null=False)
     description = models.CharField(max_length=127)
-    member = models.ForeignKey(Member)
+    member = models.ForeignKey(Member, related_name='promo_urls')
 
     def __str__(self):
         return self.category
