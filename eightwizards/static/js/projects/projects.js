@@ -50,8 +50,8 @@ angular
     .controller('ProjectsTabsCtrl', function($scope) {
       $scope.tabs = [
         {name: 'projects', publicName: 'Web'},
-        {name: 'mobile', publicName: 'Mobile'},
-        {name: 'games', publicName: 'Games'}
+        {name: 'mobile', publicName: 'Mobile'}
+        /*{name: 'games', publicName: 'Games'}*/
       ];
       $scope.breakpoints = [{
           breakpoint: 740,

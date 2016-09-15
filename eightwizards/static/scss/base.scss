@@ -534,6 +534,8 @@ body {
       color: transparent;
     }
     @media screen and (max-width: 767px) {
+      text-align: center;
+      box-sizing: border-box;
       width: 100%;
       display: block;
       border: 1px solid #fff!important;
@@ -664,6 +666,9 @@ body {
     .button {
       &.active {
         color: $projects-color;
+      }
+       &:last-child{
+        border-right: 2px solid #fff!important;
       }
     }
   }

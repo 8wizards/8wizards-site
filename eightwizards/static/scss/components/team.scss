@@ -1,4 +1,8 @@
   #Team {
+    p{
+      color: $team-color;
+      display: inline;
+    }
     .content{
       @media screen and (max-width: 768px) and (max-height: 420px) {
     justify-content: center;
@@ -107,6 +111,7 @@
       border-radius: 7px;
       top: 0;
       right: 0;
+      overflow: hidden;
     }
 
     .back {
@@ -147,7 +152,7 @@
     }
 
     img{
-      max-width: 164px!important;
+      max-width: 100%;
     }
 
    /* .frame{

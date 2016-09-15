@@ -63,7 +63,10 @@ angular.module('8wizards.team', ['ngRoute', 'ngAnimate', '8wizards.team.services
     $scope.slickConfig = {
     enabled: true,
     autoplay: true,
+    verticalSwiping: false,
     dots: true,
+    slidesToShow: 8,
+    slidesToScroll: 8,
     arrows: false,
     draggable: true,
     autoplaySpeed: 5000,

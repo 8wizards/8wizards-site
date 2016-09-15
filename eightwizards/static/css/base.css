@@ -481,6 +481,11 @@ navigation-mobile .title-bar {
     }*/
 }
 
+#Team p {
+  color: #339999;
+  display: inline;
+}
+
 @media screen and (max-width: 768px) and (max-height: 420px) {
   #Team .content {
     -webkit-justify-content: center;
@@ -637,6 +642,7 @@ navigation-mobile .title-bar {
   border-radius: 7px;
   top: 0;
   right: 0;
+  overflow: hidden;
 }
 
 #Team .back {
@@ -678,7 +684,7 @@ navigation-mobile .title-bar {
 }
 
 #Team img {
-  max-width: 164px !important;
+  max-width: 100%;
 }
 
 .frame .frame-item:hover .large {
@@ -2233,6 +2239,8 @@ body {
 
 @media screen and (max-width: 767px) {
   .sub-tabs .button {
+    text-align: center;
+    box-sizing: border-box;
     width: 100%;
     display: block;
     border: 1px solid #fff !important;
@@ -2348,6 +2356,10 @@ body {
 
 #Projects .sub-tabs .button.active {
   color: #d16300;
+}
+
+#Projects .sub-tabs .button:last-child {
+  border-right: 2px solid #fff !important;
 }
 
 #Contacts {
