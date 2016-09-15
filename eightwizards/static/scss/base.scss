@@ -10,6 +10,13 @@
 @import "components/approach";
 @import "components/animation-page";
 
+.slick-dots li button:before {
+    color: white;
+}
+.slick-dots li.slick-active button:before {
+    color: white;
+}
+
 a{
   outline: none!important;
 }
@@ -443,6 +450,7 @@ body {
     flex-direction: column;
    }
   position: static;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   padding-top: 130px;
@@ -674,6 +682,20 @@ body {
   }
 }
 
+#Projects2 {
+  background-color: $projects-color;
+    .sub-tabs {
+    .button {
+      &.active {
+        color: $projects-color;
+      }
+       &:last-child{
+        border-right: 2px solid #fff!important;
+      }
+    }
+  }
+}
+
 #Contacts {
   background-color: $contacts-color;
     .sub-tabs {
@@ -728,6 +750,9 @@ body {
     .button {
       &.active {
         color: $team-color;
+      }
+        &:last-child{
+        border-right: 2px solid #fff!important;
       }
     }
   }

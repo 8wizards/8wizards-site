@@ -1,4 +1,11 @@
 #Projects {
+  .h3{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transition: .35s ease;
+    font-size: 18px;
+  }
   .content{
     @media screen and (max-width: 450px){
     height:80%;
@@ -23,7 +30,7 @@
       .rows-flex2{
       //flex-shrink: 1;
         padding-right: 30px;
-        h3{
+        .h3{
           @media screen and (max-width: 1024px){
             text-align: center;
             margin-top: 20px!important;
@@ -83,7 +90,7 @@
       margin-bottom: 0;
       margin-top: 4px;
      }
-    h3{
+    .h3{
     text-align: left;
     font-size: 25px;
     letter-spacing: 1px;
@@ -93,5 +100,33 @@
      }
     }
     }
+  }
+}
+
+#Projects2{
+  .content{
+    display: block;
+    overflow-y: scroll!important;
+    img{
+      max-width: 100%;
+    }
+    overflow-x: hidden;
+
+      &::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+&::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+&::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+}
   }
 }

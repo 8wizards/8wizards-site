@@ -21,7 +21,7 @@ angular.module('8wizards.team', ['ngRoute', 'ngAnimate', '8wizards.team.services
   $scope.tabs = [
         {name: 'team', publicName: 'Team'},
         {name: 'approach', publicName: 'Approach'},
-        {name: 'hiring', publicName: 'Hiring'}
+        /*{name: 'hiring', publicName: 'Hiring'}*/
   ];
 
 })

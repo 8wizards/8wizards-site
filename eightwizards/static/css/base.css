@@ -353,6 +353,14 @@ navigation-mobile .title-bar {
   padding: 0;
 }
 
+#Projects .h3 {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  transition: .35s ease;
+  font-size: 18px;
+}
+
 @media screen and (max-width: 450px) {
   #Projects .content {
     height: 80%;
@@ -396,7 +404,7 @@ navigation-mobile .title-bar {
 }
 
 @media screen and (max-width: 1024px) {
-  #Projects .slider .slide .rows-flex2 h3 {
+  #Projects .slider .slide .rows-flex2 .h3 {
     text-align: center;
     margin-top: 20px !important;
   }
@@ -460,12 +468,36 @@ navigation-mobile .title-bar {
   }
 }
 
-#Projects .slider .slide p h3 {
+#Projects .slider .slide p .h3 {
   text-align: left;
   font-size: 25px;
   letter-spacing: 1px;
   font-weight: 600;
   margin-bottom: 20px;
+}
+
+#Projects2 .content {
+  display: block;
+  overflow-y: scroll !important;
+  overflow-x: hidden;
+}
+
+#Projects2 .content img {
+  max-width: 100%;
+}
+
+#Projects2 .content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+#Projects2 .content::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+#Projects2 .content::-webkit-scrollbar-thumb {
+  background-color: #000000;
 }
 
 #Team {
@@ -1094,6 +1126,17 @@ navigation-mobile .title-bar {
   }
 }
 
+#Skills .skills-wrap {
+  width: 70%;
+  margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+  #Skills .skills-wrap {
+    width: 100%;
+  }
+}
+
 #Skills .skills-wrap h2 {
   font-size: 18px;
 }
@@ -1485,6 +1528,14 @@ body .container {
 .slideUp.ng-leave.ng-leave-active {
   /*transition-property*/
   transition-property: all;
+}
+
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
 }
 
 a {
@@ -2109,6 +2160,7 @@ body {
 
 .sub-tabs {
   position: static;
+  cursor: pointer;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2362,6 +2414,18 @@ body {
   border-right: 2px solid #fff !important;
 }
 
+#Projects2 {
+  background-color: #d16300;
+}
+
+#Projects2 .sub-tabs .button.active {
+  color: #d16300;
+}
+
+#Projects2 .sub-tabs .button:last-child {
+  border-right: 2px solid #fff !important;
+}
+
 #Contacts {
   background-color: #333;
 }
@@ -2416,6 +2480,10 @@ body {
 
 #Team .sub-tabs .button.active, #Approach .sub-tabs .button.active {
   color: #339999;
+}
+
+#Team .sub-tabs .button:last-child, #Approach .sub-tabs .button:last-child {
+  border-right: 2px solid #fff !important;
 }
 
 .orbit-bullets button {

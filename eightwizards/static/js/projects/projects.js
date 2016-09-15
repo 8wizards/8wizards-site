@@ -39,7 +39,6 @@ angular
         {name: 'games', publicName: 'Games'}*/
       ];
       $scope.projectDetail = {};
-      
       Projects.get(
         {id: $routeParams.id},
         function(res) {
@@ -68,10 +67,11 @@ angular
         enabled: true,
         autoplay: true,
         slidesToScroll: 1,
+        slidesToShow: 1,
         dots: true,
         arrows: false,
         draggable: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 6000,
         method: {},
         event: {
             beforeChange: function (event, slick, currentSlide, nextSlide) {

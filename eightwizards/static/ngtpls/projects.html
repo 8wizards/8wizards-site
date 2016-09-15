@@ -12,7 +12,7 @@
                     <a href="/#/projects/{{project.id}}" ><img ng-src="{{ project.preview }}" alt="ALT"></a>
                 </div>
                 <div class="rows-flex2">
-                    <h3>{{ project.name }}</h3>
+                    <a href="{{ project.repo_url }}" class="h3">{{ project.name }}</a>
                     <p ng-bind-html="project.large_description"></p>
                 </div>
              </div>

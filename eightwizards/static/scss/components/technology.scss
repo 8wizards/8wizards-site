@@ -20,6 +20,11 @@
     }
   }
   .skills-wrap{
+    width: 70%;
+    margin: auto;
+    @media screen and (max-width: 800px){
+      width: 100%;
+    }
     h2{
       font-size: 18px;
       li{
