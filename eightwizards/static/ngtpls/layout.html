@@ -1,24 +1,26 @@
-<div id="/static/ngtpls/layout.html">
+<div id="/static/ngtpls/layout.html" class="full-height">
     <header data-block="header">
-        <h1 data-block="header" class="title-logo show-for-large">
+
+        <h1 data-block="header" class="title-logo">
             <a href="#/" title="8Wizards"></a>
         </h1>
-        <h1 data-block="header" class="title-logo medium show-for-medium-only">
-            <a href="#/" title="8Wizards"></a>
-        </h1>
-        <h1 data-block="header" class="title-logo small show-for-small-only">
-            <a href="#/" title="8Wizards"></a>
-        </h1>
+
+        <navigation-mobile></navigation-mobile>
+
+        <div sub-tabs class="sub-tabs clearfix" data-block="tabs">
+            <a ng-repeat="tab in tabs" class="button" ng-class="{active: selected == $index}" ng-click="activate($event)"
+               rel="{{ tab.name }}">{{ tab.publicName }}</a>
+        </div>
+
     </header>
 
-    <div data-block="content">
-
+    <div data-block="content" class="content">
+        <div data-block="tabs"></div>
+        <div data-block="tabs-content"></div>
     </div>
 
-    <div data-block="nav">
+    <div data-block="nav"></div>
 
-    </div>
-    <footer data-block="footer">
+    <footer data-block="footer"></footer>
 
-    </footer>
 </div>

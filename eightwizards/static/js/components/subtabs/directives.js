@@ -3,18 +3,16 @@
 angular.module('8wizards.components.subtabs.directives', ['ngRoute', 'ngAnimate'])
 
 
-.directive('subTabs', ['$location', '$animate', '$document', '$timeout', function($location, $animate, $document, $timeout) {
+.directive('subTabs', ['$location','$rootScope', '$animate', '$document', '$timeout', function($location, $rootScope, $animate, $document, $timeout) {
   return {
     link: function (scope, element) {
-      console.info(scope);
-      console.info(element);
       scope.activate = function($event) {
-        var el = $event.target
-        console.info(el);
-        console.info($event.delegateTarget.rel)
+        var el = $event.target;
+        
         $animate.addClass(el, 'active').done(function() {
           $timeout(function() {
-            $location.url('/'+$event.delegateTarget.rel);
+            $rootScope.pageAnimationClass = 'customAnimation';
+            $location.url('/'+$event.delegateTarget.attributes.rel.value);
           }, 0)
         })
       }
@@ -32,9 +30,9 @@ angular.module('8wizards.components.subtabs.directives', ['ngRoute', 'ngAnimate'
                 }, 500);
             }
         }
-    }).directive('dynamicHeight', function(){
+    });/*.directive('dynamicHeight', function(){
         return function(scope, element) {
             console.info($(window).height());
             element.height(($(window).height() - $(window).height()*0.15));
         }
-});
+});*/

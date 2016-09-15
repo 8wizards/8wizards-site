@@ -1,10 +1,24 @@
-<section id="Projects"  class="container" data-extend-template="/static/ngtpls/layout.html">
-    <div data-block="nav">
-        <navigation-frame navigation="[
-        {'id': 'index', 'title': 'Back Home'},
-        {'id': 'tech', 'title': 'Technologies'},
-        {'id': 'team', 'title': 'Our Team'},
-        {'id': 'contacts', 'title': 'Get in Touch'}
-      ];"></navigation-frame>
-    </div>
+<section id="Projects"  class="container" data-extend-template="/static/ngtpls/navigation/projects-nav.html">
+
+    <div class="tabscontent" data-block="tabs-content">
+     <slick ng-if="projects.length"
+            class="slider single-item slide-opacity-zero"
+            settings="slickConfig" responsive="breakpoints"
+            slides-to-show=1 slides-to-scroll=1 >
+
+        <div class="slide-custom" ng-repeat="project in projects">
+            <div class="slide">
+                <div class="rows-flex1">
+                    <a href="/#/projects/{{project.id}}" ><img ng-src="{{ project.preview }}" alt="ALT"></a>
+                </div>
+                <div class="rows-flex2">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.large_description }}</p>
+                </div>
+             </div>
+        </div>
+
+    </slick>
+</div>
+
 </section>

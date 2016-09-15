@@ -2,7 +2,7 @@
   "name": "8wizards",
   "version": "0.0.1",
   "dependencies": {
-    "motion-ui":"1.2.2",
+    "motion-ui": "1.2.2",
     "foundation-sites": "6.2.3",
     "angular": "~1.5",
     "angular-route": "~1.5.0",
@@ -10,7 +10,11 @@
     "angular-resource": "~1.5.0",
     "angular-animate": "~1.5.0",
     "angular-blocks": "~0.1.10",
+    "angular-foundation": "https://github.com/pineconellc/angular-foundation-bower.git#^0.8.0",
     "modernizr": "~2.6.2",
-    "jquery": "~2.2.4"
+    "jquery": "~2.2.4",
+    "slick-carousel": "^1.6.0",
+    "angular-slick-carousel": "^3.1.7",
+    "ngSmoothScroll": "^2.0.0"
   }
 }
