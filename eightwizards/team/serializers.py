@@ -12,10 +12,10 @@ class MemberSerializer(serializers.ModelSerializer):
     Controls serialization of Member model for REST API.
     """
     role = RoleSerializer(read_only=True)
+    promo_urls = PromoUrlSerializer(many=True, read_only=True)
 
     class Meta:
         model = Member
-
 
 
 class PromoUrlSerializer(serializers.ModelSerializer):
