@@ -9,6 +9,9 @@ angular.module('8wizards.contacts', ['ngRoute'])
   });
 }])
 
-.controller('ContactsCtrl', [function() {
-  console.info('ContactsCtrl')
-}]);
+.controller('ContactsCtrl', function($scope) {
+   $scope.tabs = [
+        {name: 'contacts', publicName: 'Contacts US'},
+  ];
+
+});

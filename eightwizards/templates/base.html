@@ -11,48 +11,53 @@
         <meta name="apple-mobile-web-app-title" content="{{ SITE_INFO.site_name }}">
         <meta name="description" content="{% block page-description %}{{ SITE_INFO.site_descriptopn }}{% endblock %}">
         <meta name="keywords" content="{% block page-keywords %}{{ SITE_INFO.site_keywords }}{% endblock %}">
-
+         <!-- FONTS OPEN SANS  -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <!-- icons -->
         <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
-
+         <!-- fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <!-- styles -->
 
         <!-- vendors -->
-        <link rel="stylesheet" href="{% static "vendor/foundation-sites/dist/foundation.min.css" %}">
-        <link rel="stylesheet" href="{% static "vendor/motion-ui/dist/motion-ui.min.css" %}">
-       <script src="{% static "vendor/motion-ui/dist/motion-ui.min.js" %}"></script>
+        <link rel="stylesheet" href="{% static "vendor/slick-carousel/slick/slick.css" %}">
+        <link rel="stylesheet" href="{% static "vendor/slick-carousel/slick/slick-theme.css" %}">
 
         <!-- application -->
-        <link rel="stylesheet" href="{% static "css/styles.css" %}" title="default">
+        <link rel="stylesheet" href="{% static "css/base.css" %}" title="default">
 
         <script src="{% static 'vendor/modernizr/modernizr.js' %}"></script>
 
-    <!-- fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+
 
     </head>
     <body ng-app="8wizards">
-
-        <div ng-view class="container">
-
-        </div>
+        <div  ng-view class="container page-view" ng-class="pageAnimationClass">
+    </div>
 
     <!-- vendors -->
     <script src="{% static "vendor/jquery/dist/jquery.min.js" %}"></script>
-    <script src="{% static "vendor/foundation-sites/dist/foundation.min.js" %}"></script>
     <script src="{% static "vendor/angular/angular.min.js" %}"></script>
     <script src="{% static "vendor/angular-route/angular-route.min.js" %}"></script>
     <script src="{% static "vendor/angular-resource/angular-resource.min.js" %}"></script>
     <script src="{% static "vendor/angular-loader/angular-loader.min.js" %}"></script>
     <script src="{% static "vendor/angular-animate/angular-animate.min.js" %}"></script>
+     <script src="{% static "vendor/slick-carousel/slick/slick.js" %}"></script>
+    <script src="{% static "vendor/angular-slick-carousel/dist/angular-slick.min.js" %}"></script>
     <script src="{% static "vendor/angular-blocks/dist/angular-blocks.min.js" %}"></script>
-    <script src="{% static "vendor/motion-ui/dist/motion-ui.min.js" %}"></script>
+    <script src="{% static "vendor/angular-foundation/mm-foundation.js" %}"></script>
+    <script src="{% static "vendor/angular-sanitize/angular-sanitize.min.js" %}"></script>
+    <!-- <script src="{% static "vendor/motion-ui/dist/motion-ui.min.js" %}"></script> -->
+
+    <!-- <script src="{% static "vendor/foundation.app.js" %}"></script> -->
 
     <!-- application -->
     <script src="{% static "js/app.js" %}"></script>
     <script src="{% static "js/index/index.js" %}"></script>
     <script src="{% static "js/projects/projects.js" %}"></script>
+    <script src="{% static "js/projects/services.js" %}"></script>
     <script src="{% static "js/team/team.js" %}"></script>
+    <script src="{% static "js/team/services.js" %}"></script>
     <script src="{% static "js/tech/tech.js" %}"></script>
     <script src="{% static "js/tech/services.js" %}"></script>
     <script src="{% static "js/contacts/contacts.js" %}"></script>
@@ -62,5 +67,7 @@
     <script src="{% static "js/components/subtabs/subtabs.js" %}"></script>
     <script src="{% static "js/components/subtabs/directives.js" %}"></script>
     <script src="{% static "js/components/subtabs/filters.js" %}"></script>
+    <script src="{% static "js/components/mobileNav/mobileNav.js" %}"></script>
+    <script src="{% static "js/components/mobileNav/directives.js" %}"></script>
     </body>
 </html>

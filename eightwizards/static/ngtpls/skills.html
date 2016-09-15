@@ -1,10 +1,34 @@
-<div data-extend-template="/static/ngtpls/tech.html" class="container">
-    <div sub-tabs class="button-group expanded show-for-medium sub-tabs" data-block="tabs">
-        <a class="button left" ng-click="activate($event)" rel="tech">Technologies</a>
-        <a class="button active" rel="skills">Skills</a>
-        <a class="button right" ng-click="activate($event)" rel="certificates">Certificates</a>
-    </div>
-    <div class="row" data-block="tabs-content">
+<div class="container">
+    <section id="Skills"  class="container" data-extend-template="/static/ngtpls/layout.html">
+        <div data-block="nav">
+            <navigation-frame navigation="[
+                {'id': 'index', 'title': 'Back Home'},
+                {'id': 'team', 'title': 'Our Team'},
+                {'id': 'projects', 'title': 'Projects'},
+                {'id': 'contacts', 'title': 'Get in Touch'}
+            ];"></navigation-frame>
+        </div>
 
+
+
+    <div class="row" data-block="tabs-content">
+			<div class="skills-wrap">
+				<h2>At 8Wizards, we offer professional web & mobile development services that enclose a multitude of technologies and platforms:</h2>
+				<ul>
+					<li>Website development based on up-to-date frameworks and CMS solutions;</li>
+					<li>Custom website development from scratch;</li>
+					<li>Creating original modules, plugins, and add-ons;</li>
+					<li>eCommerce solutions;</li>
+					<li>iOS and Android development;</li>
+					<li>Mobile website optimization;</li>
+					<li>Backend & database development;</li>
+					<li>Software engineering;</li>
+					<li>Frontend development & customization;</li>
+					<li>Graphic design and branding;</li>
+					<li>UI/UX design;</li>
+					<li>SEO, SEM, SMM, PPC marketing, content marketing and copywriting.</li>
+				</ul>
+			</div>
     </div>
+    </section>
 </div>

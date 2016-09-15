@@ -6,13 +6,17 @@ angular.module('8wizards', [
     'ngResource',
     'ngAnimate',
     'angular-blocks',
+    'ngSanitize',
+    'mm.foundation',
     '8wizards.index',
     '8wizards.projects',
     '8wizards.contacts',
     '8wizards.team',
     '8wizards.tech',
     '8wizards.components.frame',
-    '8wizards.components.subtabs'
+    '8wizards.components.subtabs',
+    '8wizards.components.mobileNav',
+    'slickCarousel'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   //$locationProvider.hashPrefix('!');

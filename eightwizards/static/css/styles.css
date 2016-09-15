@@ -1,3 +1,11 @@
+
+.title-bar {
+  background: transparent;
+  color: #fefefe;
+  text-align: right;
+  padding: 1.2rem 1.5rem 0.5rem 0.5rem;
+}
+
 .frame-overlay .overlay {
   position: fixed;
   transition: all 0.4s cubic-bezier(0.91, 0.8, 0.66, 1.85); }

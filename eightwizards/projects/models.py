@@ -61,6 +61,7 @@ class Project(models.Model):
 
     repo_url = models.URLField(null=True, blank=True, help_text="Open Source repository URL")
     preview = models.ImageField(blank=False, null=False)
+    project_screen = models.ImageField(blank=True, null=True)
 
 
     def save(self, **kwargs):
