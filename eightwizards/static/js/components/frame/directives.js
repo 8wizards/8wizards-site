@@ -19,7 +19,9 @@ angular.module('8wizards.components.frame.directives', ['ngRoute', 'ngAnimate'])
          if (typeof(pageAnimationClass) === 'undefined') { // Use a default, your choice
             $rootScope.pageAnimationClass = 'crossFade';
         }
-        
+        /*else if(pageAnimationClass == 'standartTab') {
+          
+        }*/
         else { // Use the specified animation
             $rootScope.pageAnimationClass = pageAnimationClass;
         }

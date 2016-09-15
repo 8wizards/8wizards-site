@@ -7,19 +7,46 @@ angular
           .when('/projects', {
             templateUrl: '/static/ngtpls/projects.html',
             controller: 'ProjectsCtrl'
+          })
+          .when('/projects/:id', {
+            templateUrl: '/static/ngtpls/project-detail.html',
+            controller: 'ProjectDetailCtrl'
           });
       $routeProvider
           .when('/mobile', {
             templateUrl: '/static/ngtpls/projects.html',
             controller: 'MobileCtrl'
+          })
+          .when('/mobile/:id', {
+            templateUrl: '/static/ngtpls/projects.html',
+            controller: 'ProjectDetailCtrl'
           });
       $routeProvider
           .when('/games', {
             templateUrl: '/static/ngtpls/projects.html',
             controller: 'GamesCtrl'
+          })
+          .when('/games/:id', {
+            templateUrl: '/static/ngtpls/projects.html',
+            controller: 'ProjectDetailCtrl'
           });
 
     }])
+    .controller('ProjectDetailCtrl', ['$scope','Projects', '$routeParams', function($scope, Projects, $routeParams) {
+      $scope.tabs = [
+        /*{name: 'projects', publicName: 'Web'},
+        {name: 'mobile', publicName: 'Mobile'},
+        {name: 'games', publicName: 'Games'}*/
+      ];
+      $scope.projectDetail = {};
+      
+      Projects.get(
+        {id: $routeParams.id},
+        function(res) {
+          $scope.projectDetail = res;
+        }
+      )
+    }]) 
     .controller('ProjectsTabsCtrl', function($scope) {
       $scope.tabs = [
         {name: 'projects', publicName: 'Web'},

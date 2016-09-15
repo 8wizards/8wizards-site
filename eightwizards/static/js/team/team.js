@@ -17,13 +17,12 @@ angular.module('8wizards.team', ['ngRoute', 'ngAnimate', '8wizards.team.services
   });
 }])
 
-.controller('TeamTabsCtrl', function($scope, $rootScope) {
+.controller('TeamTabsCtrl', function($scope) {
   $scope.tabs = [
         {name: 'team', publicName: 'Team'},
         {name: 'approach', publicName: 'Approach'},
         {name: 'hiring', publicName: 'Hiring'}
   ];
-  $rootScope.pageAnimationClass = 'crossFade';
 
 })
 .controller('TeamCtrl', ['$scope', '$controller', 'Team', function($scope, $controller, Team) {

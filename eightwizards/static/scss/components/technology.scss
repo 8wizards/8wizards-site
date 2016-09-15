@@ -13,3 +13,18 @@
   }
 }
 }
+#Skills{
+    .content {
+        @media screen and (max-width: 450px){
+      display: block!important;
+    }
+  }
+  .skills-wrap{
+    h2{
+      font-size: 18px;
+      li{
+        font-size: 15px;
+      }
+    }
+  }
+}

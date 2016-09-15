@@ -3,9 +3,11 @@
 angular
     .module('8wizards.projects.services', ['ngResource'])
     .factory('Projects', function ($resource) {
-        return $resource('/api/v1/projects/:id', {}, {
-            query: {method: 'GET', params: {}, isArray: true}
-        });
+        return $resource('/api/v1/projects/:id', {id: '@id'} 
+        /*{
+            get: {method: 'GET', params: {}}
+        }*/
+        );
     })
     .factory('webProjects', function ($resource) {
         return $resource('/api/v1/categories/web-development/projects/', {}, {

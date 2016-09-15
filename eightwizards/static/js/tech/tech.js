@@ -20,7 +20,7 @@ angular
     $scope.tabs = [
           {name: 'tech', publicName: 'Technologies'},
           {name: 'skills', publicName: 'Skills'},
-          {name: 'certificates', publicName: 'Certificates'}
+          //{name: 'certificates', publicName: 'Certificates'}
     ]
   })
   .controller('TechCtrl', ['$scope', '$controller', 'Technology', function($scope, $controller, Technology) {

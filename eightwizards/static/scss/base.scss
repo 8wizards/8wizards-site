@@ -10,6 +10,9 @@
 @import "components/technology";
 @import "components/approach";
 
+a{
+  outline: none!important;
+}
 .clearfix {
   *zoom: 1;
   &:before,
@@ -675,6 +678,21 @@ body {
   }
 }
 
+#Skills {
+  background-color: $tech-color;
+  .sub-tabs {
+    .button {
+      &.active {
+        color: $tech-color;
+      }
+      &:last-child{
+        border-right: 2px solid #fff!important;
+      }
+    }
+
+  }
+}
+
 #Tech {
   .content{
     @media screen and (max-height: 570px){
@@ -689,6 +707,9 @@ body {
     .button {
       &.active {
         color: $tech-color;
+      }
+            &:last-child{
+        border-right: 2px solid #fff!important;
       }
     }
   }
@@ -717,11 +738,12 @@ body {
 
 .slide-opacity-zero{
   opacity:0;
+  visibility: hidden;
   transition: 0.2s ease;
 }
 .slick-initialized {
   opacity:1!important;
-
+  visibility: visible;
 }
 
 

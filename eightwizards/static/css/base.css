@@ -47,7 +47,7 @@ body .container {
 }
 
 .ng-enter {
-  opacity: 0;
+  opacity: 1;
 }
 
 .ng-enter.ng-enter-active {
@@ -65,7 +65,7 @@ body .container {
 /* crossFade */
 .crossFade.ng-enter {
   /*transition-duration*/
-  transition-duration: 800ms;
+  transition-duration: 750ms;
   opacity: 0;
 }
 
@@ -75,7 +75,7 @@ body .container {
 
 .crossFade.ng-leave {
   /*transition-duration*/
-  transition-duration: 800ms;
+  transition-duration: 750ms;
   opacity: 1;
 }
 
@@ -109,19 +109,11 @@ body .container {
 .slideRight.ng-leave {
   /*transition-property*/
   transition-property: all;
-  /*transform*/
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 
 .slideRight.ng-leave.ng-leave-active {
   /*transition-property*/
   transition-property: all;
-  /*transform*/
-  -webkit-transform: translate3d(100%, 0, 0);
-  -ms-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
 }
 
 /* slideLeft */
@@ -150,22 +142,18 @@ body .container {
 .slideLeft.ng-leave {
   /*transition-property*/
   transition-property: all;
-  /*transform*/
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 
 .slideLeft.ng-leave.ng-leave-active {
   /*transition-property*/
   transition-property: all;
-  /*transform*/
-  -webkit-transform: translate3d(-100%, 0, 0);
-  -ms-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
 }
 
 /* slideDown */
+.slideDown {
+  opacity: 1 !important;
+}
+
 .slideDown.ng-enter {
   /*transition-property*/
   transition-property: none;
@@ -187,19 +175,11 @@ body .container {
 .slideDown.ng-leave {
   /*transition-property*/
   transition-property: all;
-  /*transform*/
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 
 .slideDown.ng-leave.ng-leave-active {
   /*transition-property*/
   transition-property: all;
-  /*transform*/
-  -webkit-transform: translate3d(0, 100%, 0);
-  -ms-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
 }
 
 /* slideUp */
@@ -228,19 +208,11 @@ body .container {
 .slideUp.ng-leave {
   /*transition-property*/
   transition-property: all;
-  /*transform*/
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 
 .slideUp.ng-leave.ng-leave-active {
   /*transition-property*/
   transition-property: all;
-  /*transform*/
-  -webkit-transform: translate3d(0, -100%, 0);
-  -ms-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
 }
 
 .frame .frame-item:hover .large {
@@ -1314,6 +1286,20 @@ navigation-mobile .title-bar {
   display: block !important;
 }
 
+@media screen and (max-width: 450px) {
+  #Skills .content {
+    display: block !important;
+  }
+}
+
+#Skills .skills-wrap h2 {
+  font-size: 18px;
+}
+
+#Skills .skills-wrap h2 li {
+  font-size: 15px;
+}
+
 #Approach {
   background: #339999;
 }
@@ -1328,6 +1314,7 @@ navigation-mobile .title-bar {
 }
 
 #Approach .slider .slide p {
+  padding: 0;
   color: #fff;
   text-align: center;
   font-weight: 400;
@@ -1335,6 +1322,7 @@ navigation-mobile .title-bar {
   font-size: 14px;
   line-height: 18px;
   margin-bottom: 0;
+  margin-top: 0px;
 }
 
 #Approach .slider .slide p:first-child {
@@ -1355,7 +1343,7 @@ navigation-mobile .title-bar {
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   color: #fff;
 }
 
@@ -1488,6 +1476,10 @@ navigation-mobile .title-bar {
 
 #Approach .slider .slide .rows-photo .photo-item:last-child {
   margin-right: 0;
+}
+
+a {
+  outline: none !important;
 }
 
 .clearfix {
@@ -2361,6 +2353,18 @@ body {
   color: #333;
 }
 
+#Skills {
+  background-color: #333399;
+}
+
+#Skills .sub-tabs .button.active {
+  color: #333399;
+}
+
+#Skills .sub-tabs .button:last-child {
+  border-right: 2px solid #fff !important;
+}
+
 #Tech {
   background-color: #333399;
 }
@@ -2385,6 +2389,10 @@ body {
   color: #333399;
 }
 
+#Tech .sub-tabs .button:last-child {
+  border-right: 2px solid #fff !important;
+}
+
 #Team, #Approach {
   background-color: #339999;
 }
@@ -2400,9 +2408,11 @@ body {
 
 .slide-opacity-zero {
   opacity: 0;
+  visibility: hidden;
   transition: 0.2s ease;
 }
 
 .slick-initialized {
   opacity: 1 !important;
+  visibility: visible;
 }

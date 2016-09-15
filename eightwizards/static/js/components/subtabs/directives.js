@@ -3,13 +3,15 @@
 angular.module('8wizards.components.subtabs.directives', ['ngRoute', 'ngAnimate'])
 
 
-.directive('subTabs', ['$location', '$animate', '$document', '$timeout', function($location, $animate, $document, $timeout) {
+.directive('subTabs', ['$location','$rootScope', '$animate', '$document', '$timeout', function($location, $rootScope, $animate, $document, $timeout) {
   return {
     link: function (scope, element) {
       scope.activate = function($event) {
         var el = $event.target;
+        
         $animate.addClass(el, 'active').done(function() {
           $timeout(function() {
+            $rootScope.pageAnimationClass = 'customAnimation';
             $location.url('/'+$event.delegateTarget.attributes.rel.value);
           }, 0)
         })

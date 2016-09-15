@@ -1,6 +1,5 @@
 /* Transitions */
 
-
 body{
     position: relative;
     width: 100%;
@@ -53,7 +52,7 @@ body{
 }
 .ng-enter
 {
-    opacity: 0;
+    opacity: 1;
 }
 .ng-enter.ng-enter-active
 {
@@ -71,10 +70,10 @@ body{
 .crossFade.ng-enter
 {
     /*transition-duration*/
-    -webkit-transition-duration: 800ms;
-       -moz-transition-duration: 800ms;
-         -o-transition-duration: 800ms;
-            transition-duration: 800ms;
+    -webkit-transition-duration: 750ms;
+       -moz-transition-duration: 750ms;
+         -o-transition-duration: 750ms;
+            transition-duration: 750ms;
 
     opacity: 0;
 }
@@ -85,10 +84,10 @@ body{
 .crossFade.ng-leave
 {
     /*transition-duration*/
-    -webkit-transition-duration: 800ms;
-       -moz-transition-duration: 800ms;
-         -o-transition-duration: 800ms;
-            transition-duration: 800ms;
+    -webkit-transition-duration: 750ms;
+       -moz-transition-duration: 750ms;
+         -o-transition-duration: 750ms;
+            transition-duration: 750ms;
 
     opacity: 1;
 }
@@ -117,6 +116,7 @@ body{
 }
 .slideRight.ng-enter.ng-enter-active
 {
+
     /*transition-property*/
     -webkit-transition-property: all;
        -moz-transition-property: all;
@@ -136,12 +136,7 @@ body{
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
-    /*transform*/
-    -webkit-transform: translate3d(0,0,0);
-       -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-         -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+
 }
 .slideRight.ng-leave.ng-leave-active
 {
@@ -150,12 +145,7 @@ body{
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
-    /*transform*/
-    -webkit-transform: translate3d(100%,0,0);
-       -moz-transform: translate3d(100%,0,0);
-        -ms-transform: translate3d(100%,0,0);
-         -o-transform: translate3d(100%,0,0);
-            transform: translate3d(100%,0,0);
+
 }
 /* slideLeft */
 .slideLeft
@@ -197,12 +187,6 @@ body{
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
-    /*transform*/
-    -webkit-transform: translate3d(0,0,0);
-       -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-         -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
 }
 .slideLeft.ng-leave.ng-leave-active
 {
@@ -211,14 +195,12 @@ body{
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
-    /*transform*/
-    -webkit-transform: translate3d(-100%,0,0);
-       -moz-transform: translate3d(-100%,0,0);
-        -ms-transform: translate3d(-100%,0,0);
-         -o-transform: translate3d(-100%,0,0);
-            transform: translate3d(-100%,0,0);
+
 }
 /* slideDown */
+.slideDown{
+  opacity: 1 !important;
+}
 
 .slideDown.ng-enter
 {
@@ -255,12 +237,7 @@ body{
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
-    /*transform*/
-    -webkit-transform: translate3d(0,0,0);
-       -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-         -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+
 }
 .slideDown.ng-leave.ng-leave-active
 {
@@ -269,12 +246,7 @@ body{
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
-    /*transform*/
-    -webkit-transform: translate3d(0,100%,0);
-       -moz-transform: translate3d(0,100%,0);
-        -ms-transform: translate3d(0,100%,0);
-         -o-transform: translate3d(0,100%,0);
-            transform: translate3d(0,100%,0);
+
 }
 /* slideUp */
 .slideUp
@@ -316,12 +288,7 @@ body{
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
-    /*transform*/
-    -webkit-transform: translate3d(0,0,0);
-       -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-         -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+
 }
 .slideUp.ng-leave.ng-leave-active
 {
@@ -330,10 +297,5 @@ body{
        -moz-transition-property: all;
          -o-transition-property: all;
             transition-property: all;
-    /*transform*/
-    -webkit-transform: translate3d(0,-100%,0);
-       -moz-transform: translate3d(0,-100%,0);
-        -ms-transform: translate3d(0,-100%,0);
-         -o-transform: translate3d(0,-100%,0);
-            transform: translate3d(0,-100%,0);
+
 }

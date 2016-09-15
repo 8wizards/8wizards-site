@@ -9,7 +9,7 @@
         <div class="slide-custom" ng-repeat="project in projects">
             <div class="slide">
                 <div class="rows-flex1">
-                    <img ng-src="{{ project.preview }}" alt="ALT">
+                    <a href="/#/projects/{{project.id}}" ><img ng-src="{{ project.preview }}" alt="ALT"></a>
                 </div>
                 <div class="rows-flex2">
                     <h3>{{ project.name }}</h3>
