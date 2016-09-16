@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'landing',
     'configuration',
     'projects',
-    'team'
+    'team',
+    'email_manager'
 ]
 
 # it's unstable now due to strange behaviour of sqlparse
@@ -138,3 +139,14 @@ DEBUG_TOOLBAR_CONFIG = {
 MARKUP_FIELD_TYPES = (
     ('markdown', markdown.markdown),
 )
+
+
+# EMAIL
+
+EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
+EMAIL_POST = 587
+EMAIL_HOST_USER = 'user'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_USE_TLS = True
+
+EMAIl_SENDER = 'hi@8wizards.io'

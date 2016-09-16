@@ -22,3 +22,7 @@ REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 
 STATIC_ROOT = os.path.join(BASE_DIR, '../static_collected')
+
+
+EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', 'eightwizards'),
+EMAIL_HOST_PASSWORD = environ.get('EMAIL_HOST_PASSWORD', 'password')
