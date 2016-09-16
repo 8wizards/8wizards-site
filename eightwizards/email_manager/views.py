@@ -26,11 +26,15 @@ class EmailAPIViewSet(viewsets.GenericViewSet, viewsets.mixins.CreateModelMixin)
         headers = {'X-SMTPAPI': json.dumps({'category': 'ses-emails'})}
 
         subject = 'Ping. You have message from {}'.format(serializier.data.get('name'))
-        recipient_email = serializier.data.get('email')
-        if recipient_email:
-            text_content = serializier.data.get('message')
+        recipient_email = '{} <{}>'.format(serializier.data.get('name'), serializier.data.get('email'))
+        if not recipient_email:
+            return Response(status=status.HTTP_400_BAD_REQUEST, data=serializier.errors)
 
-            msg = EmailMultiAlternatives(subject, text_content, recipient_email,
-                                         [getattr(settings, 'EMAIL_SENDER', None)], headers=headers)
+        text_content = serializier.data.get('message')
 
-            msg.send(fail_silently=False)
+        msg = EmailMultiAlternatives(subject, text_content, recipient_email,
+                                     [getattr(settings, 'EMAIL_SENDER', None)], headers=headers)
+
+        res = msg.send()
+
+        return Response(res)

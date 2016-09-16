@@ -11,23 +11,29 @@
 
     <div class="tabscontent" data-block="tabs-content">
     <div class="flex-half">
-        <form action="#">
+        <form ng-submit="sendFromData()">
 
             <div>
-                <input type="text" id="first_name" name="first_name" required placeholder=" " />
+                <input type="text" id="first_name" name="first_name" placeholder=" " ng-model="form.name"
+                       ng-style="name" ng-change="fieldValidate(form.name, 'name')"/>
                 <label for="first_name">Name</label>
             </div>
 
             <div>
-                <input type="email" id="email" name="email" required placeholder=" " />
+                <input type="email" id="email" name="email" placeholder=" " ng-model="form.email"
+                       ng-style="email" ng-change="fieldValidate(form.email, 'email')"/>
                 <label for="email">Email</label>
             </div>
 
             <div class="textarea">
-                <textarea name="name" placeholder="Say Hello =)"></textarea>
+                <textarea name="message" placeholder="Say Hello =)" ng-model="form.message"
+                          ng-style="message" ng-change="fieldValidate(form.message, 'message')"></textarea>
             </div>
 
             <input type="submit" value="Get In Touch" />
+
+            <p ng-if="successMessage">{{ successMessage }}</p>
+            <p ng-if="errorMessage">{{ errorMessage }}</p>
 
         </form>
     </div>
