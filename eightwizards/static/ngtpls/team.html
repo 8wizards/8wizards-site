@@ -3,7 +3,7 @@
     <div class="tabscontent" data-block="tabs-content">
          <slick ng-if="team.length" class="slider slide-opacity-zero"  settings="slickConfig" responsive="breakpoints" slides-to-show=8 slides-to-scroll=8>
             <div class="slide clearfix" ng-repeat="member in team">
-                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flip-container" >
                     <div class="flipper">
                         <div class="front">
                             <img ng-src="{{ member.portrait }}" alt="">

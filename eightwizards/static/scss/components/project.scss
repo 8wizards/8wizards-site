@@ -12,10 +12,10 @@
     padding: 0;
     overflow-y: scroll;
     overflow-x: hidden;
-    justify-content: center!important;
+    display: block!important;
   }
    @media screen and (max-width: 330px){
-    justify-content: flex-start!important;
+    display: block!important;
   }
   }
   .slider{
@@ -25,10 +25,10 @@
       flex-wrap: nowrap!important;
        justify-content: space-between!important;
       .rows-flex1{
-        //flex-shrink: 1;
+        margin: 0 auto;
       }
       .rows-flex2{
-      //flex-shrink: 1;
+       margin: 0 auto;
         padding-right: 30px;
         .h3{
           @media screen and (max-width: 1024px){
@@ -57,10 +57,12 @@
         }
           .rows-flex1{
             //  flex-shrink: 5;
+            
             }
            .rows-flex2{
              // flex-shrink: 1;
               padding-right: 50px;
+             
              }
         }
 

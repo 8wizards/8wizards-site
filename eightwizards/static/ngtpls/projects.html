@@ -9,7 +9,8 @@
         <div class="slide-custom" ng-repeat="project in projects">
             <div class="slide">
                 <div class="rows-flex1">
-                    <a href="/#/projects/{{project.id}}" ><img ng-src="{{ project.preview }}" alt="ALT"></a>
+                    <a ng-if="project.project_screen" href="/#/projects/{{project.id}}"><img ng-src="{{ project.preview }}" alt="ALT"></a>
+                    <a ng-if="!project.project_screen" href=""><img ng-src="{{ project.preview }}" alt="ALT"></a>
                 </div>
                 <div class="rows-flex2">
                     <a href="{{ project.repo_url }}" class="h3">{{ project.name }}</a>

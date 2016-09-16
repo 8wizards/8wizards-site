@@ -42,9 +42,9 @@ angular
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
-        vertical: true,
+        autoplay: true,
         dots: false,
-        verticalSwiping: true,
+        autoplaySpeed: 4000,
         slidesToScroll: 1
       }
     }];
@@ -53,6 +53,8 @@ angular
       enabled: true,
       autoplay: true,
       dots: true,
+      slidesToShow: 3,
+        slidesToScroll: 3,
       arrows: false,
       draggable: true,
       autoplaySpeed: 6000,
