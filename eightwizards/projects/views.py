@@ -42,11 +42,8 @@ class ProjectViewSet(NestedViewSetMixin, viewsets.ReadOnlyModelViewSet):
     Writable operation will be allowed just for tuning machine
     """
 
-    queryset = Project.objects.all()
+    queryset = Project.objects.filter(status=ACTIVE)
     serializer_class = ProjectSerializer
-
-    def get_queryset(self):
-        return self.queryset.filter(status=ACTIVE)
 
 
 class MediaViewSet(viewsets.mixins.ListModelMixin, viewsets.GenericViewSet):
