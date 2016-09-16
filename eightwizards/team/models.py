@@ -1,5 +1,6 @@
 from django.db import models
 from markupfield.fields import MarkupField
+from common.constants.models import ACTIVE, ACTIVE_INACTIVE_CHOICES
 
 
 class Role(models.Model):
@@ -11,6 +12,7 @@ class Role(models.Model):
 
 
 class Member(models.Model):
+    status = models.BooleanField(choices=ACTIVE_INACTIVE_CHOICES, default=ACTIVE)
     first_name = models.CharField(blank=False, max_length=50)
     last_name = models.CharField(blank=False, max_length=50)
     nick_name = models.CharField(blank=True, max_length=127)

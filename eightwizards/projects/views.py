@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework_extensions.mixins import NestedViewSetMixin
+from common.constants.models import ACTIVE
 from .serializers import SkillSerializer, ProjectSerializer, MediaSerializer, TechnologySerializer, CategorySerializer
 from .models import Skill, Project, MediaResource, Technology, Category
 
@@ -13,7 +14,6 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all()
     lookup_field = 'slug'
     serializer_class = CategorySerializer
-
 
 
 class SkillViewSet(viewsets.ReadOnlyModelViewSet):
@@ -45,6 +45,8 @@ class ProjectViewSet(NestedViewSetMixin, viewsets.ReadOnlyModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
+    def get_queryset(self):
+        return self.queryset.filter(active=ACTIVE)
 
 
 class MediaViewSet(viewsets.mixins.ListModelMixin, viewsets.GenericViewSet):

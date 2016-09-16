@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from .serializers import MemberSerializer, PromoUrlSerializer, CertificationSerializer
+from common.constants.models import ACTIVE
 from .models import Member, PromoUrl, Certification
 
 
@@ -11,6 +12,9 @@ class MemberViewSet(viewsets.ReadOnlyModelViewSet):
 
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
+
+    def get_queryset(self):
+        return self.queryset.filter(active=ACTIVE)
 
 
 class PromoUrlViewSet(viewsets.ReadOnlyModelViewSet):

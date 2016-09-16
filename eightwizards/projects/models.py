@@ -1,8 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from markupfield.fields import MarkupField
-from team.models import Member
 from common.constants.models import ACTIVE, ACTIVE_INACTIVE_CHOICES
+from team.models import Member
 
 
 class Skill(models.Model):
@@ -17,7 +17,6 @@ class Technology(models.Model):
     name = models.CharField(blank=False, max_length=127)
     description = MarkupField(blank=False, max_length=2047, markup_type='markdown')
     logo = models.ImageField(blank=False, null=False)
-
 
     def __str__(self):
         return self.name
