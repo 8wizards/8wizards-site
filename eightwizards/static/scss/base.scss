@@ -402,6 +402,7 @@ body {
   margin: 2*$default-bouncing-size auto 0;
   position: absolute;
   left: 2*$default-bouncing-size;
+  z-index: 12412421;
   a {
     background: url("/static/img/logo_.svg") center center no-repeat transparent;
     display: block;
