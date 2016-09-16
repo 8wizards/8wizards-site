@@ -10,11 +10,8 @@ class MemberViewSet(viewsets.ReadOnlyModelViewSet):
     Writable operation will be allowed just for tuning machine
     """
 
-    queryset = Member.objects.all()
+    queryset = Member.objects.filter(status=ACTIVE)
     serializer_class = MemberSerializer
-
-    def get_queryset(self):
-        return self.queryset.filter(status=ACTIVE)
 
 
 class PromoUrlViewSet(viewsets.ReadOnlyModelViewSet):
