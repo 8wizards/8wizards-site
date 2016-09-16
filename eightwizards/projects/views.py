@@ -46,7 +46,7 @@ class ProjectViewSet(NestedViewSetMixin, viewsets.ReadOnlyModelViewSet):
     serializer_class = ProjectSerializer
 
     def get_queryset(self):
-        return self.queryset.filter(active=ACTIVE)
+        return self.queryset.filter(status=ACTIVE)
 
 
 class MediaViewSet(viewsets.mixins.ListModelMixin, viewsets.GenericViewSet):

@@ -14,7 +14,7 @@ class MemberViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = MemberSerializer
 
     def get_queryset(self):
-        return self.queryset.filter(active=ACTIVE)
+        return self.queryset.filter(status=ACTIVE)
 
 
 class PromoUrlViewSet(viewsets.ReadOnlyModelViewSet):
