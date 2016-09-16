@@ -1015,6 +1015,7 @@ navigation-mobile .title-bar {
   border-radius: 5px;
   padding: 10px;
   box-sizing: border-box;
+  cursor: pointer !important;
 }
 
 #Contacts .button {
