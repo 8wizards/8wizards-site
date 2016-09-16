@@ -20,3 +20,5 @@ DATABASES = {
 CONN_MAX_AGE = 8
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
+
+STATIC_ROOT = os.path.join(BASE_DIR, '../static_collected')
