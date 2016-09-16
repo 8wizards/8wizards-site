@@ -1,405 +1,701 @@
+@import variables
+@import mixins
+@import components/navigration-frame
+@import components/navigration-mobile
+@import components/project
+@import components/team
+@import components/contact
+@import components/menu
+@import components/technology
+@import components/approach
+@import components/animation-page
 
-.title-bar {
-  background: transparent;
-  color: #fefefe;
-  text-align: right;
-  padding: 1.2rem 1.5rem 0.5rem 0.5rem;
-}
+.slick-dots li button:before
+  color: white
 
-.frame-overlay .overlay {
-  position: fixed;
-  transition: all 0.4s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
-.frame-overlay .left {
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 100%; }
-.frame-overlay .right {
-  right: 0;
-  top: 0;
-  width: 0;
-  height: 100%; }
-.frame-overlay .top {
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%; }
-.frame-overlay .bottom {
-  left: 0;
-  bottom: 0;
-  height: 0;
-  width: 100%; }
-.frame-overlay .left.transition, .frame-overlay .right.transition {
-  width: 100%; }
-.frame-overlay .top.transition, .frame-overlay .bottom.transition {
-  height: 100%; }
+.slick-dots li.slick-active button:before
+  color: white
 
-.frame {
-  position: static; }
-  .frame ul {
-    list-style: none;
-    padding: 0;
-    margin: 0; }
-  .frame .frame-left {
-    left: 0;
-    top: 50vh;
-    text-align: left; }
-    .frame .frame-left a {
-      left: inherit;
-      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
-      .frame .frame-left a .bouncer {
-        left: 0;
-        top: 0; }
-      .frame .frame-left a:hover, .frame .frame-left a:active, .frame .frame-left a:focus {
-        left: 1.2rem; }
-  .frame .frame-right {
-    top: 50vh;
-    right: 0;
-    text-align: right; }
-    .frame .frame-right a {
-      right: inherit;
-      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
-      .frame .frame-right a .bouncer {
-        right: 0;
-        top: 0; }
-      .frame .frame-right a:hover, .frame .frame-right a:active, .frame .frame-right a:focus {
-        right: 1.2rem; }
-  .frame .frame-top {
-    top: 0;
-    left: 50%;
-    position: absolute; }
-    .frame .frame-top a {
-      top: inherit;
-      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85);
-      margin-top: inherit; }
-      .frame .frame-top a .bouncer {
-        left: 0;
-        top: 0; }
-      .frame .frame-top a:hover, .frame .frame-top a:active, .frame .frame-top a:focus {
-        top: 1.2rem; }
-  .frame .frame-bottom {
-    bottom: 0;
-    left: 50%;
-    position: absolute; }
-    .frame .frame-bottom a {
-      bottom: inherit;
-      transition: all 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
-      .frame .frame-bottom a .bouncer {
-        left: 0;
-        bottom: 0; }
-      .frame .frame-bottom a:hover, .frame .frame-bottom a:active, .frame .frame-bottom a:focus {
-        bottom: 1.2rem; }
-  .frame .frame-item {
-    position: fixed;
-    font-size: 1.15rem;
-    text-align: center;
-    cursor: pointer;
-    letter-spacing: 0.09rem;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    outline: none; }
-    .frame .frame-item a {
-      position: relative;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-      outline: none; }
-      .frame .frame-item a .icon {
-        border-radius: 50%;
-        display: block;
-        width: 5rem;
-        height: 5rem;
-        background-size: 100% !important; }
-        @media screen and (max-width: 39.9375em) {
-          .frame .frame-item a .icon {
-            width: 2rem;
-            height: 2rem; } }
-        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-          .frame .frame-item a .icon {
-            width: 2.5rem;
-            height: 2.5rem; } }
-      .frame .frame-item a .frame-label {
-        display: none;
-        opacity: 0;
-        transition: all cubic-bezier(0.91, 0.8, 0.66, 1.85); }
-      .frame .frame-item a .bouncer {
-        position: fixed; }
-      .frame .frame-item a:hover, .frame .frame-item a:active, .frame .frame-item a:focus {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-        outline: none; }
-        .frame .frame-item a:hover .frame-label, .frame .frame-item a:active .frame-label, .frame .frame-item a:focus .frame-label {
-          opacity: 1; }
-  .frame .frame-top .icon, .frame .frame-bottom .icon {
-    margin: 1.2rem auto; }
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-      .frame .frame-top .icon, .frame .frame-bottom .icon {
-        margin-top: 0.6rem;
-        margin-bottom: 0.6rem; } }
-    @media screen and (max-width: 39.9375em) {
-      .frame .frame-top .icon, .frame .frame-bottom .icon {
-        margin-top: 0.42rem;
-        margin-bottom: 0.42rem; } }
-  .frame .frame-right .icon, .frame .frame-left .icon {
-    margin: 0 1.2rem; }
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-      .frame .frame-right .icon, .frame .frame-left .icon {
-        margin-left: 0.6rem;
-        margin-right: 0.6rem; } }
-    @media screen and (max-width: 39.9375em) {
-      .frame .frame-right .icon, .frame .frame-left .icon {
-        margin-right: 0.42rem;
-        margin-left: 0.42rem; } }
-  .frame .frame-vertical {
-    margin-left: -2.5rem; }
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-      .frame .frame-vertical {
-        margin-left: -1.25rem; } }
-    @media screen and (max-width: 39.9375em) {
-      .frame .frame-vertical {
-        margin-left: -1rem; } }
-    .frame .frame-vertical a .bouncer {
-      width: 100%;
-      height: 0;
-      transition: height 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85); }
-    .frame .frame-vertical a:hover .bouncer, .frame .frame-vertical a:active .bouncer, .frame .frame-vertical a:focus .bouncer {
-      height: 1.2rem; }
-  .frame .frame-horyzontal a .bouncer {
-    transition: width 0.2s cubic-bezier(0.91, 0.8, 0.66, 1.85);
-    height: 100%;
-    width: 0; }
-  .frame .frame-horyzontal a:hover, .frame .frame-horyzontal a:active, .frame .frame-horyzontal a:focus {
-    width: 6.2rem; }
-    .frame .frame-horyzontal a:hover .bouncer, .frame .frame-horyzontal a:active .bouncer, .frame .frame-horyzontal a:focus .bouncer {
-      width: 1.2rem; }
+a
+  outline: none !important
 
-body {
-  font: 100% "Didact Gothic", sans-serif;
-  background-color: #fff;
-  overflow: hidden; }
+.clearfix
+  *zoom: 1
 
-.container {
-  width: 100%;
-  height: 100%;
-  position: relative; }
+  &:before,
+  &:after
+    display: table
+    content: ""
 
-.content {
-  width: 70%;
-  padding-top: 11%; }
+  &:after
+    clear: both
 
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-  overflow: hidden; }
+html
+  width: 100%
+  height: 100%
 
-.vertical {
-  transform: translateY(50%); }
+body
+  margin: 0
+  width: 100%
+  height: 100%
 
-.frame .to_index .icon {
-  background: url("/static/img/index_w.svg") left center no-repeat; }
-.frame .to_index .bouncer {
-  background-color: #fff; }
-.frame .to_projects .icon {
-  background: url("/static/img/works_w.svg") left center no-repeat; }
-.frame .to_projects .bouncer {
-  background-color: #d16300; }
-.frame .to_team .icon {
-  background: url("/static/img/team_w.svg") left center no-repeat; }
-.frame .to_team .bouncer {
-  background-color: #009356; }
-.frame .to_tech .icon {
-  background: url("/static/img/technology_w.svg") left center no-repeat; }
-.frame .to_tech .bouncer {
-  background-color: #6600b5; }
-.frame .to_contacts .icon {
-  background: url("/static/img/get_in_touch_w.svg") left center no-repeat; }
-.frame .to_contacts .bouncer {
-  background-color: #820060; }
-.frame .frame-overlay .to_index {
-  background-color: #fff; }
-.frame .frame-overlay .to_contacts {
-  background-color: #820060; }
-.frame .frame-overlay .to_tech {
-  background-color: #6600b5; }
-.frame .frame-overlay .to_team {
-  background-color: #009356; }
-.frame .frame-overlay .to_projects {
-  background-color: #d16300; }
+.slick-dots
+  bottom: -20px
 
-.main-logo {
-  margin: auto;
-  position: absolute;
-  left: 0;
-  top: 50vh;
-  width: 100%;
-  -webkit-transform-origin: center bottom;
-  transform-origin: center bottom;
-  transform: translateY(-50%) !important; }
-  .main-logo a {
-    background: url("/static/img/8wizards_logo.svg") center center no-repeat transparent;
-    display: block;
-    height: 26rem;
-    margin: auto;
-    position: relative;
-    width: 26rem;
-    background-size: 100%; }
-  .main-logo.medium a {
-    height: 20rem;
-    width: 20rem; }
-  .main-logo.small a {
-    height: 16rem;
-    width: 16rem; }
+  li button
+    &:before
+      font-size: 12px
 
-.title-logo {
-  margin: 2.4rem auto 0;
-  position: absolute;
-  left: 2.4rem; }
-  .title-logo a {
-    background: url("/static/img/logo_.svg") center center no-repeat transparent;
-    display: block;
-    height: 2rem;
-    margin: auto;
-    position: relative;
-    width: 10rem;
-    background-size: 100%; }
-  .title-logo.medium {
-    margin: 1.2rem auto 0;
-    left: 1.2rem; }
-    .title-logo.medium a {
-      width: 8rem; }
-  .title-logo.small {
-    margin: 1.02rem auto 0;
-    left: 1.02rem; }
-    .title-logo.small a {
-      width: 6rem; }
+.slick-slide
+  outline: none !important
 
-.sub-tabs {
-  margin: -1rem auto 1rem !important;
-  width: 60%; }
-  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-    .sub-tabs {
-      width: 90%; } }
-  .sub-tabs .button {
-    background: transparent;
-    font-size: 1.7rem;
-    padding: 0.4rem 1rem 0.5rem;
-    margin: 0 !important;
-    border: 0.1rem solid #fff;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    outline: none; }
-    .sub-tabs .button:hover, .sub-tabs .button:focus, .sub-tabs .button:active {
-      background: transparent;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-      outline: none; }
-    .sub-tabs .button.active {
-      background: #fff;
-      color: transparent; }
-    .sub-tabs .button.left {
-      border-top-left-radius: 0.5rem;
-      border-bottom-left-radius: 0.5rem;
-      border-right: 0; }
-    .sub-tabs .button.right {
-      border-top-right-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem;
-      border-left: 0; }
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-      .sub-tabs .button {
-        font-size: 1.4rem;
-        margin-top: 1rem !important;
-        padding: 0.4em 1rem 0.5rem; } }
-    @media screen and (max-width: 39.9375em) {
-      .sub-tabs .button {
-        font-size: 1.3rem;
-        margin-top: 1rem !important;
-        padding: 0.4em 1rem 0.5rem; } }
+.slider
+  width: 70vw !important
+  margin: 0 auto !important
+  text-align: center !important
+  padding: 0 0 20px 0 !important
+  display: flex !important
+  justify-content: center !important
+  align-items: center !important
+  flex: 1 100% !important
+  flex-wrap: nowrap !important
+  background: transparent
+  height: auto !important
 
-.tabscontent {
-  width: 90%;
-  margin: 0 auto !important; }
-  .tabscontent h3 {
-    color: #fff;
-    text-align: center; }
-  .tabscontent p {
-    color: #fff; }
+  @media screen and (min-width: 768px) and (max-width: 1024px)
+    width: 75vw !important
 
-#Index {
-  background-color: #fff; }
-  #Index .frame .frame-label {
-    display: inline;
-    color: #C5C5C5;
-    text-decoration: none;
-    position: relative;
-    font-weight: bold;
-    text-align: center; }
-  #Index .frame .frame-right .icon, #Index .frame .frame-left .icon {
-    display: inline-block; }
-  #Index .frame .frame-right .frame-label, #Index .frame .frame-left .frame-label {
-    top: -2rem; }
-  #Index .frame .frame-top {
-    margin-left: -2.6rem; }
-    @media screen and (max-width: 39.9375em) {
-      #Index .frame .frame-top {
-        margin-left: -1.05rem; } }
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-      #Index .frame .frame-top {
-        margin-left: -1.25rem; } }
-  #Index .frame .frame-bottom {
-    margin-left: -3em; }
-    @media screen and (max-width: 39.9375em) {
-      #Index .frame .frame-bottom {
-        margin-left: -1rem; } }
-    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-      #Index .frame .frame-bottom {
-        margin-left: -1.2rem; } }
-  #Index .frame .to_index .icon {
-    background: url("/static/img/index.svg") left center no-repeat; }
-  #Index .frame .to_projects .icon {
-    background: url("/static/img/works.svg") left center no-repeat; }
-  #Index .frame .to_team .icon {
-    background: url("/static/img/team.svg") left center no-repeat; }
-  #Index .frame .to_tech .icon {
-    background: url("/static/img/technology.svg") left center no-repeat; }
-  #Index .frame .to_contacts .icon {
-    background: url("/static/img/get_in_touch.svg") left center no-repeat; }
+  @media screen and (max-width: 767px)
+    width: 65vw !important
 
-#Projects {
-  background-color: #d16300; }
+  .slide
+    display: flex !important
+    flex: 1 100% !important
+    justify-content: center !important
+    align-items: center !important
+    flex-wrap: wrap !important
+    margin: 0 10px
+    outline: none !important
 
-#Contacts {
-  background-color: #820060; }
+  img
+    display: block
+    margin: auto
+    max-width: 100%
 
-#Tech {
-  background-color: #6600b5; }
-  #Tech .sub-tabs .button.active {
-    color: #6600b5; }
+.full-height
+  width: 100%
+  height: 100%
 
-#Team {
-  background-color: #009356; }
+body
+  font-family: 'Open Sans', sans-serif
+  font-weight: 400
+  background-color: $reset-color
+  min-height: 320px
+  overflow: hidden
 
-/*# sourceMappingURL=base.css.map */
+  @media screen and (max-height: 550px)
+    overflow-y: scroll
+
+.container
+  width: 100%
+  height: 100%
+  position: relative
+
+.content
+  width: 70%
+  margin: 10px auto 0
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  padding: 0
+
+  &::-webkit-scrollbar
+    width: 0px
+    background-color: transparent
+    border-radius: 10px
+
+  &::-webkit-scrollbar-track
+    border-radius: 10px
+    background-color: transparent
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background-color: transparent
+    border: none
+
+  @media screen and (min-height: 1100px)
+    height: 79vh
+
+  @media screen and (max-height: 1100px)
+    height: 78vh
+
+  @media screen and (max-height: 1050px)
+    height: 77vh
+
+  @media screen and (max-height: 1000px)
+    height: 69vh
+
+  @media screen and (max-height: 950px)
+    height: 68vh
+
+  @media screen and (max-height: 900px)
+    height: 66vh
+
+  @media screen and (max-height: 850px)
+    height: 64vh
+
+  @media screen and (max-height: 800px)
+    height: 62vh
+
+  @media screen and (max-height: 750px)
+    height: 60vh
+
+  @media screen and (max-height: 725px)
+    height: 58vh
+
+  @media screen and (max-height: 685px)
+    height: 56vh
+
+  @media screen and (max-height: 665px)
+    height: 53vh
+    padding: 0
+    overflow-y: scroll
+    overflow-x: hidden
+    justify-content: space-between
+
+  @media screen and (max-height: 620px)
+    height: 51vh
+    padding: 0
+    overflow-y: scroll
+    overflow-x: hidden
+    justify-content: space-between
+
+  @media screen and (max-height: 595px)
+    height: 49vh
+    padding: 0
+    overflow-y: scroll
+    overflow-x: hidden
+    justify-content: space-between
+
+  @media screen and (max-height: 570px)
+    height: 47vh
+    padding: 0
+    overflow-y: scroll
+    overflow-x: hidden
+    justify-content: space-between
+
+  @media screen and (max-width: 768px) and (max-height: 420px)
+    height: 69vh
+
+  @media screen and (max-width: 768px) and (max-height: 380px)
+    height: 66vh
+
+  @media screen and (max-width: 768px) and (max-height: 340px)
+    height: 61vh
+
+  @media screen and (max-width: 1024px)
+
+  @media screen and (max-width: 1024px) and (max-height: 900px)
+    height: 73vh
+
+  @media screen and (max-width: 1024px) and (max-height: 850px)
+    height: 71vh
+
+  @media screen and (max-width: 1024px) and (max-height: 800px)
+    height: 69vh
+
+  @media screen and (max-width: 1024px) and (max-height: 750px)
+    height: 67vh
+
+  @media screen and (max-width: 1024px) and (max-height: 700px)
+    height: 65vh
+
+  @media screen and (max-width: 1024px) and (max-height: 650px)
+    height: 63vh
+
+  @media screen and (max-width: 1024px) and (max-height: 600px)
+    height: 61vh
+
+  @media screen and (max-width: 768px) and (max-height: 800px)
+    height: 84vh
+
+  @media screen and (max-width: 768px) and (max-height: 750px)
+    height: 82vh
+
+  @media screen and (max-width: 768px) and (max-height: 700px)
+    height: 80vh
+
+  @media screen and (max-width: 768px) and (max-height: 650px)
+    height: 78vh
+
+  @media screen and (max-width: 768px) and (max-height: 600px)
+    height: 76vh
+
+  @media screen and (max-width: 768px) and (max-height: 550px)
+    height: 74vh
+
+  @media screen and (max-width: 768px) and (max-height: 500px)
+    height: 72vh
+
+  @media screen and (max-width: 768px) and (max-height: 450px)
+    height: 70vh
+
+  @media screen and (max-width: 768px) and (max-height: 400px)
+    height: 68vh
+
+  @media screen and (max-width: 768px) and (max-height: 350px)
+    height: 62vh
+
+  @media screen and (max-width: 450px) and (min-height: 700px)
+    height: 82vh !important
+
+  @media screen and (max-width: 450px)
+    width: 65% !important
+    height: 80%
+    padding: 0
+    overflow-y: scroll
+    overflow-x: hidden
+    justify-content: flex-start
+
+  @media screen and (max-width: 330px)
+    height: 77% !important
+
+.hidden
+  visibility: hidden
+  opacity: 0
+  overflow: hidden
+
+// Prepare uniqueness per section
+.frame
+  .to_index
+    .icon
+      background: url("/static/img/index_w.svg") left center no-repeat
+
+    .bouncer
+      background-color: $index-color
+
+  .to_projects
+    .icon
+      background: url("/static/img/works_w.svg") left center no-repeat
+
+    .bouncer
+      background-color: $projects-color
+
+  .to_team
+    .icon
+      background: url("/static/img/team_w.svg") left center no-repeat
+
+    .bouncer
+      background-color: $team-color
+
+  .to_tech
+    .icon
+      background: url("/static/img/technology_w.svg") left center no-repeat
+
+    .bouncer
+      background-color: $tech-color
+
+  .to_contacts
+    .icon
+      background: url("/static/img/get_in_touch_w.svg") left center no-repeat
+
+    .bouncer
+      background-color: $contacts-color
+
+  .frame-overlay
+    .to_index
+      background-color: $index-color
+
+    .to_contacts
+      background-color: $contacts-color
+
+    .to_tech
+      background-color: $tech-color
+
+    .to_team
+      background-color: $team-color
+
+    .to_projects
+      background-color: $projects-color
+
+// Main Logo
+.main-logo
+  margin: auto
+  position: absolute
+  left: 0
+  top: 46vh
+  width: 100%
+  -webkit-transform-origin: center bottom
+  transform-origin: center bottom
+  transform: translateY(-50%) !important
+
+  @media screen and (max-width: 1024px)
+    top: 48vh
+
+  @media screen and (max-width: 760px)
+    top: 50vh
+
+  a
+    background: url("/static/img/8wizards_logo.svg") center center no-repeat transparent
+    display: block
+    height: 13 * $unit_size
+    margin: auto
+    position: relative
+    width: 13 * $unit_size
+    background-size: 100%
+
+    @media screen and (max-width: 1024px)
+      height: 10 * $unit_size
+      width: 10 * $unit_size
+
+    @media screen and (max-width: 600px)
+      height: 8 * $unit_size
+      width: 8 * $unit_size
+
+    @media screen and (max-width: 750px) and (max-height: 400px)
+      height: 7 * $unit_size
+      width: 7 * $unit_size
+
+    @media screen and (max-width: 750px) and (max-height: 350px)
+      height: 6 * $unit_size
+      width: 6 * $unit_size
+
+// Title Logo
+.title-logo
+  margin: (2 * $default-bouncing-size) auto 0
+  position: absolute
+  left: 2 * $default-bouncing-size
+
+  a
+    background: url("/static/img/logo_.svg") center center no-repeat transparent
+    display: block
+    height: $unit_size
+    margin: auto
+    position: relative
+    width: 5 * $unit_size
+    background-size: 100%
+
+    @media screen and (max-width: 1024px)
+      width: 4 * $unit_size
+
+    @media screen and (max-width: 600px)
+      width: 3 * $unit_size
+
+  @media screen and (max-width: 1024px)
+    margin: $default-bouncing-size auto 0
+    left: $default-bouncing-size
+
+  @media screen and (max-width: 600px)
+    margin: 0
+    left: 10px
+    top: 7px
+
+.sub-tabs.on
+  opacity: 1
+
+  @media screen and (max-width: 767px)
+    display: flex
+    flex-direction: column
+
+  visibility: visible
+  height: auto
+  transition: .35s ease
+
+  a
+    padding: 8px 15px
+
+.sub-tabs-wrap
+  margin: 0 auto
+
+.sub-tabs
+  @media screen and (max-width: 767px)
+    display: flex
+    flex-direction: column
+
+  position: static
+  cursor: pointer
+  display: flex
+  justify-content: center
+  padding-top: 130px
+  transition: .35s ease
+  margin: 0 auto !important
+  width: auto
+
+  @media screen and (max-width: 1024px)
+    padding-top: 100px
+
+  @media screen and (max-width: 767px)
+    opacity: 0
+    visibility: hidden
+    float: right
+    max-width: 295px
+    text-align: right
+    background-color: rgba(0, 0, 0, 0.8)
+    top: 60px
+    border: #111 4px solid
+    position: absolute
+    right: 10px
+    z-index: 2
+    padding: 20px 20px !important
+
+  @media screen and (min-width: 767px)
+    opacity: 1 !important
+
+  .button
+    background: transparent
+    position: relative
+    -webkit-transition: .25s ease
+    -moz-transition: .25s ease
+    -ms-transition: .25s ease
+    -o-transition: .25s ease
+    transition: .25s ease
+    font-size: 1.7rem
+    padding: 0.4rem 3vw 0.5rem
+    margin: 0 !important
+    border: 0.15rem solid #fff
+    float: left
+
+    &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 0
+      background-color: #fff
+      bottom: 0
+      left: 0
+      opacity: 0
+      -webkit-transition: .25s ease
+      -moz-transition: .25s ease
+      -ms-transition: .25s ease
+      -o-transition: .25s ease
+      transition: .25s ease
+
+    &:hover
+      &:after
+        opacity: 1
+        height: 5px
+
+    &:first-child
+      border-radius: $border-radius-size 0 0 $border-radius-size
+
+    &:nth-child(2)
+      border-left: none
+      border-right: none
+
+    &:last-child
+      border-radius: 0 $border-radius-size $border-radius-size 0
+
+    @media screen and (max-width: 767px)
+      padding: 8px 15px !important
+
+    &:last-child
+      @media screen and (max-width: 767px)
+        margin: 0 !important
+
+    +prevent-highlight
+
+    &:hover, &:focus, &:active
+      background: transparent
+
+      +prevent-highlight
+
+    &.active
+      background: #fff
+      color: transparent
+
+    @media screen and (max-width: 767px)
+      text-align: center
+      box-sizing: border-box
+      width: 100%
+      display: block
+      border: 1px solid #fff !important
+      border-radius: 5px !important
+      margin: 0 0 15px !important
+      font-size: 1.2rem
+
+.tabscontent
+  h3
+    color: #fff
+    text-align: center
+
+  p
+    color: #fff
+
+  .row
+    margin: 0 auto !important
+
+    // prevent row margins
+
+// Extend frame styles for main screen
+#Index
+  background-color: $index-color
+
+  .content
+    margin-top: 0
+
+  .frame
+    .frame-label
+      display: block
+      color: #C5C5C5
+      text-decoration: none
+      position: absolute
+      font-weight: bold
+      text-align: center
+
+    .frame-right
+      .icon
+        display: inline-block
+
+        //margin: 0 $default-bouncing-size+0.5rem;
+
+      .frame-label
+        top: 44px
+        right: 95px
+
+    .frame-left
+      .icon
+        display: inline-block
+
+        //margin: 0 $default-bouncing-size+0.5rem;
+
+      .frame-label
+        top: 44px
+        left: 95px
+
+    .frame-top, .frame-bottom
+      .icon
+        //margin: $default-bouncing-size+0.5rem auto;
+
+    .frame-top
+      .frame-label
+        top: 80px
+        padding-top: 30px
+        left: 10px
+
+      /* margin-left: -2.6rem;
+       *@media screen and (max-width: 39.9375em) {
+       *  margin-left: -1.05rem;
+       *}
+       *@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+       *  margin-left: -1.25rem;
+       *}
+
+    .frame-bottom
+      .frame-label
+        bottom: 80px
+        padding-bottom: 30px
+        right: 0
+
+      /*margin-left: -3em;
+       *@media screen and (max-width: 39.9375em) {
+       *  margin-left: -1rem;
+       *}
+       *@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+       *  margin-left: -1.2rem;
+       *}
+
+    .to_index
+      .icon
+        background: url("/static/img/index.svg") left center no-repeat
+
+    .to_projects
+      .icon
+        background: url("/static/img/works.svg") left center no-repeat
+
+    .to_team
+      .icon
+        background: url("/static/img/team.svg") left center no-repeat
+
+    .to_tech
+      .icon
+        background: url("/static/img/technology.svg") left center no-repeat
+
+    .to_contacts
+      .icon
+        background: url("/static/img/get_in_touch.svg") left center no-repeat
+
+#Projects
+  background-color: $projects-color
+
+  .sub-tabs
+    .button
+      &.active
+        color: $projects-color
+
+      &:last-child
+        border-right: 2px solid #fff !important
+
+#Projects2
+  background-color: $projects-color
+
+  .sub-tabs
+    .button
+      &.active
+        color: $projects-color
+
+      &:last-child
+        border-right: 2px solid #fff !important
+
+#Contacts
+  background-color: $contacts-color
+
+  .sub-tabs
+    .button
+      &.active
+        color: $contacts-color
+
+#Skills
+  background-color: $tech-color
+
+  .sub-tabs
+    .button
+      &.active
+        color: $tech-color
+
+      &:last-child
+        border-right: 2px solid #fff !important
+
+#Tech
+  .content
+    @media screen and (max-height: 570px)
+      justify-content: center !important
+
+    @media screen and (max-width: 450px)
+      justify-content: center !important
+
+  background-color: $tech-color
+
+  .sub-tabs
+    .button
+      &.active
+        color: $tech-color
+
+      &:last-child
+        border-right: 2px solid #fff !important
+
+#Team, #Approach
+  background-color: $team-color
+
+  .sub-tabs
+    .button
+      &.active
+        color: $team-color
+
+      &:last-child
+        border-right: 2px solid #fff !important
+
+// Extend foundation
+.orbit-bullets
+  button
+    width: 0.8rem
+    height: 0.8rem
+
+.slide-opacity-zero
+  opacity: 0
+  visibility: hidden
+  transition: 0.2s ease
+
+.slick-initialized
+  opacity: 1 !important
+  visibility: visible
