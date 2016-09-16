@@ -10,10 +10,10 @@ angular
   }])
 
   .factory('contactUs', ['$resource', function($resource) {
-    return $resource('/api/v1/email')
+    return $resource('/api/v1/email/')
   }])
 
-  .controller('ContactsCtrl', ['$scope', 'contactUs', function($scope, contactUs) {
+  .controller('ContactsCtrl', ['$scope', 'contactUs', '$document', '$http', function($scope, contactUs, $document, $http) {
      $scope.tabs = [
           {name: 'contacts', publicName: 'Contacts US'}
     ];
@@ -22,6 +22,8 @@ angular
       email: '',
       message: ''
     };
+
+    $http.defaults.headers.common['X-CSRFToken'] = $document.context.cookie.split('csrftoken=')[1];
 
     var errorStyle = {'border-color': 'red'},
         okStyle = {'border-color': 'inherit'};
