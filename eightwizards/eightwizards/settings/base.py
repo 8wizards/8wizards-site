@@ -150,3 +150,20 @@ EMAIL_HOST_PASSWORD = 'password'
 EMAIL_USE_TLS = True
 
 EMAIl_SENDER = 'hi@8wizards.io'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    '': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
