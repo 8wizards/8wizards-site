@@ -2107,6 +2107,7 @@ body {
   margin: 2.4rem auto 0;
   position: absolute;
   left: 2.4rem;
+  z-index: 12412421;
 }
 
 .title-logo a {
