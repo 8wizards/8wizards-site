@@ -143,13 +143,13 @@ MARKUP_FIELD_TYPES = (
 
 # EMAIL
 
-EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
-EMAIL_POST = 587
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'user'
 EMAIL_HOST_PASSWORD = 'password'
 EMAIL_USE_TLS = True
 
-EMAIl_SENDER = 'hi@8wizards.io'
+EMAIL_SENDER = 'hi@8wizards.com'
 
 
 LOGGING = {
