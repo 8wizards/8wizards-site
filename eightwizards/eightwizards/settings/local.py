@@ -20,5 +20,5 @@ CONN_MAX_AGE = 8
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 
-EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', 'eightwizards'),
+EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', 'eightwizards')
 EMAIL_HOST_PASSWORD = environ.get('EMAIL_HOST_PASSWORD', 'password')
