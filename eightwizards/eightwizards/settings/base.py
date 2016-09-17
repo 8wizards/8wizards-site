@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&a59@nx#f7ms1=0dk=)8yn_kxyzy)io(kac-(qfavm4vg5g17e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = int(os.environ.get('DEBUG', False))
+DEBUG = int(os.environ.get('DEBUG', True))
 
 ALLOWED_HOSTS = []
 
@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'landing',
     'configuration',
     'projects',
-    'team'
+    'team',
+    'email_manager'
 ]
 
 # it's unstable now due to strange behaviour of sqlparse
@@ -138,3 +139,39 @@ DEBUG_TOOLBAR_CONFIG = {
 MARKUP_FIELD_TYPES = (
     ('markdown', markdown.markdown),
 )
+
+
+# EMAIL
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'user'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_USE_TLS = True
+
+EMAIL_SENDER = 'hi@8wizards.com'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    '': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
+
+
+REST_FRAMEWORK = {}
+
+if not DEBUG:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = (
+        'rest_framework.renderers.JSONRenderer',
+    )

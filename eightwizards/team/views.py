@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from .serializers import MemberSerializer, PromoUrlSerializer, CertificationSerializer
+from common.constants.models import ACTIVE
 from .models import Member, PromoUrl, Certification
 
 
@@ -9,7 +10,7 @@ class MemberViewSet(viewsets.ReadOnlyModelViewSet):
     Writable operation will be allowed just for tuning machine
     """
 
-    queryset = Member.objects.all()
+    queryset = Member.objects.filter(status=ACTIVE)
     serializer_class = MemberSerializer
 
 
